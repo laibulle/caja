@@ -1,6 +1,6 @@
 (ns account.use-cases.confirm-user-in-db-use-case
   (:require [account.domain.user :as user]
-            [app.petit-plat.common.interface :refer [handle-errors collect-result]]
+            [common.interface :refer [handle-errors collect-result]]
             [account.infrastructure.datomic-user-schema :as user-schema]))
 
 (defn- input-valid? [{:keys [data]}]

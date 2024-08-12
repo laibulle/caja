@@ -3,10 +3,10 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [app.petit-plat.email.interface :as em]
-   [app.petit-plat.common.interface :refer [handle-errors collect-result ErrorSchema]]
+   [common.interface :refer [handle-errors collect-result ErrorSchema]]
    [account.infrastructure.datomic-user-schema :as user-schema]
    [account.domain.user :as user]
-   [app.petit-plat.password-hash.interface :as ph]))
+   [password-hash.interface :as ph]))
 
 (defn- user-valid? [{:keys [data]}]
   (if (true? (user/validate-register-user-input data))
