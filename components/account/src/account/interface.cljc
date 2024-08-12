@@ -3,26 +3,28 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [account.domain.user :as user]
-   [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case]
-   [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case]))
+   #?(:clj
+      [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
+   #?(:clj [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case])))
 
-(defn hello [] "Hello world")
+(defn hello [] "Hello ")
 
-(m/=>  register-user-in-db [:=> [:cat user/RegisterUserInput] [:or nil user/User]])
-(defn register-user-in-db [input]
-  (register-user-in-db-use-case/execute input))
+#?(:clj (do
+          (m/=>  register-user-in-db [:=> [:cat user/RegisterUserInput] [:or nil user/User]])
+          (defn register-user-in-db [input]
+            (register-user-in-db-use-case/execute input))
 
-(m/=>  confirm-user-in-db [:=> [:cat user/ConfirmUserEmailInput] [:or nil user/User]])
-(defn confirm-user-server [input]
-  (confirm-user-in-db-use-case/execute input))
+          (m/=>  confirm-user-in-db [:=> [:cat user/ConfirmUserEmailInput] [:or nil user/User]])
+          (defn confirm-user-server [input]
+            (confirm-user-in-db-use-case/execute input))
 
-(defn reset-password-server [])
+          (defn reset-password-server [])
 
-(defn forgotten-password-server [])
+          (defn forgotten-password-server [])
 
-(defn delete-account-server [])
+          (defn delete-account-server [])
 
-(defn login-server [])
+          (defn login-server [])))
 
 (comment
   (mc/emit!))

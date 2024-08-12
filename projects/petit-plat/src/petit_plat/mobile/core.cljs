@@ -8,7 +8,7 @@
 
 
 (defn root []
-  [:> rn/Text {:style {:font-size 30}} "nibnu"])
+  [:> rn/Text {:style {:font-size 30}} (hello)])
 
 (defn start
   {:dev/after-load true}
