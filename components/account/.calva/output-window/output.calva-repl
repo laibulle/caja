@@ -1,0 +1,58 @@
+; Jacking in...
+; Connecting using "petit-plat" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/petit-plat/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test:+default -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64572 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+nil
+clj꞉lisa꞉> 
+nil
+clj꞉app.petit-plat.account.domain.user꞉> 
+; Evaluating file: user.cljc
+nil
+clj꞉app.petit-plat.account.domain.user꞉> 
+"random@example.com"
+clj꞉app.petit-plat.account.domain.user꞉> 
+"random@example.com"
+clj꞉app.petit-plat.account.domain.user꞉> 
+"random@example.com"
+clj꞉app.petit-plat.account.domain.user꞉> 
+"random@example.com"
+clj꞉app.petit-plat.account.domain.user꞉> 
+#'app.petit-plat.account.interface/register-user-in-db
+clj꞉app.petit-plat.account.interface꞉> 
+; hello world
+nil
+clj꞉lisa꞉> 
+; hello world
+nil
+clj꞉lisa꞉> 
+#'app.petit-plat.account.interface/register-user-in-db
+clj꞉app.petit-plat.account.interface꞉> 
+; hello world
+nil
+clj꞉lisa꞉> 
+nil
+clj꞉app.petit-plat.account.use-cases.register-user-in-db-use-case꞉> 
+#'app.petit-plat.account.use-cases.register-user-in-db-use-case/execute
+clj꞉app.petit-plat.account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉app.petit-plat.account.interface꞉> 
+#'app.petit-plat.account.interface/register-user-in-db
+clj꞉app.petit-plat.account.interface꞉> 
+; Execution error (FileNotFoundException) at app.petit-plat.datomic-db.interface/eval25922$loading (REPL:1).
+; Could not locate datomic/client/api__init.class, datomic/client/api.clj or datomic/client/api.cljc on classpath.
+clj꞉app.petit-plat.datomic-db.interface꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; TypeError: Cannot read properties of undefined (reading 'label')
+; Aborting jack-in.

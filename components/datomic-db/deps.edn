@@ -1,0 +1,5 @@
+{:paths ["src" "resources"]
+ :deps {cuid/cuid {:mvn/version "0.1.2"}
+        com.datomic/local    {:mvn/version "1.0.285"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}

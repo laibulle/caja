@@ -1,0 +1,8 @@
+{:paths ["src" "resources"]
+ :deps {com.datomic/peer {:mvn/version "1.0.7180"}
+        ;Data validation
+        metosin/malli {:mvn/version "0.16.2"}
+        org.babashka/sci {:mvn/version "0.8.42"}
+        com.gfredericks/test.chuck {:mvn/version "0.2.14"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}

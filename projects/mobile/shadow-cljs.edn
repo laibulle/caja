@@ -1,0 +1,8 @@
+{:source-paths ["src"]
+ :aliases [:cljs]
+ :builds {:mobile {:target :react-native
+                   :init-fn app.petit-plat.mobile.core/start
+                   :output-dir "./output"
+                   :devtools {:autoload true
+                              :console true
+                              :preloads [shadow.expo.keep-awake-async]}}}}

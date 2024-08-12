@@ -1,0 +1,8 @@
+{:paths ["src" "resources"]
+ :deps {ring-jetty/ring-jetty-adapter {:mvn/version "0.1.0-SNAPSHOT"}
+        ring/ring-core {:mvn/version "1.12.2"}
+        com.taoensso/sente {:mvn/version "1.19.2"}
+        compojure/compojure {:mvn/version "1.7.1"}
+        http-kit/http-kit {:mvn/version "2.9.0-alpha1"}}
+ :aliases {:test {:extra-paths ["test"]
+                  :extra-deps {}}}}
