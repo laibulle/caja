@@ -1,3 +1,2 @@
-{:tasks {test           (shell "poly test :dev")
-         format:check   (shell "cljfmt check")
+{:tasks {format:check   (shell "cljfmt check")
          format         (shell "cljfmt fix")}}
