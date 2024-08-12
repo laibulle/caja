@@ -1,4 +1,4 @@
-(ns app.petit-plat.account.domain.organization
+(ns account.domain.organization
   (:require [malli.core :as m]
             [malli.generator :as mg]
             [malli.clj-kondo :as mc]))

@@ -1,6 +1,6 @@
-(ns app.petit-plat.account.domain.user-test
+(ns account.domain.user-test
   (:require [clojure.test :as test :refer :all]
-            [app.petit-plat.account.domain.user :as user]))
+            [account.domain.user :as user]))
 
 (deftest test-validate-register-user-input
   (testing "Valid input"

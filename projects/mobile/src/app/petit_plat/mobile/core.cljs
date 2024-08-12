@@ -4,7 +4,7 @@
    ["react-native" :as rn]
    [shadow.expo :as expo]
    [reagent.core :as r]
-   [app.petit-plat.account.interface :refer [hello]]))
+   [account.interface :refer [hello]]))
 
 
 (defn root []

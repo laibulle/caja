@@ -1,10 +1,10 @@
-(ns app.petit-plat.account.use-cases.register-user-in-db-use-case-test
+(ns account.use-cases.register-user-in-db-use-case-test
   (:require
    [clojure.test :refer :all]
-   [app.petit-plat.account.use-cases.register-user-in-db-use-case :as use-case]
-   [app.petit-plat.account.infrastructure.datomic-user-schema :as user-schema]
+   [account.use-cases.register-user-in-db-use-case :as use-case]
+   [account.infrastructure.datomic-user-schema :as user-schema]
    [app.petit-plat.email.interface :as em]
-   [app.petit-plat.account.domain.user :as user]))
+   [account.domain.user :as user]))
 
 (def valid-input {:name "John doe" :email "test@gmail.com" :password "ValidPassword#123"})
 (def invalid-input {:email "test@gmail.com" :password "short"})

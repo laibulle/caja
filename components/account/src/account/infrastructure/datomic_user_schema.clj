@@ -1,4 +1,4 @@
-(ns app.petit-plat.account.infrastructure.datomic-user-schema
+(ns account.infrastructure.datomic-user-schema
   (:require
    [cuid.core :as c]
    [app.petit-plat.datomic-db.interface :as db]))

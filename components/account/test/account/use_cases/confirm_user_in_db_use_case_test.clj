@@ -1,8 +1,8 @@
-(ns app.petit-plat.account.use-cases.confirm-user-in-db-use-case-test
+(ns account.use-cases.confirm-user-in-db-use-case-test
   (:require
    [clojure.test :refer :all]
-   [app.petit-plat.account.use-cases.confirm-user-in-db-use-case :as use-case]
-   [app.petit-plat.account.domain.user :as user]))
+   [account.use-cases.confirm-user-in-db-use-case :as use-case]
+   [account.domain.user :as user]))
 
 (def valid-input {:email-confirmation-token "test@gmail.com"})
 (def invalid-input {})

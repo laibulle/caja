@@ -1,7 +1,7 @@
-(ns app.petit-plat.account.use-cases.confirm-user-in-db-use-case
-  (:require [app.petit-plat.account.domain.user :as user]
+(ns account.use-cases.confirm-user-in-db-use-case
+  (:require [account.domain.user :as user]
             [app.petit-plat.common.interface :refer [handle-errors collect-result]]
-            [app.petit-plat.account.infrastructure.datomic-user-schema :as user-schema]))
+            [account.infrastructure.datomic-user-schema :as user-schema]))
 
 (defn- input-valid? [{:keys [data]}]
   (if (true? (user/validate-confirmation-email-input data))

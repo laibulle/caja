@@ -1,11 +1,11 @@
-(ns app.petit-plat.account.use-cases.register-user-in-db-use-case
+(ns account.use-cases.register-user-in-db-use-case
   (:require
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [app.petit-plat.email.interface :as em]
    [app.petit-plat.common.interface :refer [handle-errors collect-result ErrorSchema]]
-   [app.petit-plat.account.infrastructure.datomic-user-schema :as user-schema]
-   [app.petit-plat.account.domain.user :as user]
+   [account.infrastructure.datomic-user-schema :as user-schema]
+   [account.domain.user :as user]
    [app.petit-plat.password-hash.interface :as ph]))
 
 (defn- user-valid? [{:keys [data]}]

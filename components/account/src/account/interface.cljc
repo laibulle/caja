@@ -1,10 +1,10 @@
-(ns app.petit-plat.account.interface
+(ns account.interface
   (:require
    [malli.core :as m]
    [malli.clj-kondo :as mc]
-   [app.petit-plat.account.domain.user :as user]
-   [app.petit-plat.account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case]
-   [app.petit-plat.account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case]))
+   [account.domain.user :as user]
+   [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case]
+   [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case]))
 
 (defn hello [] "Hello world")
 
