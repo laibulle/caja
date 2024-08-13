@@ -10,28 +10,27 @@
 
 (def stack (createStackNavigator))
 
-(defn home-screen []
-  (fn []
-    [:> rn/View
-     [:> rn/Text "Home Screen"]]))  ; Use a string instead of a keyword
+;; Define the components properly
+(defn HomeScreen []
+  [:> rn/View
+   [:> rn/Text "Home Screen"]])
 
-(defn details-screen []
-  (fn []
-    [:> rn/View
-     [:> rn/Text "Details Screen"]]))
+(defn DetailsScreen []
+  [:> rn/View
+   [:> rn/Text "Details Screen"]])
 
-(defn stack-navigator []
+(defn StackNavigator []
   (let [StackNavigator (.-Navigator stack)
         StackScreen (.-Screen stack)]
     [:> NavigationContainer
      [:> StackNavigator
-      [:> StackScreen {:name "Home" :component home-screen}]
-      [:> StackScreen {:name "Details" :component details-screen}]]]))
+      [:> StackScreen {:name "Home" :component (r/reactify-component HomeScreen)}]
+      [:> StackScreen {:name "Details" :component (r/reactify-component DetailsScreen)}]]]))
 
 (defn start
   {:dev/after-load true}
   []
-  (expo/render-root (r/as-element [stack-navigator])))
+  (expo/render-root (r/as-element [StackNavigator])))
 
 (comment
   (start))
