@@ -11,11 +11,13 @@
 (def stack (createStackNavigator))
 
 ;; Define your screen components
-(defn HomeScreen []
+(defn HomeScreen [^js props]
   [:> rn/View
-   [:> rn/Text "Home Screen"]])
+   [:> rn/Text "Home Screen"]
+   [:> rn/Button {:title "Go to details" :on-press (fn []
+                                                     (.navigate (.-navigation props) "details"))}]])
 
-(defn DetailsScreen []
+(defn DetailsScreen [^js props]
   [:> rn/View
    [:> rn/Text "Details Screen"]])
 
@@ -24,13 +26,12 @@
         StackScreen (.-Screen stack)]
     [:> NavigationContainer
      [:> StackNavigator
-      ;; Passing the component as a child function
-      [:> StackScreen {:name "Home"}
-       (fn []
-         (r/as-element [HomeScreen]))]
-      [:> StackScreen {:name "Details"}
-       (fn []
-         (r/as-element [DetailsScreen]))]]]))
+      [:> StackScreen {:name "home"}
+       (fn [^js props]
+         (r/as-element [HomeScreen props]))]
+      [:> StackScreen {:name "details"}
+       (fn [^js props]
+         (r/as-element [DetailsScreen props]))]]]))
 
 (defn start
   {:dev/after-load true}
