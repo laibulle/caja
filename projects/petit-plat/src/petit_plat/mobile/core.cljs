@@ -10,7 +10,7 @@
 
 (def stack (createStackNavigator))
 
-;; Define the components properly
+;; Define your screen components
 (defn HomeScreen []
   [:> rn/View
    [:> rn/Text "Home Screen"]])
@@ -24,8 +24,13 @@
         StackScreen (.-Screen stack)]
     [:> NavigationContainer
      [:> StackNavigator
-      [:> StackScreen {:name "Home" :component (r/reactify-component HomeScreen)}]
-      [:> StackScreen {:name "Details" :component (r/reactify-component DetailsScreen)}]]]))
+      ;; Passing the component as a child function
+      [:> StackScreen {:name "Home"}
+       (fn []
+         (r/as-element [HomeScreen]))]
+      [:> StackScreen {:name "Details"}
+       (fn []
+         (r/as-element [DetailsScreen]))]]]))
 
 (defn start
   {:dev/after-load true}
