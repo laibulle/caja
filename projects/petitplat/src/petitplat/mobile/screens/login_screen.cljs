@@ -34,5 +34,4 @@
        :cornerRadius 5
        :style (.-button styles)
        :onPress handle-press}]
-   ;[:> AppleAuthentication/AppleAuthentication]
      [:> Button {:title "Sign In" :on-press (fn [])}]]))
