@@ -1,6 +1,8 @@
 (ns petitplat.mobile.core
   (:require
    ["expo" :as ex]
+   [petitplat.events] ;; These two are only required to make the compiler
+   [petitplat.subs]
    [re-frame.core :as rf]
    ["react-native" :as rn]
    ["@react-navigation/native" :refer [NavigationContainer]]
