@@ -4,6 +4,7 @@
    ["react-native" :as rn]
    ["@react-navigation/native" :refer [NavigationContainer]]
    ["@react-navigation/stack" :refer [createStackNavigator]]
+   [petit-plat.mobile.screens.login-screen :refer [LoginScreen]]
    [shadow.expo :as expo]
    [reagent.core :as r]
    [account.interface :refer [hello]]))
@@ -26,6 +27,9 @@
         StackScreen (.-Screen stack)]
     [:> NavigationContainer
      [:> StackNavigator
+      [:> StackScreen {:name "login"}
+       (fn [^js props]
+         (r/as-element [LoginScreen props]))]
       [:> StackScreen {:name "home"}
        (fn [^js props]
          (r/as-element [HomeScreen props]))]
