@@ -1,6 +1,7 @@
 (ns petitplat.mobile.core
   (:require
    ["expo" :as ex]
+   [re-frame.core :as rf]
    ["react-native" :as rn]
    ["@react-navigation/native" :refer [NavigationContainer]]
    ["@react-navigation/stack" :refer [createStackNavigator]]
@@ -37,10 +38,23 @@
        (fn [^js props]
          (r/as-element [DetailsScreen props]))]]]))
 
-(defn start
-  {:dev/after-load true}
-  []
+(defn mount-ui []
   (expo/render-root (r/as-element [StackNavigator])))
+
+(defn start
+  []
+  (rf/dispatch-sync [:initialize])
+  (mount-ui))
+
+
+(defn ^:dev/after-load clear-cache-and-render!
+  []
+  ;; The `:dev/after-load` metadata causes this function to be called
+  ;; after shadow-cljs hot-reloads code. We force a UI update by clearing
+  ;; the Reframe subscription cache.
+  (rf/clear-subscription-cache!)
+  (mount-ui))
+
 
 (comment
   (start))
