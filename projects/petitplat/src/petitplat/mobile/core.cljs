@@ -44,6 +44,7 @@
   (expo/render-root (r/as-element [StackNavigator])))
 
 (defn start
+  {:dev/after-load true}
   []
   (rf/dispatch-sync [:initialize])
   (mount-ui))
@@ -60,3 +61,4 @@
 
 (comment
   (start))
+
