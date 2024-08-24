@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$expo_apple_authentication.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,iDAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,wDAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,gCAAf,GAAkDH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,2BAAzB,CAAlD,GAA0GC,OAAA,CAAQ,2BAAR,CAA1G;AACAC,sDAAuDC,CAAAA,OAAvD,GAAiEP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,gCAAhF;;",
+"sources":["shadow.js.shim.module$expo_apple_authentication.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$expo_apple_authentication\");\ngoog.provide(\"module$shadow_js_shim_module$expo_apple_authentication\");\nshadow.js.shim.module$expo_apple_authentication = shadow.js.nativeProvides[\"expo-apple-authentication\"] = require(\"expo-apple-authentication\");\nmodule$shadow_js_shim_module$expo_apple_authentication.default = shadow.js.shim.module$expo_apple_authentication;\n"],
+"names":["goog","provide","shadow","js","shim","module$expo_apple_authentication","nativeProvides","require","module$shadow_js_shim_module$expo_apple_authentication","default"]
+}

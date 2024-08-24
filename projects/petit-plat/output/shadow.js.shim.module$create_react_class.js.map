@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$create_react_class.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,0CAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,iDAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,yBAAf,GAA2CH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,oBAAzB,CAA3C,GAA4FC,OAAA,CAAQ,oBAAR,CAA5F;AACAC,+CAAgDC,CAAAA,OAAhD,GAA0DP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,yBAAzE;;",
+"sources":["shadow.js.shim.module$create_react_class.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$create_react_class\");\ngoog.provide(\"module$shadow_js_shim_module$create_react_class\");\nshadow.js.shim.module$create_react_class = shadow.js.nativeProvides[\"create-react-class\"] = require(\"create-react-class\");\nmodule$shadow_js_shim_module$create_react_class.default = shadow.js.shim.module$create_react_class;\n"],
+"names":["goog","provide","shadow","js","shim","module$create_react_class","nativeProvides","require","module$shadow_js_shim_module$create_react_class","default"]
+}

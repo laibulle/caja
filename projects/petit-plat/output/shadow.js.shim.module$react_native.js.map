@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$react_native.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,oCAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,2CAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,mBAAf,GAAqCH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,cAAzB,CAArC,GAAgFC,OAAA,CAAQ,cAAR,CAAhF;AACAC,yCAA0CC,CAAAA,OAA1C,GAAoDP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,mBAAnE;;",
+"sources":["shadow.js.shim.module$react_native.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$react_native\");\ngoog.provide(\"module$shadow_js_shim_module$react_native\");\nshadow.js.shim.module$react_native = shadow.js.nativeProvides[\"react-native\"] = require(\"react-native\");\nmodule$shadow_js_shim_module$react_native.default = shadow.js.shim.module$react_native;\n"],
+"names":["goog","provide","shadow","js","shim","module$react_native","nativeProvides","require","module$shadow_js_shim_module$react_native","default"]
+}

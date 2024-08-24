@@ -1,0 +1,9 @@
+{
+"version":3,
+"file":"shadow.js.shim.module$expo.js",
+"lineCount":5,
+"mappings":"AAAAA,IAAKC,CAAAA,OAAL,CAAa,4BAAb,CAAA;AACAD,IAAKC,CAAAA,OAAL,CAAa,mCAAb,CAAA;AACAC,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,WAAf,GAA6BH,MAAOC,CAAAA,EAAGG,CAAAA,cAAV,CAAyB,MAAzB,CAA7B,GAAgEC,OAAA,CAAQ,MAAR,CAAhE;AACAC,iCAAkCC,CAAAA,OAAlC,GAA4CP,MAAOC,CAAAA,EAAGC,CAAAA,IAAKC,CAAAA,WAA3D;;",
+"sources":["shadow.js.shim.module$expo.js"],
+"sourcesContent":["goog.provide(\"shadow.js.shim.module$expo\");\ngoog.provide(\"module$shadow_js_shim_module$expo\");\nshadow.js.shim.module$expo = shadow.js.nativeProvides[\"expo\"] = require(\"expo\");\nmodule$shadow_js_shim_module$expo.default = shadow.js.shim.module$expo;\n"],
+"names":["goog","provide","shadow","js","shim","module$expo","nativeProvides","require","module$shadow_js_shim_module$expo","default"]
+}
