@@ -3,6 +3,7 @@
  :aliases {:server {:extra-deps
                     {account/account {:local/root "../../components/account"}
                      http-kit/http-kit {:mvn/version "2.8.0"}
+                     compojure/compojure {:mvn/version "1.7.1"}
                      com.taoensso/sente {:mvn/version "1.19.2"}}}
            :test {:extra-paths ["test"]
                   :extra-deps {}}}}
