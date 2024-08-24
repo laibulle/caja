@@ -1,5 +1,6 @@
 (ns petitplat.mobile.screens.login-screen
   (:require
+   [re-frame.alpha :refer [subscribe dispatch sub]]
    ["expo-apple-authentication" :as AppleAuthentication]
    ["react-native" :refer [View Text Button StyleSheet]]))
 
@@ -12,7 +13,8 @@
                              :height 44}}))
 
 (defn LoginScreen [^js props]
-  (let [handle-press (fn []
+  (let [color @(subscribe [:color])
+        handle-press (fn []
                        (try
                          (.then (AppleAuthentication/signInAsync
                                  #js {:requestedScopes #js [(.-FULL_NAME AppleAuthentication/AppleAuthenticationScope)
@@ -28,6 +30,7 @@
                              (js/console.log "Sign-in error" e)))))]
     [:> View
      [:> Text "Login"]
+     [:> Text color]
      [:> AppleAuthentication/AppleAuthenticationButton
       {:buttonType (.-SIGN_IN AppleAuthentication/AppleAuthenticationButtonType)
        :buttonStyle (.-BLACK AppleAuthentication/AppleAuthenticationButtonStyle)
