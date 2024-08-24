@@ -1,4 +1,4 @@
-(ns petit-plat.mobile.core
+(ns petitplat.mobile.core
   (:require
    ["expo" :as ex]
    ["react-native" :as rn]

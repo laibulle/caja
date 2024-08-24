@@ -1,4 +1,4 @@
-(ns petit-plat.mobile.screens.login-screen
+(ns petitplat.mobile.screens.login-screen
   (:require
    ["expo" :as ex]
    ["react-native" :as rn]
