@@ -4,7 +4,7 @@
    ["react-native" :as rn]
    ["@react-navigation/native" :refer [NavigationContainer]]
    ["@react-navigation/stack" :refer [createStackNavigator]]
-   [petit-plat.mobile.screens.login-screen :refer [LoginScreen]]
+   [petitplat.mobile.screens.login-screen :refer [LoginScreen]]
    [shadow.expo :as expo]
    [reagent.core :as r]
    [account.interface :refer [hello]]))
