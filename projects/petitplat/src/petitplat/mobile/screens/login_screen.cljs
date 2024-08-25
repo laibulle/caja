@@ -20,7 +20,7 @@
                                  #js {:requestedScopes #js [(.-FULL_NAME AppleAuthentication/AppleAuthenticationScope)
                                                             (.-EMAIL AppleAuthentication/AppleAuthenticationScope)]})
                                 (fn [credential]
-                                   ;; signed in
+                                  (dispatch [:sign-in {:provider :apple :credentials credential}])
                                   (js/console.log "Signed in with credential" credential)))
                          (catch js/Error e
                            (if (= (.-code e) "ERR_REQUEST_CANCELED")
