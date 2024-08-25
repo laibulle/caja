@@ -14,7 +14,6 @@
                  (js->clj :keywordize-keys true))
                 nil))))
 
-
 (comment
   (set-item "myk" {:key "my key"})
   (.then (get-item "myk")
