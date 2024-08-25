@@ -1,6 +1,5 @@
 {:source-paths ["src" "test"]
  :aliases [:cljs]
- :dev-http {3001 "output/test"}
  :builds {:mobile {:target :react-native
                    :init-fn petitplat.mobile.core/start
                    :output-dir "./output"
@@ -8,10 +7,7 @@
                               :console true
                               :preloads [shadow.expo.keep-awake-async]}}
 
-          :browser-test {:target :browser-test
-                         :test-dir "output/test"}
-
-          :test {:target :node-test
-                 :output-to "output/tests.js"
-                 :asset-path "out"
-                 :autorun true}}}
+          :test {:target     :karma
+                 :output-to  "output/test.js"
+                 :ns-regexp  "-test$"
+                 :autorun    true}}}

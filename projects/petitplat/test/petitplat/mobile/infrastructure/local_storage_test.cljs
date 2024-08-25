@@ -1,5 +1,6 @@
 (ns petitplat.mobile.infrastructure.local-storage-test
   (:require
+   [petitplat.mobile.core :as core]
    [cljs.test :refer-macros [deftest is async run-tests]]
    [petitplat.mobile.infrastructure.local-storage :as ls]
    ["@react-native-async-storage/async-storage" :as mock-async-storage]))
@@ -10,9 +11,10 @@
                        (fn [key value]
                          (reset! (atom {}) {key value}))]
            (let [key "test-key"
-                 value {:foo "bar"}]
+                 value {:foo "bar"}
+                 expected (.stringify js/JSON (clj->js value))]
              (ls/set-item key value)
-             (is (= (get @mock-async-storage key) (.stringify js/JSON (clj->js value))))
+             (is (= (get @mock-async-storage key) expected))
              (done)))))
 
 (deftest test-get-item
