@@ -4,6 +4,8 @@
    [re-frame.alpha :refer [reg-event-db reg-fx reg-event-fx inject-cofx path after sub]]
    [cljs.spec.alpha :as s]))
 
+(def storage-key "app")
+
 (reg-fx
  :load-storage
  (fn [key]
@@ -12,7 +14,7 @@
 (reg-event-fx              ;; -fx registration, not -db registration
  :initialize
  (fn [_ _]
-   {:load-storage "petit-plat"}))
+   {:load-storage storage-key}))
 
 (reg-event-db
  :storage-loaded
