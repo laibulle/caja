@@ -11,8 +11,7 @@
           :browser-test {:target :browser-test
                          :test-dir "output/test"}
 
-          :test {:target :browser-test
-                 :test-dir "output/test"
-                 :output-to "js/tests.js"
+          :test {:target :node-test
+                 :output-to "output/tests.js"
                  :asset-path "out"
                  :autorun true}}}
