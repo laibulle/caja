@@ -5,4 +5,10 @@
                    :output-dir "./output"
                    :devtools {:autoload true
                               :console true
-                              :preloads [shadow.expo.keep-awake-async]}}}}
+                              :preloads [shadow.expo.keep-awake-async]}}
+
+          :test {:target :node-test
+                 :output-to "out/tests.js"
+                 :runner :node
+                 :asset-path "out"
+                 :autorun true}}}
