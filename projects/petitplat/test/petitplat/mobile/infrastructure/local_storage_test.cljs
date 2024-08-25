@@ -6,10 +6,9 @@
 
 (deftest test-set-item
   (async done
-    ;; Mock setItem function
-         (with-redefs [mock-async-storage/setItem (fn [key value]
-                                                    (reset! (atom {}) {key value}))]
-      ;; Test
+         (with-redefs [mock-async-storage/setItem
+                       (fn [key value]
+                         (reset! (atom {}) {key value}))]
            (let [key "test-key"
                  value {:foo "bar"}]
              (ls/set-item key value)
@@ -18,10 +17,9 @@
 
 (deftest test-get-item
   (async done
-    ;; Mock getItem function
-         (with-redefs [mock-async-storage/getItem (fn [key]
-                                                    (js/Promise.resolve (.stringify js/JSON (clj->js {:foo "bar"}))))]
-      ;; Test
+         (with-redefs
+          [mock-async-storage/getItem (fn [key]
+                                        (js/Promise.resolve (.stringify js/JSON (clj->js {:foo "bar"}))))]
            (let [key "test-key"]
              (-> (ls/get-item key)
                  (.then (fn [result]
