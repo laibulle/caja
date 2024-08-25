@@ -7,7 +7,7 @@
 (reg-fx
  :load-storage
  (fn [key]
-   (ls/get-item (key))))
+   (ls/get-item key)))
 
 (reg-event-fx              ;; -fx registration, not -db registration
  :initialize
