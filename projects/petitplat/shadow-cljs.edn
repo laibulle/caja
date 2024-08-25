@@ -8,7 +8,7 @@
                               :preloads [shadow.expo.keep-awake-async]}}
 
           :test {:target :node-test
-                 :output-to "out/tests.js"
+                 :output-to "output/tests.js"
                  :runner :node
                  :asset-path "out"
                  :autorun true}}}
