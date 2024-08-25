@@ -9,4 +9,7 @@
                               :preloads [shadow.expo.keep-awake-async]}}
 
           :test {:target     :karma
-                 :output-to  "output/test.js"}}}
+                 :output-to  "output/test.js"
+                 :compiler-options {:source-map true}
+                 :js-options {:ignore-asset-registry true
+                              :ignore-warnings true}}}}

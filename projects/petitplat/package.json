@@ -5,6 +5,7 @@
   "scripts": {
     "test": "shadow-cljs compile test && karma start --single-run",
     "test:watch": "npx shadow-cljs watch test",
+    "karma": "karma start",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
