@@ -1,0 +1,5 @@
+{:lint-as
+ {helix.core/defnc clj-kondo.lint-as/def-catch-all
+  helix.core/$ clj-kondo.lint-as/def-catch-all
+  helix.core/<> clj-kondo.lint-as/def-catch-all}}
+
