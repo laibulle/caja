@@ -5,6 +5,7 @@
    [helix.core :refer [defnc $]]
    ["@react-navigation/native" :refer [NavigationContainer]]
    ["@react-navigation/stack" :refer [createStackNavigator]]
+   [petitplat.mobile.screens.login-screen :refer [login-screen]]
    [helix.experimental.refresh :as refresh]))
 
 (def stack (createStackNavigator))
@@ -27,9 +28,9 @@
           ;; ($ StackScreen {:name "login"}
           ;;    (fn [props]
           ;;      ($ LoginScreen props)))
-          ;; ($ stack-screen {:name "home"}
-          ;;    (fn [props]
-          ;;      ($ HomeScreen props)))
+          ($ stack-screen {:name "home"}
+             (fn [props]
+               ($ login-screen props)))
           ($ stack-screen {:name "details"}
              (fn [props]
                ($ details-screen props)))))))
