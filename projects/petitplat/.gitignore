@@ -37,3 +37,4 @@ yarn-error.*
 .calva/
 .shadow-cljs/
 output/
+out/
