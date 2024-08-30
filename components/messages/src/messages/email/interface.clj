@@ -28,6 +28,7 @@
   (let [text (dt/generate (:variables input))
         html (dh/generate (:variables input))
         sm-input (-> input
+                     (assoc :from (get-in @config [:default-from :email]))
                      (assoc  :body [:alternative
                                     {:type "text/plain"
                                      :content text}
@@ -40,9 +41,9 @@
 
 (comment
   (init {:host "localhost"
-         :port 8025})
-  (send-email-from-template {:from "me@draines.com"
-                             :to "foo@example.com"
+         :port 8025
+         :default-from {:email "me@draines.com" :name "Me"}})
+  (send-email-from-template {:to "foo@example.com"
                              :subject "Hi!"
                              :body [:alternative
                                     {:type "text/plain"

@@ -10,7 +10,8 @@
 
 (comment
   (init {:email {:host "localhost"
-                 :port 8025}})
+                 :port 8025
+                 :default-from {:email "me@draines.com" :name "Me"}}})
   (send-email-from-template {:from "me@draines.com"
                              :to "foo@example.com"
                              :subject "Hi!"
