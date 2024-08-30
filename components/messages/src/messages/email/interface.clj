@@ -12,6 +12,7 @@
     message))
 
 (defn send-message [message]
+  (println message)
   (let [new-message (add-default-from message)
         result (p/send-message conn new-message)]
     (if (= (:error result) :SUCCESS)
