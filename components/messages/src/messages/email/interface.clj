@@ -1,4 +1,4 @@
-(ns email.interface
+(ns messages.email.interface
   (:require [postal.core :as p]))
 
 (def conn {:host "localhost"

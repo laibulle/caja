@@ -1,4 +1,4 @@
-(ns email.templates.default-html)
+(ns messages.email.templates.default-html)
 
 (defn generate [{:keys [title table intro dictionary outro action signature product go_to_action text-direction]}]
   [:doctype :html]

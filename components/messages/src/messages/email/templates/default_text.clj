@@ -1,4 +1,4 @@
-(ns email.templates.default-text)
+(ns messages.email.templates.default-text)
 
 (defn generate [{:keys [title intro dictionary outro action signature product]}]
   (str
