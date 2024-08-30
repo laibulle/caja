@@ -1,1 +1,1 @@
-(ns accounts.infrastructure.postgres.postgres-memberships-adapter)
+(ns account.infrastructure.postgres.postgres-memberships-adapter)

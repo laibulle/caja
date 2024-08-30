@@ -1,1 +1,3 @@
-(ns accounts.infrastructure.postgres.postgres-users-adapter)
+(ns account.infrastructure.postgres.postgres-users-adapter)
+
+(defn hello [])

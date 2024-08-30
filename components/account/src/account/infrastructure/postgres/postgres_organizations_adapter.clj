@@ -1,1 +1,1 @@
-(ns accounts.infrastructure.postgres.postgres-organizations-adapter)
+(ns account.infrastructure.postgres.postgres-organizations-adapter)
