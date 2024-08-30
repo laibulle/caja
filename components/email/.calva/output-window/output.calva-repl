@@ -1,0 +1,87 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/email; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64205 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/email; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64213 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+nil
+clj꞉email.templates.default-text꞉> 
+#'email.templates.default-text/generate
+clj꞉email.templates.default-text꞉> 
+"hello\n\ni\nn\nt\nr\no\n\n\n\no\nu\nt\nr\no\n\n\n\n© 2024 My product. All rights reserved."
+clj꞉email.templates.default-text꞉> 
+"hello\n\nintro\n\n\n\noutro\n\n\n\n© 2024 My product. All rights reserved."
+clj꞉email.templates.default-text꞉> 
+; Syntax error compiling at (src/email/templates/default_html.clj:3:1).
+; Unable to resolve symbol: text-direction in this context
+clj꞉email.templates.default-html꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/email/templates/default_html.clj:3:1).
+; product.link
+clj꞉email.templates.default-html꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/email/templates/default_html.clj:62:49).
+; product.logo_height
+clj꞉email.templates.default-html꞉> 
+#'email.templates.default-html/generate
+clj꞉email.templates.default-html꞉> 
+[:html {:xmlns "http://www.w3.org/1999/xhtml"} [:head [:meta {:name "viewport", :content "width=device-width, initial-scale=1.0"}] [:meta {:http-equiv "Content-Type", :content "text/html; charset=UTF-8"}] [:style {:type "text/css", :rel "stylesheet", :media "all"} "/* Base Styles */" "*:not(br):not(tr):not(html) { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; box-sizing: border-box; }" "body { width: 100% !important; height: 100%; margin: 0; line-height: 1.4; background-color: #F2F4F6; color: #74787E; text-size-adjust: none; }" "a { color: #3869D4; }" "/* Layout Styles */" ".email-wrapper { width: 100%; margin: 0; padding: 0; background-color: #F2F4F6; }" ".email-content { width: 100%; margin: 0; padding: 0; }" ".email-masthead { padding: 25px 0; text-align: center; }" ".email-masthead_logo { max-width: 400px; border: 0; }" ".email-masthead_name { font-size: 16px; font-weight: bold; color: #2F3133; text-decoration: none; text-shadow: 0 1px 0 white; }" ".email-logo { max-height: 50px; }" "/* Body Styles */" ".email-body { width: 100%; margin: 0; padding: 0; border-top: 1px solid #EDEFF2; border-bottom: 1px solid #EDEFF2; background-color: #FFF; }" ".email-body_inner { width: 570px; margin: 0 auto; padding: 0; }" ".email-footer { width: 570px; margin: 0 auto; padding: 0; text-align: center; }" ".email-footer p { color: #AEAEAE; }" ".body-action { width: 100%; margin: 30px auto; padding: 0; text-align: center; }" ".body-dictionary { width: 100%; overflow: hidden; margin: 20px auto 10px; padding: 0; }" ".body-dictionary dd { margin: 0 0 10px 0; }" ".body-dictionary dt { clear: both; color: #000; font-weight: bold; }" ".body-sub { margin-top: 25px; padding-top: 25px; border-top: 1px solid #EDEFF2; }" ".content-cell { padding: 35px; }" ".align-right { text-align: right; }" "/* Typography */" "h1 { margin-top: 0; color: #2F3133; font-size: 19px; font-weight: bold; }" "h2 { margin-top: 0; color: #2F3133; font-size: 16px; font-weight: bold; }" "h3 { margin-top: 0; color: #2F3133; font-size: 14px; font-weight: bold; }" "p { margin-top: 0; color: #74787E; font-size: 16px; line-height: 1.5em; }" "p.sub { font-size: 12px; }" "p.center { text-align: center; }" "/* Data table */" ".data-table-title { width: 100%; margin: 0; font-size: 17px; padding: 20px 0 15px 0; }" ".data-wrapper { width: 100%; margin: 0; padding: 0 0 35px 0; }" ".data-table { width: 100%; margin: 0; }" ".data-table th { text-align: left; padding: 0px 5px; padding-bottom: 8px; border-bottom: 1px solid #EDEFF2; }" ".data-table th p { margin: 0; color: #9BA2AB; font-size: 12px; }" ".data-table td { padding: 10px 5px; color: #74787E; font-size: 15px; line-height: 18px; }" "/* Buttons */" ".button { display: inline-block; width: 200px; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 45px; text-align: center; text-decoration: none; text-size-adjust: none; mso-hide: all; }" "/* Media Queries */" "@media only screen and (max-width: 600px) { .email-body_inner, .email-footer { width: 100% !important; } }" "@media only screen and (max-width: 500px) { .button { width: 100% !important; } }"]] [:body {:dir nil} [:table.email-wrapper {:width "100%", :cellpadding 0, :cellspacing 0} [:tr [:td {:align "center"} [:table.email-content {:width "100%", :cellpadding 0, :cellspacing 0} [:tr [:td.email-masthead [:a.email-masthead_name {:href "http://link.com", :target "_blank"} "My product"]]] [:tr [:td.email-body {:width "100%"} [:table.email-body_inner {:align "center", :width "570", :cellpadding 0, :cellspacing 0} [:tr [:td.content-cell [:h1 "hello"] ([:p "intro"]) [:dl.body-dictionary ()] () () nil ([:p "outro"]) nil]]]]] [:tr [:td [:table.email-footer {:align "center", :width "570", :cellpadding 0, :cellspacing 0} [:tr [:td.content-cell [:p.sub.center "&copy; " 2024 " " [:a {:href "http://link.com", :target "_blank"} "My product"] ". All rights reserved."]]]]]]]]]]]]
+clj꞉email.templates.default-html꞉> 
