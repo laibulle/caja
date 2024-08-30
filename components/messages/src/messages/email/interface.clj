@@ -1,8 +1,10 @@
 (ns messages.email.interface
   (:require [postal.core :as p]))
 
-(def conn {:host "localhost"
-           :port 8025})
+(def config (atom nil))
+
+(defn init [config-input]
+  (reset! config config-input))
 
 (def default-from "me@draines.com")
 
@@ -14,13 +16,15 @@
 (defn send-message [message]
   (println message)
   (let [new-message (add-default-from message)
-        result (p/send-message conn new-message)]
+        result (p/send-message @config new-message)]
     (if (= (:error result) :SUCCESS)
       true
       {:errors [result]})))
 
 
 (comment
+  (init {:host "localhost"
+         :port 8025})
   (send-message {:from "me@draines.com"
                  :to "foo@example.com"
                  :subject "Hi!"

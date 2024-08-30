@@ -4,6 +4,9 @@
    [messages.email.templates.default-text :as dt]
    [messages.email.templates.default-html :as dh]))
 
+(defn init [input]
+  (mi/init {:email input}))
+
 (defn send-email [input]
   (let [text (dt/generate (:variables input))
         html (dh/generate (:variables input))
@@ -20,6 +23,8 @@
     (mi/send-message sm-input)))
 
 (comment
+  (init {:email {:host "localhost"
+                 :port 8025}})
   (send-email {:from "me@draines.com"
                :to "foo@example.com"
                :subject "Hi!"
