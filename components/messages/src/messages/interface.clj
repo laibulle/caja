@@ -18,8 +18,6 @@
                                      :content html}])
                      (dissoc :variables))]
 
-    (println html)
-
     (mi/send-message sm-input)))
 
 (comment
