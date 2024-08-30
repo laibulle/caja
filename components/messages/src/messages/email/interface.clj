@@ -9,11 +9,9 @@
 (defn init [config-input]
   (reset! config config-input))
 
-(def default-from "me@draines.com")
-
 (defn add-default-from [message]
   (if (nil? (:from message))
-    (assoc message :from default-from)
+    (assoc message :from (get-in @config [:default-from :email]))
     message))
 
 (defn send-email [message]
@@ -28,7 +26,6 @@
   (let [text (dt/generate (:variables input))
         html (dh/generate (:variables input))
         sm-input (-> input
-                     (assoc :from (get-in @config [:default-from :email]))
                      (assoc  :body [:alternative
                                     {:type "text/plain"
                                      :content text}
