@@ -2,7 +2,7 @@
   (:require [postal.core :as p]))
 
 (def conn {:host "localhost"
-           :port 1026})
+           :port 8025})
 
 (def default-from "me@draines.com")
 
