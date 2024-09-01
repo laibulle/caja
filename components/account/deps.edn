@@ -1,6 +1,5 @@
 {:paths ["src" "resources"]
  :deps {com.datomic/peer {:mvn/version "1.0.7180"}
-        honeysql/honeysql {:mvn/version "1.0.461"}
         ;Data validation
         metosin/malli {:mvn/version "0.16.2"}
         org.babashka/sci {:mvn/version "0.8.42"}

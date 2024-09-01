@@ -3,6 +3,7 @@
 
 (defn hello [])
 
+
 (defn get-user-by-email [email]
   (-> {:select [:a :b :c]
        :from   [:foo]

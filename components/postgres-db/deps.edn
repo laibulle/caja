@@ -1,0 +1,10 @@
+{:paths ["src" "resources"]
+ :deps {org.clojure/java.jdbc {:mvn/version "0.7.12"}
+        honeysql/honeysql {:mvn/version "1.0.461"}}
+ :aliases {:clj {}
+           :test {:extra-paths ["test"]
+                  :extra-deps {}}}}
+
+
+
+
