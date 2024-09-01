@@ -1,5 +1,6 @@
 {:paths ["src" "resources"]
- :deps {caja/postgres-db {:local/root "../postgres-db"}
+ :deps {clj-time/clj-time {:mvn/version "0.15.2"}
+        caja/postgres-db {:local/root "../postgres-db"}
         honeysql/honeysql {:mvn/version "1.0.461"}
         com.datomic/peer {:mvn/version "1.0.7180"}
         ;Data validation

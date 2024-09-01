@@ -6,7 +6,8 @@
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.infrastructure.datomic-user-schema :as user-schema]
    [account.domain.user :as user]
-   [password-hash.interface :as ph]))
+   [password-hash.interface :as ph]
+   [clj-time.core :as t]))
 
 (defn- user-valid? [{:keys [data]}]
   (if (true? (user/validate-register-user-input data))
@@ -42,8 +43,8 @@
 
 (defn- generate-user-data [{:keys [data]}]
   {:data (-> data
-             (assoc :confirmed (not (credentials-provider data)))
-             (assoc :confirmation-token (user/generate-confirmation-token)))})
+             (assoc :confirmed_at (when (not (credentials-provider data)) (t/now)))
+             (assoc :confirmation-token (when (credentials-provider data) (user/generate-confirmation-token))))})
 
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
 (defn execute [input]
