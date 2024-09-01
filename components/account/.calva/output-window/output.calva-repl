@@ -332,3 +332,25 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; No such namespace: user-schema
 ; Evaluation of file register_user_in_db_use_case.clj failed: class clojure.lang.Compiler$CompilerException
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/user-valid?
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
+; No such var: ua/get-user-by-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
+; No such var: ua/get-user-by-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.use-cases.register-user-in-db-use-case/user-exists?
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
