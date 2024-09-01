@@ -90,3 +90,60 @@ nil
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
+nil
+clj꞉postgres-db.interface꞉> 
+#'postgres-db.interface/conn
+clj꞉postgres-db.interface꞉> 
+; Execution error (FileNotFoundException) at postgres-db.interface/eval10825$loading (REPL:1).
+; Could not locate clojure/java/jdbc__init.class, clojure/java/jdbc.clj or clojure/java/jdbc.cljc on classpath.
+clj꞉postgres-db.interface꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:61535 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at postgres-db.interface/eval9741$loading (REPL:1).
+; Could not locate clojure/java/jdbc__init.class, clojure/java/jdbc.clj or clojure/java/jdbc.cljc on classpath.
+clj꞉postgres-db.interface꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:61891 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at postgres-db.interface/eval8790$loading (REPL:1).
+; Could not locate next/jdbc__init.class, next/jdbc.clj or next/jdbc.cljc on classpath.
+clj꞉postgres-db.interface꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:61943 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
