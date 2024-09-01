@@ -231,3 +231,104 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 ; import - failed: #{:load} at: [:ns-clauses :load :clause] spec: :clojure.core.specs.alpha/ns-load
 ; import - failed: #{:gen-class} at: [:ns-clauses :gen-class :clause] spec: :clojure.core.specs.alpha/ns-gen-class
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:51250 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: register_user_in_db_use_case.clj
+; 
+; ; clj  account.use-cases.register-user-in-db-use-case 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16640$loading (register_user_in_db_use_case.clj:1).
+; Could not locate app/petit_plat/email/interface__init.class, app/petit_plat/email/interface.clj or app/petit_plat/email/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+; Evaluation of file register_user_in_db_use_case.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:linters {:unresolved-symbol {:exclude [(malli.core/=>)]}}}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:63:3).
+; Unable to resolve symbol: user-exists? in this context
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16886$loading (REPL:1).
+; Could not locate app/petit_plat/email/interface__init.class, app/petit_plat/email/interface.clj or app/petit_plat/email/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16904$loading (REPL:1).
+; Could not locate messages/interface__init.class, messages/interface.clj or messages/interface.cljc on classpath.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:51383 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval19597$loading (REPL:1).
+; Could not locate common/interface__init.class, common/interface.clj or common/interface.cljc on classpath.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:51429 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.datomic-user-schema/eval19623$loading (datomic_user_schema.clj:1).
+; Could not locate cuid/core__init.class, cuid/core.clj or cuid/core.cljc on classpath.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval20805$loading (REPL:1).
+; Could not locate password_hash/interface__init.class, password_hash/interface.clj or password_hash/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:51511 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/user-valid?
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Evaluating file: register_user_in_db_use_case.clj
+; 
+; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
+; No such namespace: user-schema
+; Evaluation of file register_user_in_db_use_case.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

@@ -2,9 +2,9 @@
   (:require
    [malli.core :as m]
    [malli.clj-kondo :as mc]
-   [app.petit-plat.email.interface :as em]
+   [messages.interface :as mi]
    [common.interface :refer [=> collect-result ErrorSchema]]
-   [account.infrastructure.datomic-user-schema :as user-schema]
+   ;[account.infrastructure.datomic-user-schema :as user-schema]
    [account.domain.user :as user]
    [password-hash.interface :as ph]
    [clj-time.core :as t]))
@@ -33,9 +33,9 @@
 (defn- send-confirmation-email [{:keys [data]}]
   (if (credentials-provider data)
     (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
-          result (em/send-message {:to (:email data)
-                                   :subject "Confirm your email"
-                                   :variables {:title "hello" :intro [message] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}})]
+          result (mi/send-email-from-template {:to (:email data)
+                                               :subject "Confirm your email"
+                                               :variables {:title "hello" :intro [message] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}})]
       (if (true? result)
         {:data data}
         result))

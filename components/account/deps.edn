@@ -1,11 +1,15 @@
 {:paths ["src" "resources"]
- :deps {clj-time/clj-time {:mvn/version "0.15.2"}
-        caja/postgres-db {:local/root "../postgres-db"}
+ :deps {caja/postgres-db {:local/root "../postgres-db"}
+        caja/messages {:local/root "../messages"}
+        caja/common {:local/root "../common"}
+        caja/password-hash {:local/root "../password-hash"}
+        clj-time/clj-time {:mvn/version "0.15.2"}
         honeysql/honeysql {:mvn/version "1.0.461"}
         com.datomic/peer {:mvn/version "1.0.7180"}
         ;Data validation
         metosin/malli {:mvn/version "0.16.2"}
         org.babashka/sci {:mvn/version "0.8.42"}
         com.gfredericks/test.chuck {:mvn/version "0.2.14"}}
- :aliases {:test {:extra-paths ["test"]
+ :aliases {:clj {}
+           :test {:extra-paths ["test"]
                   :extra-deps {}}}}
