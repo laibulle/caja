@@ -4,7 +4,7 @@
         caja/common {:local/root "../common"}
         caja/password-hash {:local/root "../password-hash"}
         clj-time/clj-time {:mvn/version "0.15.2"}
-        honeysql/honeysql {:mvn/version "1.0.461"}
+        com.github.seancorfield/honeysql {:mvn/version "2.6.1161"}
         com.datomic/peer {:mvn/version "1.0.7180"}
         ;Data validation
         metosin/malli {:mvn/version "0.16.2"}

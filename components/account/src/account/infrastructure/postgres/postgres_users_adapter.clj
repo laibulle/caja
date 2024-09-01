@@ -1,10 +1,9 @@
 (ns account.infrastructure.postgres.postgres-users-adapter
   (:require
    [postgres-db.interface :as db]
-   ;[honey.sql :as sql]
-   ))
+   [honey.sql :as sql]))
 
-
+(def table-name :users)
 ;; (defn get-user-by-email [email]
 ;;   (-> {:select [:a :b :c]
 ;;        :from   [:foo]
@@ -12,10 +11,16 @@
 ;;       (sql/format)
 ;;       (jdbc/execute! conn)))
 
-(defn insert-user [data])
+(defn insert-user [data]
+  (-> {:insert-into table-name
+       :columns [:name]
+       :values [data]}
+      (sql/format)
+      (db/execute)))
 
 (defn get-user-by-email [email])
 
 (comment
   (db/init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
-  (db/fetch-data))
+  (db/fetch-data)
+  (insert-user {:name "hello"}))

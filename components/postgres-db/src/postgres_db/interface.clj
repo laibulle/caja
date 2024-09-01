@@ -13,6 +13,9 @@
 
 (def datasource (atom nil))
 
+(defn execute [statement]
+  (jdbc/execute! @datasource statement))
+
 (defn fetch-data []
   (jdbc/execute! @datasource ["SELECT * FROM your_table LIMIT 10"]))
 

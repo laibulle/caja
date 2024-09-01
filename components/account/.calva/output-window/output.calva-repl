@@ -36,8 +36,8 @@ You can configure this with the setting:
 ;   - See https://calva.io/connect-sequences/
 ; 
 
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:56238 ...
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:50889 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -49,332 +49,88 @@ clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
 nil
-clj꞉accounts.infrastructure.postgres.postgres-users-adapter꞉> 
-#'accounts.infrastructure.postgres.postgres-users-adapter/hello
-clj꞉accounts.infrastructure.postgres.postgres-users-adapter꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:56439 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
 clj꞉user꞉> 
-; Jack-in done.
+#'user/init
 clj꞉user꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval10875$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; Syntax error compiling at (src/account/infrastructure/postgres/postgres_users_adapter.clj:7:3).
-; No such namespace: sql
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:61288 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-nil
-clj꞉postgres-db.interface꞉> 
-#'postgres-db.interface/conn
-clj꞉postgres-db.interface꞉> 
-; Execution error (FileNotFoundException) at postgres-db.interface/eval10825$loading (REPL:1).
-; Could not locate clojure/java/jdbc__init.class, clojure/java/jdbc.clj or clojure/java/jdbc.cljc on classpath.
-clj꞉postgres-db.interface꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:61535 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at postgres-db.interface/eval9741$loading (REPL:1).
-; Could not locate clojure/java/jdbc__init.class, clojure/java/jdbc.clj or clojure/java/jdbc.cljc on classpath.
-clj꞉postgres-db.interface꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:61891 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at postgres-db.interface/eval8790$loading (REPL:1).
-; Could not locate next/jdbc__init.class, next/jdbc.clj or next/jdbc.cljc on classpath.
-clj꞉postgres-db.interface꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:61943 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:64403 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval10865$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:64441 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval11816$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12059$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12065$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12071$loading (REPL:1).
-; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:64483 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-nil
-clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x494be861 "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51c6jhsg1nefjml|494be861, dataSourceName -> 1hge18jb51c6jhsg1nefjml|494be861 ]"]
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x643911d4 "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51cmpoix1gbqj9g|643911d4, dataSourceName -> 1hge18jb51cmpoix1gbqj9g|643911d4 ]"]
 ; 
 ; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 ; SLF4J: Defaulting to no-operation (NOP) logger implementation
 ; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+clj꞉user꞉> 
+{:name "John Doe", :email "j@gmail.com", :password "$2a$11$xkHToJ4Z6RCTsIWyij5nS.NkWNjrQQYW6qymTutz3ByKJ9r0Tzdem", :confirmed_at #object[org.joda.time.DateTime 0x2e23c982 "2024-09-01T20:26:55.323Z"], :confirmation-token nil}
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval24137$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval25478$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:51100 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x6f0f393f "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51cmxkl53hmzhv|6f0f393f, dataSourceName -> 1hge18jb51cmxkl53hmzhv|6f0f393f ]"]
+; 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x4ab056ae "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51cmxkl53hmzhv|4ab056ae, dataSourceName -> 1hge18jb51cmxkl53hmzhv|4ab056ae ]"]
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 ; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
 ; ERROR: relation "your_table" does not exist
 ;   Position: 15
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-; Syntax error macroexpanding clojure.core/ns at (src/account/use_cases/register_user_in_db_use_case.clj:1:1).
-; import - failed: #{:refer-clojure} at: [:ns-clauses :refer-clojure :clause] spec: :clojure.core.specs.alpha/ns-refer-clojure
-; import - failed: #{:require} at: [:ns-clauses :require :clause] spec: :clojure.core.specs.alpha/ns-require
-; import - failed: #{:import} at: [:ns-clauses :import :clause] spec: :clojure.core.specs.alpha/ns-import
-; import - failed: #{:use} at: [:ns-clauses :use :clause] spec: :clojure.core.specs.alpha/ns-use
-; import - failed: #{:refer} at: [:ns-clauses :refer :clause] spec: :clojure.core.specs.alpha/ns-refer
-; import - failed: #{:load} at: [:ns-clauses :load :clause] spec: :clojure.core.specs.alpha/ns-load
-; import - failed: #{:gen-class} at: [:ns-clauses :gen-class :clause] spec: :clojure.core.specs.alpha/ns-gen-class
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:51250 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Evaluating file: register_user_in_db_use_case.clj
-; 
-; ; clj  account.use-cases.register-user-in-db-use-case 
-; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16640$loading (register_user_in_db_use_case.clj:1).
-; Could not locate app/petit_plat/email/interface__init.class, app/petit_plat/email/interface.clj or app/petit_plat/email/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
-; Evaluation of file register_user_in_db_use_case.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-{:linters {:unresolved-symbol {:exclude [(malli.core/=>)]}}}
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:63:3).
-; Unable to resolve symbol: user-exists? in this context
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16886$loading (REPL:1).
-; Could not locate app/petit_plat/email/interface__init.class, app/petit_plat/email/interface.clj or app/petit_plat/email/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval16904$loading (REPL:1).
-; Could not locate messages/interface__init.class, messages/interface.clj or messages/interface.cljc on classpath.
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:51383 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval19597$loading (REPL:1).
-; Could not locate common/interface__init.class, common/interface.clj or common/interface.cljc on classpath.
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:51429 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-; Execution error (FileNotFoundException) at account.infrastructure.datomic-user-schema/eval19623$loading (datomic_user_schema.clj:1).
-; Could not locate cuid/core__init.class, cuid/core.clj or cuid/core.cljc on classpath.
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval20805$loading (REPL:1).
-; Could not locate password_hash/interface__init.class, password_hash/interface.clj or password_hash/interface.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; nREPL Connection was closed
-; Jacking in...
-; Connecting using "deps.edn" project type.
-; You can make Calva auto-select this.
-;   - See https://calva.io/connect-sequences/
-; 
-
-; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:clj:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
-; Using host:port localhost:51511 ...
-; Hooking up nREPL sessions ...
-; Connected session: clj
-; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
-nil
-clj꞉user꞉> 
-; Jack-in done.
-clj꞉user꞉> 
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-#'account.use-cases.register-user-in-db-use-case/user-valid?
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Evaluating file: register_user_in_db_use_case.clj
-; 
-; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
-; No such namespace: user-schema
-; Evaluation of file register_user_in_db_use_case.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-#'account.use-cases.register-user-in-db-use-case/user-valid?
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
-; No such var: ua/get-user-by-email
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:18:13).
-; No such var: ua/get-user-by-email
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+#'account.infrastructure.postgres.postgres-users-adapter/table-name
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #'account.infrastructure.postgres.postgres-users-adapter/insert-user
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
-#'account.use-cases.register-user-in-db-use-case/user-exists?
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-#'account.use-cases.register-user-in-db-use-case/save-in-db
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-#'user/init
-clj꞉user꞉> 
-#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x7502e1d7 "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51ce39qx19wv23f|7502e1d7, dataSourceName -> 1hge18jb51ce39qx19wv23f|7502e1d7 ]"]
-; 
-; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-; SLF4J: Defaulting to no-operation (NOP) logger implementation
-; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
-clj꞉user꞉> 
-; Syntax error compiling at (dev/user.clj:11:3).
-; No such var: ru/execute
-clj꞉user꞉> 
-nil
-clj꞉user꞉> 
-; Syntax error compiling at (dev/user.clj:11:3).
-; No such var: ru/execute
-clj꞉user꞉> 
-; Evaluating file: register_user_in_db_use_case.clj
-nil
-clj꞉account.use-cases.register-user-in-db-use-case꞉> 
-{:name "John Doe", :email "j@gmail.com", :password "$2a$11$0a4pVl4adxlhnQpFJXl6NOP71enH8JQUesvtXEzOR63pd7HkoNL3W", :confirmed_at #object[org.joda.time.DateTime 0x4dada275 "2024-09-01T16:26:00.458Z"], :confirmation-token nil}
-clj꞉user꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ArityException) at account.infrastructure.postgres.postgres-users-adapter/insert-user (REPL:15).
+; Wrong number of args (0) passed to: :users
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ArityException) at account.infrastructure.postgres.postgres-users-adapter/insert-user (REPL:15).
+; Wrong number of args (0) passed to: :users
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ExceptionInfo) at honey.sql/format-values (sql.cljc:1108).
+; :values expects a sequence of rows (maps) or column values (sequences)
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ExceptionInfo) at honey.sql/format-values (sql.cljc:1108).
+; :values expects a sequence of rows (maps) or column values (sequences)
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+["INSERT INTO users (name) VALUES (?)" "hello"]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "users" does not exist
+;   Position: 13
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
