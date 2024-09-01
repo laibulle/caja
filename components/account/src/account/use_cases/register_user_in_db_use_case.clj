@@ -42,7 +42,7 @@
 
 (defn- generate-user-data [{:keys [data]}]
   {:data (-> data
-             (assoc :confirmed false)
+             (assoc :confirmed (not (credentials-provider data)))
              (assoc :confirmation-token (user/generate-confirmation-token)))})
 
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
