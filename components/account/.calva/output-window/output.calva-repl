@@ -68,3 +68,9 @@ nil
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval10875$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_users_adapter.clj:7:3).
+; No such namespace: sql
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
