@@ -30,11 +30,7 @@
   (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
         result (em/send-message {:to (:email data)
                                  :subject "Confirm your email"
-                                 :body [:alternative
-                                        {:type "text/plain"
-                                         :content message}
-                                        {:type "text/html"
-                                         :content message}]})]
+                                 :variables {:title "hello" :intro [message] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}})]
     (if (true? result)
       {:data data}
       result)))
