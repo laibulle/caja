@@ -3,8 +3,8 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [messages.interface :as mi]
+   [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [common.interface :refer [=> collect-result ErrorSchema]]
-   ;[account.infrastructure.datomic-user-schema :as user-schema]
    [account.domain.user :as user]
    [password-hash.interface :as ph]
    [clj-time.core :as t]))
@@ -15,12 +15,12 @@
     {:errors [:invalid-user]}))
 
 (defn- user-exists? [{:keys [data]}]
-  (if (nil? (user-schema/get-user-by-email (:email data)))
+  (if (nil? (ua/get-user-by-email (:email data)))
     {:data data}
     {:errors [:email-already-taken]}))
 
 (defn- save-in-db [{:keys [data]}]
-  (user-schema/insert-user data)
+  (ua/insert-user data)
   {:data data})
 
 (defn- hash-password [{:keys [data]}]

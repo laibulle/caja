@@ -12,6 +12,10 @@
 ;;       (sql/format)
 ;;       (jdbc/execute! conn)))
 
+(defn insert-user [data])
+
+(defn get-user-by-email [email])
+
 (comment
   (db/init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
   (db/fetch-data))
