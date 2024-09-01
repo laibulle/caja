@@ -147,3 +147,78 @@ clj꞉postgres-db.interface꞉> 
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64403 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval10865$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64441 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval11816$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12059$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12065$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.postgres.postgres-users-adapter/eval12071$loading (REPL:1).
+; Could not locate honey/sql__init.class, honey/sql.clj or honey/sql.cljc on classpath.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:64483 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x494be861 "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51c6jhsg1nefjml|494be861, dataSourceName -> 1hge18jb51c6jhsg1nefjml|494be861 ]"]
+; 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "your_table" does not exist
+;   Position: 15
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
