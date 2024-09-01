@@ -10,6 +10,6 @@
         metosin/malli {:mvn/version "0.16.2"}
         org.babashka/sci {:mvn/version "0.8.42"}
         com.gfredericks/test.chuck {:mvn/version "0.2.14"}}
- :aliases {:clj {}
+ :aliases {:dev {:extra-paths ["dev"]}
            :test {:extra-paths ["test"]
                   :extra-deps {}}}}

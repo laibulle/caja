@@ -354,3 +354,27 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #'account.use-cases.register-user-in-db-use-case/user-exists?
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'user/init
+clj꞉user꞉> 
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0x7502e1d7 "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51ce39qx19wv23f|7502e1d7, dataSourceName -> 1hge18jb51ce39qx19wv23f|7502e1d7 ]"]
+; 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+clj꞉user꞉> 
+; Syntax error compiling at (dev/user.clj:11:3).
+; No such var: ru/execute
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+; Syntax error compiling at (dev/user.clj:11:3).
+; No such var: ru/execute
+clj꞉user꞉> 
+; Evaluating file: register_user_in_db_use_case.clj
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:name "John Doe", :email "j@gmail.com", :password "$2a$11$0a4pVl4adxlhnQpFJXl6NOP71enH8JQUesvtXEzOR63pd7HkoNL3W", :confirmed_at #object[org.joda.time.DateTime 0x4dada275 "2024-09-01T16:26:00.458Z"], :confirmation-token nil}
+clj꞉user꞉> 
