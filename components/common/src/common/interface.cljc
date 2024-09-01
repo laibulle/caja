@@ -1,6 +1,6 @@
 (ns common.interface)
 
-(defn handle-errors [result next-fn]
+(defn => [result next-fn]
   (if (some? (:errors result))
     result
     (next-fn result)))

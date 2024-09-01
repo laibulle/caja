@@ -3,7 +3,7 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [app.petit-plat.email.interface :as em]
-   [common.interface :refer [handle-errors collect-result ErrorSchema]]
+   [common.interface :refer [=> collect-result ErrorSchema]]
    [account.infrastructure.datomic-user-schema :as user-schema]
    [account.domain.user :as user]
    [password-hash.interface :as ph]))
@@ -47,12 +47,12 @@
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
 (defn execute [input]
   (-> {:data input}
-      (handle-errors user-valid?)
-      (handle-errors user-exists?)
-      (handle-errors generate-user-data)
-      (handle-errors hash-password)
-      (handle-errors save-in-db)
-      (handle-errors send-confirmation-email)
+      (=> user-valid?)
+      (=> user-exists?)
+      (=> generate-user-data)
+      (=> hash-password)
+      (=> save-in-db)
+      (=> send-confirmation-email)
       collect-result))
 
 (comment
