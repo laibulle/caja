@@ -974,3 +974,19 @@ clj꞉user꞉> 
 ; #:users{:id 20, :name John Doe, :email j@djnjkreds.fr, :confirmed_at nil, :confirmation_token 04719e05013e4204b38a3a1c7712b906, :password_hash $2a$11$BGa9mj7Qq2hn0KPMbHgJjeLAH1gCWPWxMU/BneBvGaKvXWhtr5VuK, :created_at #inst "2024-09-02T05:34:25.231072000-00:00", :updated_at nil}
 {:name "John Doe", :email "j@djnjkreds.fr", :confirmed_at nil, :confirmation-token "04719e05013e4204b38a3a1c7712b906", :password_hash "$2a$11$BGa9mj7Qq2hn0KPMbHgJjeLAH1gCWPWxMU/BneBvGaKvXWhtr5VuK"}
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; nil
+; #:users{:id 1, :name John Doe, :email j@gmail.com, :confirmed_at nil, :confirmation_token b9bf3c21ffca41b1aef8b6ebb79065a7, :password_hash $2a$11$BxNG7jF9dKSOZgz45UwECOC2iSTDhyUNWQ3u0sOLe3/YorlYZOmY., :created_at #inst "2024-09-02T05:39:03.091559000-00:00", :updated_at nil}
+{:name "John Doe", :email "j@gmail.com", :confirmed_at nil, :confirmation-token "b9bf3c21ffca41b1aef8b6ebb79065a7", :password_hash "$2a$11$BxNG7jF9dKSOZgz45UwECOC2iSTDhyUNWQ3u0sOLe3/YorlYZOmY."}
+clj꞉user꞉> 
+#'account.use-cases.register-user-in-db-use-case/random-name
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+"jv9xtig1bkdz9o5xoqzv"
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

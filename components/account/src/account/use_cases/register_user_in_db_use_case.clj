@@ -13,6 +13,9 @@
    [next.jdbc :as jdbc])
   (:import java.sql.Timestamp))
 
+(defn- random-name []
+  (apply str (repeatedly 20 #(rand-nth "abcdefghijklmnopqrstuvwxyz0123456789"))))
+
 (defn- user-valid? [{:keys [data]}]
   (if (true? (user/validate-register-user-input data))
     {:data data}
@@ -27,7 +30,8 @@
 (defn- save-in-db [{:keys [data]}]
   (jdbc/with-transaction [tx @db/datasource]
     (let [user (ua/insert-user tx data)
-          organization (oa/insert-organization tx {:owner-id (:id user) :name "sample" :slug "sample"})
+          name (random-name)
+          organization (oa/insert-organization tx {:owner-id (:id user) :name name :slug name})
           membership (ma/insert-membership tx {:role "owner" :organization-id (:id organization) :user-id (:id user)})]
       {:data data :user user :organization organization :membership membership})))
 
@@ -68,6 +72,7 @@
       collect-result))
 
 (comment
+  (random-name)
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
