@@ -1,0 +1,6 @@
+{:up   ["CREATE TABLE users (id int);"
+        "CREATE TABLE organizations (id int);"
+        "CREATE TABLE memberships (id int);"]
+ :down ["DROP TABLE users;"
+        "DROP TABLE organizations;"
+        "DROP TABLE memberships;"]}
