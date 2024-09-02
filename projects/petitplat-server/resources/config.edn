@@ -5,5 +5,5 @@
                  {:dev
                   {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"}
                   :prod
-                  {:jdbc-url "jdbc:sqlite:db/database.db"}})
+                  {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"}})
         :stop (postgres-db.interface/stop)}}}}
