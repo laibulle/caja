@@ -346,3 +346,28 @@ nil
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 {:errors [:email-already-taken]}
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_users_adapter.clj:19:7).
+; No such var: db/execute!
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute!
+clj꞉postgres-db.interface꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:name "hello", :email "test@gmail.com"}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 

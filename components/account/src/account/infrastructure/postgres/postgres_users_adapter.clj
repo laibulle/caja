@@ -16,7 +16,7 @@
        :columns [:name :email]
        :values [data]}
       (sql/format)
-      (db/execute)))
+      (db/execute!)))
 
 (defn get-user-by-email [email]
   (-> {:select [:name :email]
@@ -24,7 +24,7 @@
        :where
        [:= :email email]}
       (sql/format)
-      (db/execute)))
+      (db/execute-one!)))
 
 (comment
   (db/init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
