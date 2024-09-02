@@ -381,3 +381,5 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 ; Evaluating file: confirm_user_in_db_use_case.clj
 nil
 clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
