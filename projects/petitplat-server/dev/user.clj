@@ -1,9 +1,10 @@
 (ns user
   (:require [juxt.clip.core :as clip]
             [aero.core :refer [read-config]]
+            [postgres-db.interface :as di]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(def system-config (read-config "resources/config.edn"))
+(def system-config (read-config (clojure.java.io/resource "config.edn")))
 (def system nil)
 
 (defn start []
@@ -20,4 +21,6 @@
 (comment
   (println system-config)
   (start)
+  (println @di/datasource)
+
   (reset))
