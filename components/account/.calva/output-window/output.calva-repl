@@ -747,3 +747,15 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
 ; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:email {:email {:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}}}
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
