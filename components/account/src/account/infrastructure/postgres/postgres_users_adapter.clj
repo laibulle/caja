@@ -21,7 +21,6 @@
       (db/execute-one!)))
 
 (comment
-  (db/init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
   (db/fetch-data)
   (insert-user {:name "hello" :email "test@gmail.com"})
   (get-user-by-email "test@gmail.com"))
