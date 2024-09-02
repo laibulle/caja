@@ -27,5 +27,5 @@
   (repl/migrate config)
   (repl/rollback config)
 
-  (let [user (ru/execute {:name "John Doe" :email "js@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"})]
+  (let [user (ru/execute {:name "John Doe" :email "jssa@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"})]
     (cu/execute {:token (:confirmation-token user) :email (:email user)})))
