@@ -1006,3 +1006,27 @@ nil
 clj꞉user꞉> 
 ; Jack-in done.
 clj꞉user꞉> 
+#'account.use-cases.register-user-in-db-use-case/my-tconfig
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/t
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (ArityException) at account.use-cases.register-user-in-db-use-case/eval39461 (REPL:87).
+; Wrong number of args (1) passed to: taoensso.tower/make-t-uncached/new-t--27143
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/t
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/my-tconfig
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (ArityException) at account.use-cases.register-user-in-db-use-case/eval39700 (REPL:87).
+; Wrong number of args (1) passed to: taoensso.tower/make-t-uncached/new-t--27143
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; 24-09-02 06:46:29 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:subject], :dev-mode? true}
+""
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/my-tconfig
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; 24-09-02 06:47:08 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:subject], :dev-mode? true}
+""
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/t
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

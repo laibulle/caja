@@ -6,12 +6,22 @@
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [account.infrastructure.postgres.postgres-organizations-adapter :as oa]
    [account.infrastructure.postgres.postgres-memberships-adapter :as ma]
+   [taoensso.tower :as tower :refer (with-tscope)]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.domain.user :as user]
    [password-hash.interface :as ph]
    [postgres-db.interface :as db]
    [next.jdbc :as jdbc])
   (:import java.sql.Timestamp))
+
+(def my-tconfig
+  {:dictionary ; Map or named resource containing map
+   {:fr   {:confirmation-email {:subject         "Confirmez votre email"}
+           :missing  "|Missing translation: [%1$s %2$s %3$s]|"}}
+   :dev-mode? true ;
+   :fallback-locale :fr})
+
+(def t (tower/make-t my-tconfig))
 
 (defn- random-name []
   (apply str (repeatedly 20 #(rand-nth "abcdefghijklmnopqrstuvwxyz0123456789"))))
@@ -46,13 +56,14 @@
 
 (defn- send-confirmation-email [{:keys [data]}]
   (if (credentials-provider data)
-    (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
-          result (mi/send-email-from-template {:to (:email data)
-                                               :subject "Confirm your email"
-                                               :variables {:title "hello" :intro [message] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}})]
-      (if (true? result)
-        {:data data}
-        result))
+    (with-tscope :confirmation-email
+      (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
+            result (mi/send-email-from-template {:to (:email data)
+                                                 :subject "Confirm your email"
+                                                 :variables {:title (t :subject) :intro [(t :intro)] :outro [(t :outro)] :product {:name "My product" :link "http://link.com"}}})]
+        (if (true? result)
+          {:data data}
+          result)))
     {:data data}))
 
 (defn- generate-user-data [{:keys [data]}]
@@ -72,6 +83,8 @@
       collect-result))
 
 (comment
+  (with-tscope :confirmation-email
+    (t :fr :subject))
   (random-name)
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
