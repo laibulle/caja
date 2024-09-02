@@ -1043,3 +1043,15 @@ clj꞉user꞉> 
 ; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
 clj꞉user꞉> 
+#'user/init
+clj꞉user꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}, :base-url "http://base-url", :product {:name "My product", :link "https://www.google.fr"}}
+clj꞉user꞉> 
+#'messages.interface/create-email-link
+clj꞉messages.interface꞉> 
+"http://base-url"
+clj꞉messages.interface꞉> 
+#'messages.interface/create-email-link
+clj꞉messages.interface꞉> 
+"http://base-url/fre"
+clj꞉messages.interface꞉> 
