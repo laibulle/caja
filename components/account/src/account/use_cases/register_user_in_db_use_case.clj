@@ -18,6 +18,9 @@
 (def my-tconfig
   {:dictionary ; Map or named resource containing map
    {:fr   {:confirmation-email {:subject         "Confirmez votre email"}
+           :intro "Bienvenue"
+           :outro ""
+           :instructions "Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :"
            :missing  "|Missing translation: [%1$s %2$s %3$s]|"}}
    :dev-mode? true ;
    :fallback-locale :fr})
@@ -58,16 +61,14 @@
 (defn- send-confirmation-email [{:keys [data]}]
   (if (credentials-provider data)
     (with-tscope :confirmation-email
-      (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
-            confirmation-link (mi/create-email-link (str "/confirm-email?token=" (:confirmation-token data) "&email=" (URLEncoder/encode (:email data) "UTF-8")))
+      (let [confirmation-link (mi/create-email-link (str "/confirm-email?token=" (:confirmation-token data) "&email=" (URLEncoder/encode (:email data) "UTF-8")))
             result (mi/send-email-from-template {:to (:email data)
-                                                 :subject "Confirm your email"
+                                                 :subject (t :fr :subject)
                                                  :variables {:title (t :fr :subject)
                                                              :intro [(t :fr :intro)]
                                                              :outro [(t :fr :outro)]
-                                                             :action [{:instructions "To get started with Mailgen, please click here:"
-                                                                       :button {:link confirmation-link :text "Confirm email"}}]
-                                                             :product {:name "My product" :link "http://link.com"}}})]
+                                                             :action [{:instructions (t :fr :instructions)
+                                                                       :button {:link confirmation-link :text "Confirm email"}}]}})]
         (if (true? result)
           {:data data}
           result)))
