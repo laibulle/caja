@@ -1,6 +1,0 @@
-{:up   ["CREATE TABLE users (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL, name VARCHAR(255) NOT NULL, confirmed_at TIMESTAMP, created_at TIMESTAMP NOT NULL DEFAULT current_timestamp(), updated_at TIMESTAMP);"
-        "CREATE TABLE organizations (id int);"
-        "CREATE TABLE memberships (id int);"]
- :down ["DROP TABLE users;"
-        "DROP TABLE organizations;"
-        "DROP TABLE memberships;"]}

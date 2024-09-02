@@ -259,3 +259,90 @@ clj꞉user꞉> 
 ; Applying 001-users
 nil
 clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Rolling back 001-users
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: cannot drop table users because other objects depend on it
+;   Detail: constraint memberships_user_id_fkey on table memberships depends on table users
+;   Hint: Use DROP ... CASCADE to drop the dependent objects too.
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: cannot drop table users because other objects depend on it
+;   Detail: constraint memberships_user_id_fkey on table memberships depends on table users
+;   Hint: Use DROP ... CASCADE to drop the dependent objects too.
+clj꞉user꞉> 
+; Rolling back 001-users
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: cannot drop table users because other objects depend on it
+;   Detail: constraint memberships_user_id_fkey on table memberships depends on table users
+;   Hint: Use DROP ... CASCADE to drop the dependent objects too.
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Evaluating file: register_user_in_db_use_case.clj
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:errors [:email-already-taken]}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
