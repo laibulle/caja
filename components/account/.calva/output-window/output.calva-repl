@@ -1030,3 +1030,16 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 #'account.use-cases.register-user-in-db-use-case/t
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'messages.email.interface/send-email-from-template
+clj꞉messages.email.interface꞉> 
+#'messages.email.interface/send-email
+clj꞉messages.email.interface꞉> 
+#'user/init
+clj꞉user꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}
+; 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+clj꞉user꞉> 

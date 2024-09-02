@@ -22,8 +22,9 @@
       {:errors [result]})))
 
 (defn send-email-from-template [input]
-  (let [text (dt/generate (:variables input))
-        html (dh/generate (:variables input))
+  (let [variables (assoc (:variable input) :product (:product @config))
+        text (dt/generate variables)
+        html (dh/generate variables)
         sm-input (-> input
                      (assoc  :body [:alternative
                                     {:type "text/plain"
@@ -38,7 +39,8 @@
 (comment
   (init {:host "localhost"
          :port 8025
-         :default-from {:email "me@draines.com" :name "Me"}})
+         :default-from {:email "me@draines.com" :name "Me"}
+         :product {:name "My product" :link "https://www.google.fr"}})
   (add-default-from {})
   (send-email-from-template {:to "foo@example.com"
                              :subject "Hi!"
