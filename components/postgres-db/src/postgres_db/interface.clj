@@ -28,6 +28,9 @@
 (defn init [config]
   (reset! datasource (create-datasource config)))
 
+(defn stop []
+  (reset! datasource nil))
+
 (comment
   (init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
   (fetch-data))

@@ -18,4 +18,5 @@
   (refresh :after 'dev/go))
 
 (comment
+  (println system-config)
   (start))
