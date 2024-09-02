@@ -617,3 +617,68 @@ clj꞉user꞉> 
 ; Applying 001-users
 nil
 clj꞉user꞉> 
+{:name "John Doe", :email "j@gmdewdeddsssddssail.com", :confirmed_at nil, :confirmation-token "06d2a68592c240bda46e0e2fef24ba29", :password_hash "$2a$11$gTUlw.alqode/.GCkLZ6o.OJ5IOGvNZlUbLVv7qvNO6o.w7jUM0Gy"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/register_user_in_db_use_case.clj:29:5).
+; No such namespace: oa
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.register-user-in-db-use-case/eval28894$loading (REPL:1).
+; Could not locate account/infrastructure/postgres/postgres_organization_adapter__init.class, account/infrastructure/postgres/postgres_organization_adapter.clj or account/infrastructure/postgres/postgres_organization_adapter.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:errors [:email-already-taken]}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: column "email" of relation "organizations" does not exist
+;   Position: 34
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: column "slug" of relation "organizations" does not exist
+;   Position: 34
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'user/init
+clj꞉user꞉> 
+#'user/config
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization (postgres_organizations_adapter.clj:10).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization (REPL:11).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:19).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: null value in column "slug" of relation "organizations" violates not-null constraint
+;   Detail: Failing row contains (4, hello, null, 2024-09-02 06:49:51.902284, null).
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:19).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:19).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 

@@ -4,6 +4,7 @@
    [malli.clj-kondo :as mc]
    [messages.interface :as mi]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
+   [account.infrastructure.postgres.postgres-organizations-adapter :as oa]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.domain.user :as user]
    [password-hash.interface :as ph]
@@ -23,7 +24,8 @@
 
 (defn- save-in-db [{:keys [data]}]
   (jdbc/with-transaction [tx @db/datasource]
-    (ua/insert-user tx data))
+    (ua/insert-user tx data)
+    (oa/insert-organization tx {:name "sample" :slug "sample"}))
   {:data data})
 
 (defn- hash-password [{:keys [data]}]
@@ -66,4 +68,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@gmdewdeddsssddssail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "j@gmcdewdeddsssddssail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
