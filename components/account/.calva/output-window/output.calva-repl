@@ -964,3 +964,13 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 #'account.use-cases.register-user-in-db-use-case/save-in-db
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:email {:email {:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}}}
+clj꞉user꞉> 
+#'messages.interface/init
+clj꞉messages.interface꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}
+clj꞉user꞉> 
+; nil
+; #:users{:id 20, :name John Doe, :email j@djnjkreds.fr, :confirmed_at nil, :confirmation_token 04719e05013e4204b38a3a1c7712b906, :password_hash $2a$11$BGa9mj7Qq2hn0KPMbHgJjeLAH1gCWPWxMU/BneBvGaKvXWhtr5VuK, :created_at #inst "2024-09-02T05:34:25.231072000-00:00", :updated_at nil}
+{:name "John Doe", :email "j@djnjkreds.fr", :confirmed_at nil, :confirmation-token "04719e05013e4204b38a3a1c7712b906", :password_hash "$2a$11$BGa9mj7Qq2hn0KPMbHgJjeLAH1gCWPWxMU/BneBvGaKvXWhtr5VuK"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

@@ -3,7 +3,7 @@
    [messages.email.interface :as mi]))
 
 (defn init [input]
-  (mi/init {:email input}))
+  (mi/init (:email input)))
 
 (defn send-email-from-template [input]
   (mi/send-email-from-template input))
