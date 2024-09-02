@@ -5,19 +5,22 @@
    [clojure.set :as set]
    [next.jdbc :as jdbc]))
 
+(def table-name :organizations)
+
 (defn db-to-domain-organization [db-org]
   (-> db-org
       (set/rename-keys {:organizations/id :id
                         :organizations/slug :slug
                         :organizations/name :name
+                        :organizations/owner_id :owner-id
                         :organizations/created_at :created-at
                         :organizations/updated_at :updated-at})))
 
 (defn domain-organization-to-db [org]
   (-> org
-      (set/rename-keys {:updated-at :updated_at})))
+      (set/rename-keys {:owner-id :owner_id
+                        :updated-at :updated_at})))
 
-(def table-name :organizations)
 
 (defn insert-organization [tx data]
   (->> {:insert-into table-name

@@ -759,3 +759,33 @@ clj꞉user꞉> 
 ; Applying 001-users
 nil
 clj꞉user꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/domain-membership-to-db
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/insert-membership
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/table-name
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: null value in column "owner_id" of relation "organizations" violates not-null constraint
+;   Detail: Failing row contains (1, sample, sample, null, 2024-09-02 07:00:02.268847, null).
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'user/config
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: null value in column "owner_id" of relation "organizations" violates not-null constraint
+;   Detail: Failing row contains (1, sample, sample, null, 2024-09-02 07:01:07.360381, null).
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

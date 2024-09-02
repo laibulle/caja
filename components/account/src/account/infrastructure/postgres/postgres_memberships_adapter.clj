@@ -9,7 +9,9 @@
 
 (defn domain-membership-to-db [membership]
   (-> membership
-      (set/rename-keys {:updated-at :updated_at})))
+      (set/rename-keys {:user-id :user_id
+                        :organization-id :organization_id
+                        :updated-at :updated_at})))
 
 (defn insert-membership [tx data]
   (-> {:insert-into table-name
