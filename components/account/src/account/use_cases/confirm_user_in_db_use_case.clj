@@ -1,6 +1,6 @@
 (ns account.use-cases.confirm-user-in-db-use-case
   (:require [account.domain.user :as user]
-            [common.interface :refer [handle-errors collect-result]]
+            [common.interface :refer [=> collect-result]]
             [account.infrastructure.datomic-user-schema :as user-schema]))
 
 (defn- input-valid? [{:keys [data]}]
@@ -22,9 +22,9 @@
 
 (defn execute [input]
   (-> {:data input}
-      (handle-errors input-valid?)
-      (handle-errors get-user)
-      (handle-errors update-user)
+      (=> input-valid?)
+      (=> get-user)
+      (=> update-user)
       collect-result))
 
 (comment [])
