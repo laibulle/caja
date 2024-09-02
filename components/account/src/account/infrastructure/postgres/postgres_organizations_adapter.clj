@@ -14,8 +14,8 @@
                         :organizations/created_at :created-at
                         :organizations/updated_at :updated-at})))
 
-(defn domain-organization-to-db [db-user]
-  (-> db-user
+(defn domain-organization-to-db [org]
+  (-> org
       (set/rename-keys {:updated-at :updated_at})))
 
 (def table-name :organizations)

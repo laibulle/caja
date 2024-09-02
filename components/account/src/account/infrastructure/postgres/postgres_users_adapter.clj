@@ -16,8 +16,8 @@
                         :updated-at :updated_at})))
 
 
-(defn db-to-domain-user [db-user]
-  (-> db-user
+(defn db-to-domain-user [user]
+  (-> user
       (set/rename-keys {:users/id :id
                         :users/name :name
                         :users/email :email
