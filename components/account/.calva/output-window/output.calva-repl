@@ -1057,3 +1057,14 @@ clj꞉messages.interface꞉> 
 clj꞉messages.interface꞉> 
 nil
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/send-confirmation-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (ArityException) at account.use-cases.register-user-in-db-use-case/send-confirmation-email (REPL:65).
+; Wrong number of args (1) passed to: taoensso.tower/make-t-uncached/new-t--27143
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/send-confirmation-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; 24-09-02 07:06:02 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:intro], :dev-mode? true}
+; 24-09-02 07:06:02 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:outro], :dev-mode? true}
+{:name "John Doe", :email "j@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "fb7580a970ef4513a9441f3d3c959eba", :password_hash "$2a$11$bNiB6ue9/1uKtj89w38Vc.7xRU9U5q/sARcq7Z/Y99jHj9tW6tvee"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

@@ -62,7 +62,11 @@
             confirmation-link (mi/create-email-link (str "/confirm-email?token=" (:confirmation-token data) "&email=" (URLEncoder/encode (:email data) "UTF-8")))
             result (mi/send-email-from-template {:to (:email data)
                                                  :subject "Confirm your email"
-                                                 :variables {:title (t :subject) :intro [(t :intro)] :outro [(t :outro)] :product {:name "My product" :link "http://link.com"}}})]
+                                                 :variables {:title (t :fr :subject)
+                                                             :intro [(t :fr :intro)]
+                                                             :outro [(t :fr :outro)]
+                                                             :action [{:button {:link confirmation-link :text "Confirm email"}}]
+                                                             :product {:name "My product" :link "http://link.com"}}})]
         (if (true? result)
           {:data data}
           result)))
@@ -91,4 +95,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@djnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "j@djdewnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
