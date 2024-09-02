@@ -691,3 +691,59 @@ clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
 ; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:19).
 ; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
 clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; [#:next.jdbc{:update-count 1}]
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:20).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; [#:next.jdbc{:update-count 1}]
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/domain-organization-to-db (REPL:20).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; {:slug sample, :name hello}
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; {:slug sample, :name hello}
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/domain-membership-to-db
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_memberships_adapter.clj:17:7).
+; Unable to resolve symbol: table-name in this context
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/domain-membership-to-db
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_memberships_adapter.clj:17:7).
+; Unable to resolve symbol: table-name in this context
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_memberships_adapter.clj:17:7).
+; Unable to resolve symbol: table-name in this context
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/table-name
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/table-name
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/insert-membership
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; {:name sample, :slug sample}
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

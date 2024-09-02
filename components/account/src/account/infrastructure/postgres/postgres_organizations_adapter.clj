@@ -6,7 +6,6 @@
    [next.jdbc :as jdbc]))
 
 (defn db-to-domain-organization [db-org]
-  (println)
   (-> db-org
       (set/rename-keys {:organizations/id :id
                         :organizations/slug :slug
@@ -22,10 +21,9 @@
 
 (defn insert-organization [tx data]
   (->> {:insert-into table-name
-        :values [data]}
+        :values [(domain-organization-to-db data)]}
        (sql/format)
-       (db/execute! tx)
-       (domain-organization-to-db)))
+       (db/execute! tx)))
 
 (comment
   (jdbc/with-transaction [tx @db/datasource]

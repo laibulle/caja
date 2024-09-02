@@ -1,15 +1,22 @@
 (ns account.infrastructure.postgres.postgres-memberships-adapter
   (:require
    [postgres-db.interface :as db]
-   [honey.sql :as sql]))
+   [honey.sql :as sql]
+   [clojure.set :as set]
+   [next.jdbc :as jdbc]))
 
 (def table-name :memberships)
 
-(defn insert-membership [data]
+(defn domain-membership-to-db [membership]
+  (-> membership
+      (set/rename-keys {:updated-at :updated_at})))
+
+(defn insert-membership [tx data]
   (-> {:insert-into table-name
-       :values [data]}
+       :values [(domain-membership-to-db data)]}
       (sql/format)
-      (db/execute!)))
+      (db/execute! tx)))
 
 (comment
-  (insert-membership {}))
+  (jdbc/with-transaction [tx @db/datasource]
+    (insert-membership tx {})))
