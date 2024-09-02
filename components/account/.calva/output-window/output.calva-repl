@@ -400,3 +400,30 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; #:users{:id 1, :name hello, :email test@gmail.com, :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+{:id 1, :name "hello", :email "test@gmail.com", :confirmed-at nil, :confirmation-token nil, :created-at #inst "2024-09-02T03:00:33.501385000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
