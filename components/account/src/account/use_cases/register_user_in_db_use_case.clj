@@ -6,7 +6,6 @@
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [account.infrastructure.postgres.postgres-organizations-adapter :as oa]
    [account.infrastructure.postgres.postgres-memberships-adapter :as ma]
-   [taoensso.tower :as tower :refer (with-tscope)]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.domain.user :as user]
    [password-hash.interface :as ph]
