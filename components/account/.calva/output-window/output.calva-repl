@@ -229,3 +229,13 @@ clj꞉user꞉> 
 ; ERROR: column "name" does not exist
 ;   Position: 8
 clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+#object[com.mchange.v2.c3p0.ComboPooledDataSource 0xea7704f "com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge18jb51czwgelse2xmi|ea7704f, dataSourceName -> 1hge18jb51czwgelse2xmi|ea7704f ]"]
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: column "name" does not exist
+;   Position: 8
+clj꞉user꞉> 
