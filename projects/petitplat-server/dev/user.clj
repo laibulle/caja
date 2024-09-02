@@ -15,8 +15,9 @@
 
 (defn reset []
   (stop)
-  (refresh :after 'dev/go))
+  (refresh :after 'user/start))
 
 (comment
   (println system-config)
-  (start))
+  (start)
+  (reset))
