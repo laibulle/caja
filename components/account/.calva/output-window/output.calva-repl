@@ -84,3 +84,10 @@ clj꞉user꞉> 
 ; {:title Confirmez votre email, :intro [|Missing translation: [[:fr] :confirmation-email [:intro]]|], :outro [|Missing translation: [[:fr] :confirmation-email [:outro]]|], :action [{:instructions |Missing translation: [[:fr] :confirmation-email [:instructions]]|, :button {:link http://base-url/confirm-email?token=1e35f716072a4828a0dc8e60fe598f43&email=j%40gmail.com, :text Confirm email}}], :product {:name My product, :link https://www.google.fr}}
 {:name "John Doe", :email "j@gmail.com", :confirmed_at nil, :confirmation-token "1e35f716072a4828a0dc8e60fe598f43", :password_hash "$2a$11$9ZAzT1o6obeA8Ai718GdRuXYNvYNvIME8z7M/az1NvGg9X6fCPK9O"}
 clj꞉user꞉> 
+#'account.use-cases.register-user-in-db-use-case/my-tconfig
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/t
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; {:title Confirmez votre email, :intro [Bienvenue], :outro [], :action [{:instructions Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :, :button {:link http://base-url/confirm-email?token=15cd27f7e2e648efb01479516a766eed&email=js%40gmail.com, :text Confirm email}}], :product {:name My product, :link https://www.google.fr}}
+{:name "John Doe", :email "js@gmail.com", :confirmed_at nil, :confirmation-token "15cd27f7e2e648efb01479516a766eed", :password_hash "$2a$11$oM6JrHsRKucQYo1wEqWqBOyADEu0UFHEnBDYW6x3c8WK2I4Lm0GnC"}
+clj꞉user꞉> 

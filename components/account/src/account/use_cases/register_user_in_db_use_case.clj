@@ -16,13 +16,13 @@
   (:import [java.net URLEncoder]))
 
 (def my-tconfig
-  {:dictionary ; Map or named resource containing map
-   {:fr   {:confirmation-email {:subject         "Confirmez votre email"}
-           :intro "Bienvenue"
-           :outro ""
-           :instructions "Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :"
+  {:dictionary
+   {:fr   {:confirmation-email {:subject         "Confirmez votre email"
+                                :intro "Bienvenue"
+                                :outro ""
+                                :instructions "Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :"}
            :missing  "|Missing translation: [%1$s %2$s %3$s]|"}}
-   :dev-mode? true ;
+   :dev-mode? true
    :fallback-locale :fr})
 
 (def t (tower/make-t my-tconfig))
