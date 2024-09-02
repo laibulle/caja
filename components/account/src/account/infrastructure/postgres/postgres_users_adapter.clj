@@ -21,6 +21,5 @@
       (db/execute-one!)))
 
 (comment
-  (db/fetch-data)
   (insert-user {:name "hello" :email "test@gmail.com"})
   (get-user-by-email "test@gmail.com"))
