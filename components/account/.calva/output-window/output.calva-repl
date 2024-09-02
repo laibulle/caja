@@ -605,3 +605,15 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 {:name "John Doe", :email "j@gmdewdeddsssddssail.com", :confirmed_at nil, :confirmation-token "f0580bd9999f443da2760d46818258df", :password_hash "$2a$11$ep2PQbq5iEpBacQmxGywP..FPb3QgVoM.uhlP4Q0BIAk4Xu235GtS"}
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Evaluating file: postgres_organizations_adapter.clj
+nil
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization (postgres_organizations_adapter.clj:10).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
