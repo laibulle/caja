@@ -32,7 +32,6 @@
                                     {:type "text/html"
                                      :content html}])
                      (dissoc :variables))]
-    (println variables)
     (send-email sm-input)))
 
 

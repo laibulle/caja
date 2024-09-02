@@ -68,7 +68,7 @@
                                                              :intro [(t :fr :intro)]
                                                              :outro [(t :fr :outro)]
                                                              :action [{:instructions (t :fr :instructions)
-                                                                       :button {:link confirmation-link :text "Confirm email"}}]}})]
+                                                                       :button [{:link confirmation-link :text "Confirm email" :color "blue"}]}]}})]
         (if (true? result)
           {:data data}
           result)))

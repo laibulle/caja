@@ -104,7 +104,7 @@
 
              ;; Action
               (for [action_item action]
-                [:<>
+                [:div
                  [:p (:instructions action_item)]
                  [:table.body-action {:align "center" :cellpadding 0 :cellspacing 0}
                   [:tr
@@ -149,4 +149,8 @@
                ". All rights reserved."]]]]]]]]]]]]))
 
 (comment
-  (generate {:title "hello" :intro ["intro"] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}))
+  (->>
+   (generate {:title "hello" :intro ["intro"] :outro ["outro"]
+              :action [{:instructions "instructions" :button [{:link "https://hello" :text "click" :color "blue"}]}]
+              :product {:name "My product" :link "http://link.com"}})
+   (spit "sample.html")))
