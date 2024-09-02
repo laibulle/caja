@@ -17,8 +17,6 @@
 
 
 (defn db-to-domain-user [db-user]
-  (println db-user)
-
   (-> db-user
       (set/rename-keys {:users/id :id
                         :users/name :name
@@ -32,8 +30,9 @@
 
 (defn insert-user [tx data]
   (let [query {:insert-into table-name
-               :values [(domain-user-to-db data)]}]
-    (db/execute-one! tx (sql/format query) {:return-keys true})))
+               :values [(domain-user-to-db data)]}
+        res (db/execute-one! tx (sql/format query) {:return-keys true})]
+    (db-to-domain-user res)))
 
 (defn get-user-by-email [tx email]
   (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]

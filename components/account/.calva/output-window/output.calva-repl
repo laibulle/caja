@@ -899,3 +899,16 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉postgres-db.interface꞉> 
 #'account.infrastructure.postgres.postgres-users-adapter/insert-user
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 14, :name "hello", :email "j@gmdsail.com", :confirmed_at #inst "2024-09-02T05:20:03.428000000-00:00", :confirmation_token nil, :password_hash nil, :created_at #inst "2024-09-02T05:20:03.425383000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; #:users{:id 15, :name hello, :email j@gmdsail.com, :confirmed_at #inst "2024-09-02T05:20:56.645000000-00:00", :confirmation_token nil, :password_hash nil, :created_at #inst "2024-09-02T05:20:56.645113000-00:00", :updated_at nil}
+{:id 15, :name "hello", :email "j@gmdsail.com", :password-hash nil, :confirmed-at #inst "2024-09-02T05:20:56.645000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-02T05:20:56.645113000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
