@@ -28,6 +28,13 @@
                         :users/updated_at :updated-at})))
 
 
+(defn update-user [tx data]
+  (let [query {:update table-name
+               :set (domain-user-to-db data)
+               :where [:= :id (:id data)]}
+        res (db/execute-one! tx (sql/format query) {:return-keys true})]
+    (db-to-domain-user res)))
+
 (defn insert-user [tx data]
   (let [query {:insert-into table-name
                :values [(domain-user-to-db data)]}
@@ -46,4 +53,5 @@
 (comment
   (jdbc/with-transaction [tx @db/datasource]
     ;(insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
-    (get-user-by-email tx "j@gmdsail.com")))
+    (get-user-by-email tx "j@gmdsail.com")
+    (update-user tx {:id 1 :email "jj@mjk.fr"})))

@@ -45,7 +45,8 @@
 
 (def ConfirmUserEmailInput
   [:map
-   [:confirmation-email-token String100]])
+   [:email String100]
+   [:token String100]])
 
 (defn validate-confirmation-email-input [input]
   (m/validate ConfirmUserEmailInput input))

@@ -1,30 +1,42 @@
 (ns account.use-cases.confirm-user-in-db-use-case
   (:require [account.domain.user :as user]
+            [next.jdbc :as jdbc]
+            [postgres-db.interface :as db]
             [common.interface :refer [=> collect-result]]
-            [account.infrastructure.datomic-user-schema :as user-schema]))
+            [account.infrastructure.postgres.postgres-users-adapter :as ua])
+  (:import java.sql.Timestamp))
 
-(defn- input-valid? [{:keys [data]}]
-  (if (true? (user/validate-confirmation-email-input data))
-    {:data data}
+(defn- input-valid? [input]
+  (if (true? (user/validate-confirmation-email-input (:data input)))
+    input
     {:errors [:invalid-confirmation-token-input]}))
 
-(defn- get-user [{:keys [data]}]
-  (let [user (user-schema/get-user-by-email-confirmation-token (:email-confirmation-token data))]
+(defn- get-user [input]
+  (let [user (ua/get-user-by-email (:tx input) (get-in input [:data :email]))]
     (if (some? user)
-      {:data (assoc-in data [:user] user)}
+      (assoc-in input [:user] user)
       {:errors [:email-confirmation-token-not-found]})))
 
-(defn- update-user [{:keys [data]}]
-  {:data {:user (-> data
-                    (assoc-in  [:user :comfirmed] true)
-                    (assoc-in  [:user :confirmation-token] nil)
-                    (user-schema/update-user))}})
+(defn- token-valid [input]
+  (if (= (get-in input [:data :token]) (get-in input [:user :confirmation-token]))
+    input
+    {:errors [:email-confirmation-token-not-found]}))
+
+(defn- update-user [input]
+  (let [values {:id (get-in input [:user :id])
+                :confirmed_at (Timestamp. (System/currentTimeMillis))
+                :confirmation-token nil}]
+    (ua/update-user  (:tx input) values)
+    input))
 
 (defn execute [input]
-  (-> {:data input}
-      (=> input-valid?)
-      (=> get-user)
-      (=> update-user)
-      collect-result))
+  (jdbc/with-transaction [tx @db/datasource]
+    (-> {:data input :tx tx}
+        (=> input-valid?)
+        (=> get-user)
+        (=> token-valid)
+        (=> update-user)
+        collect-result)))
 
-(comment [])
+(comment []
+         (execute {:token "1e35f716072a4828a0dc8e60fe598f43" :email "jj@mjk.fr"}))

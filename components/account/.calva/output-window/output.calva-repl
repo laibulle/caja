@@ -184,3 +184,200 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; {:title Confirmez votre email, :intro [Bienvenue], :outro [], :action [{:instructions Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :, :button [{:link http://base-url/confirm-email?token=2787464d83bf450caf76f447be35d765&email=dewfrefrjdew%40djdewnjkreds.fr, :text Confirm email, :color blue}]}], :product {:name My product, :link https://www.google.fr}}
 {:name "John Doe", :email "dewfrefrjdew@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "2787464d83bf450caf76f447be35d765", :password_hash "$2a$11$oGn0LuE4f5w85lHVlHcnZeIYNUY0PqIX0q6rq7b9bAV9KgXs/0bmO"}
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/input-valid?
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (FileNotFoundException) at account.infrastructure.datomic-user-schema/eval67710$loading (datomic_user_schema.clj:1).
+; Could not locate cuid/core__init.class, cuid/core.clj or cuid/core.cljc on classpath.
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/input-valid?
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/input-valid?
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/execute
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:errors [:invalid-confirmation-token-input]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:errors [:email-already-taken]}
+clj꞉user꞉> 
+{:errors [:invalid-confirmation-token-input]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.domain.user/ConfirmUserEmailInput
+clj꞉account.domain.user꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/update-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ExceptionInfo) at honey.sql/format-dsl (sql.cljc:1607).
+; These SQL clauses are unknown or have nil values: :id, :email(perhaps you need [:lift {:id ...}] here?)
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/update-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ExceptionInfo) at honey.sql/format-dsl (sql.cljc:1607).
+; These SQL clauses are unknown or have nil values: :id, :email(perhaps you need [:lift {:id ...}] here?)
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/update-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+{:id 1, :name "John Doe", :email "jj@mjk.fr", :password-hash "$2a$11$9ZAzT1o6obeA8Ai718GdRuXYNvYNvIME8z7M/az1NvGg9X6fCPK9O", :confirmed-at nil, :confirmation-token "1e35f716072a4828a0dc8e60fe598f43", :created-at #inst "2024-09-02T18:28:36.718981000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/execute
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}, :base-url "http://base-url", :product {:name "My product", :link "https://www.google.fr"}}
+clj꞉user꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; nil
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/input-valid?
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/input-valid?
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/execute
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; {:data {:token 1e35f716072a4828a0dc8e60fe598f431e35f716072a4828a0dc8e60fe598f43, :email jj@mjk.fr}, :tx #object[com.mchange.v2.c3p0.impl.NewProxyConnection 0x276fe585 com.mchange.v2.c3p0.impl.NewProxyConnection@276fe585 [wrapping: org.postgresql.jdbc.PgConnection@4a5bcdf1]]}
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; nil
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; nil
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; nil
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/get-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db (postgres_users_adapter.clj:13).
+; class com.mchange.v2.c3p0.impl.NewProxyConnection cannot be cast to class clojure.lang.IPersistentMap (com.mchange.v2.c3p0.impl.NewProxyConnection and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/confirm_user_in_db_use_case.clj:35:9).
+; Unable to resolve symbol: token-valid in this context
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/token-valid
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/execute
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/token-valid
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f431e35f716072a4828a0dc8e60fe598f43
+; 1e35f716072a4828a0dc8e60fe598f43
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f43
+; 1e35f716072a4828a0dc8e60fe598f43
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db (postgres_users_adapter.clj:13).
+; class com.mchange.v2.c3p0.impl.NewProxyConnection cannot be cast to class clojure.lang.IPersistentMap (com.mchange.v2.c3p0.impl.NewProxyConnection and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f43
+; 1e35f716072a4828a0dc8e60fe598f43
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: column "comfirmed_at" of relation "users" does not exist
+;   Position: 27
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; Syntax error (IllegalArgumentException) compiling new at (src/account/use_cases/confirm_user_in_db_use_case.clj:27:31).
+; Unable to resolve classname: Timestamp
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.use-cases.confirm-user-in-db-use-case/update-user
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f43
+; 1e35f716072a4828a0dc8e60fe598f43
+{:token "1e35f716072a4828a0dc8e60fe598f43", :email "jj@mjk.fr"}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f43
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+; jj@mjk.fr
+; 1e35f716072a4828a0dc8e60fe598f43
+; nil
+{:errors [:email-confirmation-token-not-found]}
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Evaluating file: confirm_user_in_db_use_case.clj
+nil
+clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
