@@ -21,8 +21,5 @@
   (refresh :after 'user/start))
 
 (comment
-  (println system-config)
   (start)
-  (println @di/datasource)
-
   (reset))
