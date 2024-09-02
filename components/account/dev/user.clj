@@ -25,4 +25,4 @@
   (repl/rollback config)
 
 
-  (ru/execute {:name "John Doe" :email "j@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (ru/execute {:name "John Doe" :email "js@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
