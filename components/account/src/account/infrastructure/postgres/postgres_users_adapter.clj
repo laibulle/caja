@@ -45,10 +45,5 @@
 
 (comment
   (jdbc/with-transaction [tx @db/datasource]
-    (let [result (insert-user tx {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})]
-      (:id result)))
-
-  (jdbc/with-transaction [tx @db/datasource]
-    (insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
-    ;(get-user-by-email tx "j@gmdsail.com")
-    ))
+    ;(insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
+    (get-user-by-email tx "j@gmdsail.com")))

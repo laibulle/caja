@@ -26,10 +26,10 @@
 
 (defn- save-in-db [{:keys [data]}]
   (jdbc/with-transaction [tx @db/datasource]
-    (ua/insert-user tx data)
-    (oa/insert-organization tx {:name "sample" :slug "sample"})
-    (ma/insert-membership tx {}))
-  {:data data})
+    (let [user (ua/insert-user tx data)]
+      (oa/insert-organization tx {:owner-id (:id user) :name "sample" :slug "sample"})
+      (ma/insert-membership tx {}))
+    {:data data}))
 
 (defn- hash-password [{:keys [data]}]
   {:data
@@ -71,4 +71,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@gmcdewdeddsssddssail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "j@dre.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))

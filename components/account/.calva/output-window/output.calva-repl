@@ -912,3 +912,40 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 ; #:users{:id 15, :name hello, :email j@gmdsail.com, :confirmed_at #inst "2024-09-02T05:20:56.645000000-00:00", :confirmation_token nil, :password_hash nil, :created_at #inst "2024-09-02T05:20:56.645113000-00:00", :updated_at nil}
 {:id 15, :name "hello", :email "j@gmdsail.com", :password-hash nil, :confirmed-at #inst "2024-09-02T05:20:56.645000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-02T05:20:56.645113000-00:00", :updated-at nil}
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nil
+; #:users{:id 16, :name John Doe, :email j@gmcdewdeddsssddssail.com, :confirmed_at nil, :confirmation_token 4c8de5afc74c40d0a9f957087d9a45b1, :password_hash $2a$11$.Ol0Tt7Jhvjc8PXZbe9oWOB4Xsbs9OnXCLZMP.Jzn8a4GjXTpn3zS, :created_at #inst "2024-09-02T05:22:15.949155000-00:00", :updated_at nil}
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: null value in column "owner_id" of relation "organizations" violates not-null constraint
+;   Detail: Failing row contains (4, hello, sample, null, 2024-09-02 07:24:18.912792, null).
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: insert or update on table "organizations" violates foreign key constraint "organizations_owner_id_fkey"
+;   Detail: Key (owner_id)=(1) is not present in table "users".
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+{:id 6, :slug "sample", :name "hello", :owner-id 2, :created-at #inst "2024-09-02T05:24:44.075915000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nil
+; #:users{:id 17, :name John Doe, :email j@gmcdewdeddsssddssail.com, :confirmed_at nil, :confirmation_token 8387701cdb1b42ecac3b9bfb391689be, :password_hash $2a$11$qECukhGPRUIvLt3iehgYHeK4i3bztrWvB0QI30iqY1eJ4HMU5tTCW, :created_at #inst "2024-09-02T05:25:08.074497000-00:00", :updated_at nil}
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; nil
+; #:users{:id 18, :name John Doe, :email j@dre.fr, :confirmed_at nil, :confirmation_token 5880832d0b5c4901987bcb73501c8c0f, :password_hash $2a$11$oKPyMFUkXbaFoUXB7V/s7uzPdBUUWR75RuGTLw/O1G3Ls5pqnu6NK, :created_at #inst "2024-09-02T05:25:18.310903000-00:00", :updated_at nil}
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

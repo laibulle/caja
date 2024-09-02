@@ -23,11 +23,11 @@
 
 
 (defn insert-organization [tx data]
-  (->> {:insert-into table-name
-        :values [(domain-organization-to-db data)]}
-       (sql/format)
-       (db/execute! tx)))
+  (let [query {:insert-into table-name
+               :values [(domain-organization-to-db data)]}
+        res (db/execute-one! tx (sql/format query) {:return-keys true})]
+    (db-to-domain-organization res)))
 
 (comment
   (jdbc/with-transaction [tx @db/datasource]
-    (insert-organization tx {:slug "sample" :name "hello"})))
+    (insert-organization tx {:owner-id 2 :slug "sample" :name "hello"})))
