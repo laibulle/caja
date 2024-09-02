@@ -25,7 +25,9 @@
 
 (defn- hash-password [{:keys [data]}]
   {:data
-   (assoc data :password (ph/encrypt (data :password)))})
+   (-> data
+       (assoc :password_hash (ph/encrypt (data :password)))
+       (dissoc :password))})
 
 (defn- credentials-provider [data]
   (= (:provider data) :credentials))

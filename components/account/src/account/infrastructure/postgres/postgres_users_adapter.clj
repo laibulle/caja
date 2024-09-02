@@ -10,7 +10,8 @@
 
 (defn domain-user-to-db [db-user]
   (-> db-user
-      (set/rename-keys {:confirmed-at :confirmed_at
+      (set/rename-keys {:password-hash :password_hash
+                        :confirmed-at :confirmed_at
                         :confirmation-token :confirmation_token
                         :updated-at :updated_at})))
 
@@ -20,6 +21,7 @@
       (set/rename-keys {:users/id :id
                         :users/name :name
                         :users/email :email
+                        :users/password_hash :password-hash
                         :users/confirmed_at :confirmed-at
                         :users/confirmation_token :confirmation-token
                         :users/created_at :created-at

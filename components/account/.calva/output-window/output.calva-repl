@@ -468,3 +468,15 @@ nil
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 #'account.use-cases.register-user-in-db-use-case/generate-user-data
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: column "password" of relation "users" does not exist
+;   Position: 33
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/hash-password
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:name "John Doe", :email "j@gmail.com", :confirmed_at #inst "2024-09-02T04:07:54.896000000-00:00", :confirmation-token nil, :password_hash "$2a$11$fRXRIho68VXlP7NKxGvZUemxIe9khetqgwzWW.vBZempcA.4.TkN6"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
