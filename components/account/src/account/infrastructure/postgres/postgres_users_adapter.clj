@@ -7,7 +7,6 @@
 
 (defn insert-user [data]
   (-> {:insert-into table-name
-       :columns [:name :email]
        :values [data]}
       (sql/format)
       (db/execute!)))

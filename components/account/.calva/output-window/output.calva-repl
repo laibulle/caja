@@ -394,3 +394,9 @@ clj꞉user꞉> 
 ; Applying 001-users
 nil
 clj꞉user꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T03:00:33.501385000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
