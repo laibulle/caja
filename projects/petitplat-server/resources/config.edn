@@ -1,0 +1,10 @@
+{:system-config
+ {:components
+  {:db {:start (hikari-cp.core/make-datasource
+                #profile
+                 {:dev
+                  {:adapter "h2"
+                   :url "jdbc:h2:~/test"}
+                  :prod
+                  {:jdbc-url "jdbc:sqlite:db/database.db"}})
+        :stop (hikari-cp.core/close-datasource this)}}}}
