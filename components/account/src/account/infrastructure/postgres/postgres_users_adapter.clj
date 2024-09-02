@@ -4,12 +4,6 @@
    [honey.sql :as sql]))
 
 (def table-name :users)
-;; (defn get-user-by-email [email]
-;;   (-> {:select [:a :b :c]
-;;        :from   [:foo]
-;;        :where  [:= :foo.a "baz"]}
-;;       (sql/format)
-;;       (jdbc/execute! conn)))
 
 (defn insert-user [data]
   (-> {:insert-into table-name

@@ -377,3 +377,20 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T02:55:10.829606000-00:00", :updated_at nil}
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+{:data {:email "hell"}}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:data {:email "hell"}}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:data {:email "hell"}}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (PSQLException) at org.postgresql.jdbc.PgPreparedStatement/setObject (PgPreparedStatement.java:1051).
+; Can't infer the SQL type to use for an instance of org.joda.time.DateTime. Use setObject() with an explicit Types value to specify the type to use.
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'user/config
+clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
