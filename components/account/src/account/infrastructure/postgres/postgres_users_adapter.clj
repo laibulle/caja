@@ -35,7 +35,7 @@
       (db/execute!)))
 
 (defn get-user-by-email [email]
-  (-> {:select [:id :name :email :confirmed_at :confirmation_token :created_at :updated_at]
+  (-> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
        :from [table-name]
        :where
        [:= :email email]}

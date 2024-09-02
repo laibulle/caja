@@ -480,3 +480,5 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #'account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
