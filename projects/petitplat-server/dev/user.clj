@@ -8,7 +8,9 @@
 (def system nil)
 
 (defn start []
-  (alter-var-root #'system (constantly (clip/start system-config))))
+  (let [sys (clip/start system-config)]
+    (println "System after start:" sys)
+    (alter-var-root #'system (constantly sys))))
 
 (defn stop []
   (alter-var-root #'system

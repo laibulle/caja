@@ -27,7 +27,8 @@
 
 (defn init [config]
   (println "Starting db")
-  (reset! datasource (create-datasource config)))
+  (reset! datasource (create-datasource config))
+  {})
 
 (defn stop []
   (reset! datasource nil))
