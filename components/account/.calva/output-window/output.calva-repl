@@ -512,3 +512,21 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; Execution error at postal.core/send-message (core.clj:33).
 ; message needs at least :from and :to or :from and :bcc
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'messages.email.interface/send-email
+clj꞉messages.email.interface꞉> 
+{:errors [:email-already-taken]}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error at postal.core/send-message (core.clj:33).
+; message needs at least :from and :to or :from and :bcc
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉user꞉> 
+#'user/init
+clj꞉user꞉> 
+{:email {:email {:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}}}
+clj꞉user꞉> 
+{:errors [:email-already-taken]}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error at postal.core/send-message (core.clj:33).
+; message needs at least :from and :to or :from and :bcc
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
