@@ -1,16 +1,19 @@
 (ns authentication.infrastructure.jwt
   (:require
-   [buddy.sign.jwt :as jwt]
-   [clj-time.core :as time]))
+   [buddy.sign.jwt :as jwt])
+  (:import [java.sql Timestamp]
+           [java.util Calendar]))
 
 (def jwt-secret "gZInYYYf3lFsAZLbMXkSi0rUaXIeEc1S")
 
 (defn- account-expiration-date []
-  (time/plus (time/now) (time/days 30)))
+  (let [calendar (Calendar/getInstance)]
+    (.add calendar Calendar/DAY_OF_MONTH 30)
+    (Timestamp. (.getTimeInMillis calendar))))
 
 (defn generate-account-token [data]
   (-> data
-      (assoc :exp (account-expiration-date))
+      (assoc :exp (.getTime (account-expiration-date)))  ; Store expiration as Unix timestamp (milliseconds)
       (jwt/sign jwt-secret)))
 
 (defn unsign-account-token [token]
