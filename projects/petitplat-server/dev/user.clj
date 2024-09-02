@@ -4,7 +4,7 @@
             [postgres-db.interface :as di]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(def system-config (read-config (clojure.java.io/resource "config.edn")))
+(def system-config (:system-config (read-config (clojure.java.io/resource "config.edn"))))
 (def system nil)
 
 (defn start []
