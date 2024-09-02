@@ -26,6 +26,7 @@
   (jdbc/execute! @datasource ["SELECT * FROM your_table LIMIT 10"]))
 
 (defn init [config]
+  (println "Starting db")
   (reset! datasource (create-datasource config)))
 
 (defn stop []
