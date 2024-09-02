@@ -383,3 +383,10 @@ nil
 clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
 {:errors [:email-confirmation-token-not-found]}
 clj꞉account.use-cases.confirm-user-in-db-use-case꞉> 
+nil
+clj꞉user꞉> 
+{:errors [:invalid-confirmation-token-input]}
+clj꞉user꞉> 
+; {:title Confirmez votre email, :intro [Bienvenue], :outro [], :action [{:instructions Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :, :button [{:link http://base-url/confirm-email?token=b1a2223151404ba5b421e76da212951f&email=jssa%40gmail.com, :text Confirm email, :color blue}]}], :product {:name My product, :link https://www.google.fr}}
+{:token "b1a2223151404ba5b421e76da212951f", :email "jssa@gmail.com"}
+clj꞉user꞉> 
