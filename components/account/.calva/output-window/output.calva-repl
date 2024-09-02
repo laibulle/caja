@@ -949,3 +949,18 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
 ; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/db-to-domain-membership
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+#'account.infrastructure.postgres.postgres-memberships-adapter/insert-membership
+clj꞉account.infrastructure.postgres.postgres-memberships-adapter꞉> 
+; nil
+; #:users{:id 19, :name John Doe, :email j@dreds.fr, :confirmed_at nil, :confirmation_token 6da785e050ac419aabf6e1eb7c7510f9, :password_hash $2a$11$YaAZSfVVCFbCsfkhRWYfHeGHzbBuisOnukdjclmG3FkPYvWxfwlWW, :created_at #inst "2024-09-02T05:28:51.730209000-00:00", :updated_at nil}
+; Execution error at postal.core/send-message (core.clj:33).
+; message needs at least :from and :to or :from and :bcc
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

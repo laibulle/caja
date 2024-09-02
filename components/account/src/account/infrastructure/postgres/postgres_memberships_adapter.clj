@@ -13,11 +13,15 @@
                         :organization-id :organization_id
                         :updated-at :updated_at})))
 
+(defn db-to-domain-membership [membership]
+  (-> membership
+      (set/rename-keys {})))
+
 (defn insert-membership [tx data]
-  (-> {:insert-into table-name
-       :values [(domain-membership-to-db data)]}
-      (sql/format)
-      (db/execute! tx)))
+  (let [query {:insert-into table-name
+               :values [(domain-membership-to-db data)]}
+        res (db/execute-one! tx (sql/format query) {:return-keys true})]
+    (db-to-domain-membership res)))
 
 (comment
   (jdbc/with-transaction [tx @db/datasource]
