@@ -16,4 +16,7 @@
   (init)
 
   (repl/migrate config)
+  (repl/rollback config)
+
+
   (ru/execute {:name "John Doe" :email "j@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))

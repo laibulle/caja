@@ -253,3 +253,9 @@ clj꞉user꞉> 
 ; ERROR: column "name" does not exist
 ;   Position: 8
 clj꞉user꞉> 
+; Rolling back 001-users
+nil
+clj꞉user꞉> 
+; Applying 001-users
+nil
+clj꞉user꞉> 
