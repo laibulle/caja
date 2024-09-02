@@ -134,3 +134,23 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 ; ERROR: relation "users" does not exist
 ;   Position: 13
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "users" does not exist
+;   Position: 25
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "users" does not exist
+;   Position: 13
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "users" does not exist
+;   Position: 13
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: relation "users" does not exist
+;   Position: 25
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 

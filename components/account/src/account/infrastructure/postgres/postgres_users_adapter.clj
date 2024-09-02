@@ -13,14 +13,21 @@
 
 (defn insert-user [data]
   (-> {:insert-into table-name
-       :columns [:name]
+       :columns [:name :email]
        :values [data]}
       (sql/format)
       (db/execute)))
 
-(defn get-user-by-email [email])
+(defn get-user-by-email [email]
+  (-> {:select [:name :email]
+       :from [table-name]
+       :where
+       [:= :email email]}
+      (sql/format)
+      (db/execute)))
 
 (comment
   (db/init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
   (db/fetch-data)
-  (insert-user {:name "hello"}))
+  (insert-user {:name "hello" :email "test@gmail.com"})
+  (get-user-by-email "test@gmail.com"))
