@@ -15,7 +15,6 @@
     message))
 
 (defn send-email [message]
-  (println message)
   (let [new-message (add-default-from message)
         result (p/send-message @config new-message)]
     (if (= (:error result) :SUCCESS)
