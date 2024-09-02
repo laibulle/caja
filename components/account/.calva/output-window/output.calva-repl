@@ -1055,3 +1055,5 @@ clj꞉messages.interface꞉> 
 clj꞉messages.interface꞉> 
 "http://base-url/fre"
 clj꞉messages.interface꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

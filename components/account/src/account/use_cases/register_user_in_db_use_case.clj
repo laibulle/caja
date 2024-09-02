@@ -12,7 +12,8 @@
    [password-hash.interface :as ph]
    [postgres-db.interface :as db]
    [next.jdbc :as jdbc])
-  (:import java.sql.Timestamp))
+  (:import java.sql.Timestamp)
+  (:import [java.net URLEncoder]))
 
 (def my-tconfig
   {:dictionary ; Map or named resource containing map
@@ -58,6 +59,7 @@
   (if (credentials-provider data)
     (with-tscope :confirmation-email
       (let [message (str "Hello " (:name data) ". Your confirmation token is " (:confirmation-token data))
+            confirmation-link (mi/create-email-link (str "/confirm-email?token=" (:confirmation-token data) "&email=" (URLEncoder/encode (:email data) "UTF-8")))
             result (mi/send-email-from-template {:to (:email data)
                                                  :subject "Confirm your email"
                                                  :variables {:title (t :subject) :intro [(t :intro)] :outro [(t :outro)] :product {:name "My product" :link "http://link.com"}}})]
