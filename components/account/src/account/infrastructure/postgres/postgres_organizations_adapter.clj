@@ -2,7 +2,8 @@
   (:require
    [postgres-db.interface :as db]
    [honey.sql :as sql]
-   [clojure.set :as set]))
+   [clojure.set :as set]
+   [next.jdbc :as jdbc]))
 
 (defn db-to-domain-organization [db-org]
   (-> db-org
@@ -14,12 +15,13 @@
 
 (def table-name :organizations)
 
-(defn insert-organization [data]
-  (-> {:insert-into table-name
-       :values [data]}
-      (sql/format)
-      (db/execute!)
-      (db-to-domain-organization)))
+(defn insert-organization [tx data]
+  (->> {:insert-into table-name
+        :values [data]}
+       (sql/format)
+       (db/execute! tx)
+       (db-to-domain-organization)))
 
 (comment
-  (insert-organization {:name "hello"}))
+  (jdbc/with-transaction [tx @db/datasource]
+    (insert-organization tx {:name "hello"})))

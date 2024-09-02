@@ -13,8 +13,8 @@
 
 (def datasource (atom nil))
 
-(defn execute! [statement]
-  (jdbc/execute! @datasource statement))
+(defn execute! [tx statement]
+  (jdbc/execute! tx statement))
 
 (defn execute-one! [statement]
   (jdbc/execute-one! @datasource statement))

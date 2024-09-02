@@ -39,6 +39,7 @@
   (init {:host "localhost"
          :port 8025
          :default-from {:email "me@draines.com" :name "Me"}})
+  (add-default-from {})
   (send-email-from-template {:to "foo@example.com"
                              :subject "Hi!"
                              :body [:alternative

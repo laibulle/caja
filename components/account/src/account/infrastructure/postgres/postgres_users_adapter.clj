@@ -2,9 +2,9 @@
   (:require
    [postgres-db.interface :as db]
    [honey.sql :as sql]
-   [clojure.set :as set])
+   [clojure.set :as set]
+   [next.jdbc :as jdbc])
   (:import java.sql.Timestamp))
-
 
 (def table-name :users)
 
@@ -28,11 +28,11 @@
                         :users/updated_at :updated-at})))
 
 
-(defn insert-user [data]
-  (-> {:insert-into table-name
-       :values [(domain-user-to-db data)]}
-      (sql/format)
-      (db/execute!)))
+(defn insert-user [tx data]
+  (->> {:insert-into table-name
+        :values [(domain-user-to-db data)]}
+       (sql/format)
+       (db/execute! tx)))
 
 (defn get-user-by-email [email]
   (-> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
@@ -44,5 +44,6 @@
       (db-to-domain-user)))
 
 (comment
-  (insert-user {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
+  (jdbc/with-transaction [tx @db/datasource]
+    (insert-user tx {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))}))
   (get-user-by-email "j@gmdsail.com"))

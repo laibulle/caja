@@ -6,7 +6,9 @@
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.domain.user :as user]
-   [password-hash.interface :as ph])
+   [password-hash.interface :as ph]
+   [postgres-db.interface :as db]
+   [next.jdbc :as jdbc])
   (:import java.sql.Timestamp))
 
 (defn- user-valid? [{:keys [data]}]
@@ -20,7 +22,8 @@
     {:errors [:email-already-taken]}))
 
 (defn- save-in-db [{:keys [data]}]
-  (ua/insert-user data)
+  (jdbc/with-transaction [tx @db/datasource]
+    (ua/insert-user tx data))
   {:data data})
 
 (defn- hash-password [{:keys [data]}]
@@ -63,4 +66,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@gmddsssdsail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "j@gmdewdeddsssddssail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))

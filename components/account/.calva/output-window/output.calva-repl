@@ -530,3 +530,78 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; Execution error at postal.core/send-message (core.clj:33).
 ; message needs at least :from and :to or :from and :bcc
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error at postal.core/send-message (core.clj:33).
+; message needs at least :from and :to or :from and :bcc
+clj꞉messages.interface꞉> 
+; Execution error at postal.core/send-message (core.clj:33).
+; message needs at least :from and :to or :from and :bcc
+clj꞉messages.email.interface꞉> 
+{:from nil}
+clj꞉messages.email.interface꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}
+clj꞉messages.email.interface꞉> 
+{:from "me@draines.com"}
+clj꞉messages.email.interface꞉> 
+#'user/init
+clj꞉user꞉> 
+{:from "me@draines.com"}
+clj꞉messages.email.interface꞉> 
+#'user/init
+clj꞉user꞉> 
+#'user/init
+clj꞉user꞉> 
+true
+clj꞉messages.interface꞉> 
+{:name "John Doe", :email "j@gmdewdeddsssdsail.com", :confirmed_at nil, :confirmation-token "c4fa594ad24d41e7a5ab7b792fcc5fe6", :password_hash "$2a$11$zPXPBl2Uvyj0Zau0Z27ece5mUfDZvl95q1kb31La30SL8kDeZP4oW"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'postgres-db.interface/execute!
+clj꞉postgres-db.interface꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_organizations_adapter.clj:27:5).
+; Unable to resolve symbol: insert-organization in this context
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_organizations_adapter.clj:23:8).
+; Unable to resolve symbol: db-to-domain-organization in this context
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/table-name
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+#'account.infrastructure.postgres.postgres-organizations-adapter/insert-organization
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval943$fn$G (protocols.clj:14).
+; No implementation of method: :get-datasource of protocol: #'next.jdbc.protocols/Sourceable found for class: clojure.lang.Atom
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization (REPL:10).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval943$fn$G (protocols.clj:14).
+; No implementation of method: :get-datasource of protocol: #'next.jdbc.protocols/Sourceable found for class: clojure.lang.Atom
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+; Execution error (ClassCastException) at account.infrastructure.postgres.postgres-organizations-adapter/db-to-domain-organization (REPL:10).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-organizations-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:errors [:email-already-taken]}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval943$fn$G (protocols.clj:14).
+; No implementation of method: :get-datasource of protocol: #'next.jdbc.protocols/Sourceable found for class: clojure.lang.Atom
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/save-in-db
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+{:name "John Doe", :email "j@gmdewdeddsssddssail.com", :confirmed_at nil, :confirmation-token "f0580bd9999f443da2760d46818258df", :password_hash "$2a$11$ep2PQbq5iEpBacQmxGywP..FPb3QgVoM.uhlP4Q0BIAk4Xu235GtS"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
