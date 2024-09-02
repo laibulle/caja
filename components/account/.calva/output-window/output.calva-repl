@@ -91,3 +91,40 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; {:title Confirmez votre email, :intro [Bienvenue], :outro [], :action [{:instructions Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :, :button {:link http://base-url/confirm-email?token=15cd27f7e2e648efb01479516a766eed&email=js%40gmail.com, :text Confirm email}}], :product {:name My product, :link https://www.google.fr}}
 {:name "John Doe", :email "js@gmail.com", :confirmed_at nil, :confirmation-token "15cd27f7e2e648efb01479516a766eed", :password_hash "$2a$11$oM6JrHsRKucQYo1wEqWqBOyADEu0UFHEnBDYW6x3c8WK2I4Lm0GnC"}
 clj꞉user꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test)
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test)
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test)
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:63381 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
