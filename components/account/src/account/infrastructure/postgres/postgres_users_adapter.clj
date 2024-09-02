@@ -45,4 +45,4 @@
 
 (comment
   (insert-user {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
-  (get-user-by-email "test@gmail.com"))
+  (get-user-by-email "j@gmdsail.com"))

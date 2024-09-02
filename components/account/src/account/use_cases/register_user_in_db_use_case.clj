@@ -30,7 +30,7 @@
        (dissoc :password))})
 
 (defn- credentials-provider [data]
-  (= (:provider data) :credentials))
+  (or (=  (:provider data) :credentials) (=  (:provider data) nil)))
 
 (defn- send-confirmation-email [{:keys [data]}]
   (if (credentials-provider data)
@@ -63,4 +63,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "j@gmdsail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
