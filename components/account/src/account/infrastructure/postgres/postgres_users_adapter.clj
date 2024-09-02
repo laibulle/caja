@@ -8,16 +8,18 @@
 
 (def table-name :users)
 
-(defn domain-user-to-db [db-user]
-  (-> db-user
+(defn domain-user-to-db [user]
+  (-> user
       (set/rename-keys {:password-hash :password_hash
                         :confirmed-at :confirmed_at
                         :confirmation-token :confirmation_token
                         :updated-at :updated_at})))
 
 
-(defn db-to-domain-user [user]
-  (-> user
+(defn db-to-domain-user [db-user]
+  (println db-user)
+
+  (-> db-user
       (set/rename-keys {:users/id :id
                         :users/name :name
                         :users/email :email
@@ -29,21 +31,25 @@
 
 
 (defn insert-user [tx data]
-  (->> {:insert-into table-name
-        :values [(domain-user-to-db data)]}
-       (sql/format)
-       (db/execute! tx)))
+  (let [query {:insert-into table-name
+               :values [(domain-user-to-db data)]}]
+    (db/execute-one! tx (sql/format query) {:return-keys true})))
 
-(defn get-user-by-email [email]
-  (-> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
-       :from [table-name]
-       :where
-       [:= :email email]}
-      (sql/format)
-      (db/execute-one!)
-      (db-to-domain-user)))
+(defn get-user-by-email [tx email]
+  (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
+        :from [table-name]
+        :where
+        [:= :email email]}
+       (sql/format)
+       (db/execute-one! tx)
+       (db-to-domain-user)))
 
 (comment
   (jdbc/with-transaction [tx @db/datasource]
-    (insert-user tx {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))}))
-  (get-user-by-email "j@gmdsail.com"))
+    (let [result (insert-user tx {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})]
+      (:id result)))
+
+  (jdbc/with-transaction [tx @db/datasource]
+    (insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
+    ;(get-user-by-email tx "j@gmdsail.com")
+    ))

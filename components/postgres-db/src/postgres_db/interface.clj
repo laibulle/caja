@@ -16,8 +16,11 @@
 (defn execute! [tx statement]
   (jdbc/execute! tx statement))
 
-(defn execute-one! [statement]
-  (jdbc/execute-one! @datasource statement))
+(defn execute-one!
+  ([tx statement opts]
+   (jdbc/execute-one! tx statement opts))
+  ([tx statement]
+   (jdbc/execute-one! tx statement)))
 
 (defn fetch-data []
   (jdbc/execute! @datasource ["SELECT * FROM your_table LIMIT 10"]))

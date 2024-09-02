@@ -789,3 +789,113 @@ clj꞉user꞉> 
 ; ERROR: null value in column "owner_id" of relation "organizations" violates not-null constraint
 ;   Detail: Failing row contains (1, sample, sample, null, 2024-09-02 07:01:07.360381, null).
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+; Execution error (ArityException) at account.infrastructure.postgres.postgres-users-adapter/eval29249$fn (REPL:49).
+; Wrong number of args (2) passed to: account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/db-to-domain-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+{:email {:email {:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}}}}
+clj꞉user꞉> 
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; hello
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (ArityException) at account.use-cases.register-user-in-db-use-case/user-exists? (register_user_in_db_use_case.clj:18).
+; Wrong number of args (1) passed to: account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Evaluating file: register_user_in_db_use_case.clj
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; Execution error (ArityException) at account.use-cases.register-user-in-db-use-case/user-exists? (register_user_in_db_use_case.clj:22).
+; Wrong number of args (1) passed to: account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/user-exists?
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; hello
+; Execution error (ClassCastException) at next.jdbc.connection/spec->url+etc (connection.clj:149).
+; class clojure.lang.PersistentVector cannot be cast to class clojure.lang.IPersistentMap (clojure.lang.PersistentVector and clojure.lang.IPersistentMap are in unnamed module of loader 'app')
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; [SELECT id, name, email, password_hash, confirmed_at, confirmation_token, created_at, updated_at FROM users WHERE email = ? j@gmdsail.com]
+; Execution error (IllegalArgumentException) at next.jdbc.protocols/eval1005$fn$G (protocols.clj:34).
+; No implementation of method: :-execute-one of protocol: #'next.jdbc.protocols/Executable found for class: nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'postgres-db.interface/execute-one!
+#'postgres-db.interface/execute-one!
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nil
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; #:users{:id 2, :name hello, :email j@gmdsail.com, :password_hash nil, :confirmed_at #inst "2024-09-02T05:09:24.367000000-00:00", :confirmation_token nil, :created_at #inst "2024-09-02T05:09:24.366636000-00:00", :updated_at nil}
+{:id 2, :name "hello", :email "j@gmdsail.com", :password-hash nil, :confirmed-at #inst "2024-09-02T05:09:24.367000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-02T05:09:24.366636000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; #:users{:id 2, :name hello, :email j@gmdsail.com, :password_hash nil, :confirmed_at #inst "2024-09-02T05:09:24.367000000-00:00", :confirmation_token nil, :created_at #inst "2024-09-02T05:09:24.366636000-00:00", :updated_at nil}
+{:id 2, :name "hello", :email "j@gmdsail.com", :password-hash nil, :confirmed-at #inst "2024-09-02T05:09:24.367000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-02T05:09:24.366636000-00:00", :updated-at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; nil
+; Execution error (PSQLException) at org.postgresql.core.v3.QueryExecutorImpl/receiveErrorResponse (QueryExecutorImpl.java:2713).
+; ERROR: null value in column "owner_id" of relation "organizations" violates not-null constraint
+;   Detail: Failing row contains (2, sample, sample, null, 2024-09-02 07:09:42.134283, null).
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'postgres-db.interface/execute-one!
+clj꞉postgres-db.interface꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 

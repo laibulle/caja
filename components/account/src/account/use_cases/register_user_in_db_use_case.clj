@@ -19,9 +19,10 @@
     {:errors [:invalid-user]}))
 
 (defn- user-exists? [{:keys [data]}]
-  (if (nil? (ua/get-user-by-email (:email data)))
-    {:data data}
-    {:errors [:email-already-taken]}))
+  (jdbc/with-transaction [tx @db/datasource]
+    (if (nil? (ua/get-user-by-email tx (:email data)))
+      {:data data}
+      {:errors [:email-already-taken]})))
 
 (defn- save-in-db [{:keys [data]}]
   (jdbc/with-transaction [tx @db/datasource]
