@@ -371,3 +371,9 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 #:users{:name "hello", :email "test@gmail.com"}
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/get-user-by-email
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#:users{:id 1, :name "hello", :email "test@gmail.com", :confirmed_at nil, :confirmation_token nil, :created_at #inst "2024-09-02T02:55:10.829606000-00:00", :updated_at nil}
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
