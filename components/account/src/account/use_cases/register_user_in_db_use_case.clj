@@ -65,7 +65,8 @@
                                                  :variables {:title (t :fr :subject)
                                                              :intro [(t :fr :intro)]
                                                              :outro [(t :fr :outro)]
-                                                             :action [{:button {:link confirmation-link :text "Confirm email"}}]
+                                                             :action [{:instructions "To get started with Mailgen, please click here:"
+                                                                       :button {:link confirmation-link :text "Confirm email"}}]
                                                              :product {:name "My product" :link "http://link.com"}}})]
         (if (true? result)
           {:data data}
@@ -95,4 +96,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:data {:email "hell"}})
-  (execute {:name "John Doe" :email "j@djdewnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "dewfrefrjdew@djdewnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))

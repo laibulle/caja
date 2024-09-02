@@ -22,7 +22,7 @@
       {:errors [result]})))
 
 (defn send-email-from-template [input]
-  (let [variables (assoc (:variable input) :product (:product @config))
+  (let [variables (assoc (:variables input) :product (:product @config))
         text (dt/generate variables)
         html (dh/generate variables)
         sm-input (-> input
@@ -32,7 +32,7 @@
                                     {:type "text/html"
                                      :content html}])
                      (dissoc :variables))]
-
+    (println variables)
     (send-email sm-input)))
 
 

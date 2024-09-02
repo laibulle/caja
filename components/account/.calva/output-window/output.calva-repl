@@ -1068,3 +1068,26 @@ clj꞉account.use-cases.register-user-in-db-use-case꞉> 
 ; 24-09-02 07:06:02 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:outro], :dev-mode? true}
 {:name "John Doe", :email "j@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "fb7580a970ef4513a9441f3d3c959eba", :password_hash "$2a$11$bNiB6ue9/1uKtj89w38Vc.7xRU9U5q/sARcq7Z/Y99jHj9tW6tvee"}
 clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/send-confirmation-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/send-confirmation-email
+#'account.use-cases.register-user-in-db-use-case/send-confirmation-email
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+; 24-09-02 07:09:57 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:intro], :dev-mode? true}
+; 24-09-02 07:09:57 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:outro], :dev-mode? true}
+{:name "John Doe", :email "dewj@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "9adedc17561b4fd48d4296f23d77b805", :password_hash "$2a$11$trjW0DIxIufRZDwLOV7iJustNjIhskk5L8tchkBLFgJ1hyjpjd38C"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'messages.email.interface/send-email-from-template
+clj꞉messages.email.interface꞉> 
+; 24-09-02 07:11:02 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:intro], :dev-mode? true}
+; 24-09-02 07:11:02 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:outro], :dev-mode? true}
+; {:product {:name My product, :link https://www.google.fr}}
+{:name "John Doe", :email "dewjdew@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "95f9cce0e69247908aa8125d32ba9519", :password_hash "$2a$11$r1aK7axaY9aKaQxUbUATnuIHnoH8GHLmfO6VFtAIrWIDILv1R4S02"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'messages.email.interface/send-email-from-template
+clj꞉messages.email.interface꞉> 
+; 24-09-02 07:11:38 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:intro], :dev-mode? true}
+; 24-09-02 07:11:38 MOTH-CCXKHVG6YL DEBUG [taoensso.tower:691] - Missing-translation: {:locales [:fr], :scope :confirmation-email, :ks [:outro], :dev-mode? true}
+; {:title Confirmez votre email, :intro [|Missing translation: [[:fr] :confirmation-email [:intro]]|], :outro [|Missing translation: [[:fr] :confirmation-email [:outro]]|], :action [{:instructions To get started with Mailgen, please click here:, :button {:link http://base-url/confirm-email?token=ad822a0efc8c415ea84ed70193b01fbc&email=dewfrefrjdew%40djdewnjkreds.fr, :text Confirm email}}], :product {:name My product, :link https://www.google.fr}}
+{:name "John Doe", :email "dewfrefrjdew@djdewnjkreds.fr", :confirmed_at nil, :confirmation-token "ad822a0efc8c415ea84ed70193b01fbc", :password_hash "$2a$11$s7CkzzOTclNxNr3DLBIoiOz1G5vNIEvYlwbGp02ZEfavydqNDBMTa"}
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
