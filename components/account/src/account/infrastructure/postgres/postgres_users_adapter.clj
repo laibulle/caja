@@ -2,9 +2,18 @@
   (:require
    [postgres-db.interface :as db]
    [honey.sql :as sql]
-   [clojure.set :as set]))
+   [clojure.set :as set])
+  (:import java.sql.Timestamp))
+
 
 (def table-name :users)
+
+(defn domain-user-to-db [db-user]
+  (-> db-user
+      (set/rename-keys {:confirmed-at :confirmed_at
+                        :confirmation-token :confirmation_token
+                        :updated-at :updated_at})))
+
 
 (defn db-to-domain-user [db-user]
   (-> db-user
@@ -19,7 +28,7 @@
 
 (defn insert-user [data]
   (-> {:insert-into table-name
-       :values [data]}
+       :values [(domain-user-to-db data)]}
       (sql/format)
       (db/execute!)))
 
@@ -33,5 +42,5 @@
       (db-to-domain-user)))
 
 (comment
-  (insert-user {:name "hello" :email "test@gmail.com"})
+  (insert-user {:name "hello" :email "test@gmail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
   (get-user-by-email "test@gmail.com"))

@@ -427,3 +427,44 @@ clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
 {:id 1, :name "hello", :email "test@gmail.com", :confirmed-at nil, :confirmation-token nil, :created-at #inst "2024-09-02T03:00:33.501385000-00:00", :updated-at nil}
 clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/domain-user-to-db
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+#'account.infrastructure.postgres.postgres-users-adapter/insert-user
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Syntax error compiling at (src/account/infrastructure/postgres/postgres_users_adapter.clj:44:69).
+; No such namespace: t
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Execution error (PSQLException) at org.postgresql.jdbc.PgPreparedStatement/setObject (PgPreparedStatement.java:1051).
+; Can't infer the SQL type to use for an instance of org.joda.time.DateTime. Use setObject() with an explicit Types value to specify the type to use.
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+; Syntax error macroexpanding clojure.core/ns at (src/account/infrastructure/postgres/postgres_users_adapter.clj:1:1).
+; import - failed: #{:refer-clojure} at: [:ns-clauses :refer-clojure :clause] spec: :clojure.core.specs.alpha/ns-refer-clojure
+; import - failed: #{:require} at: [:ns-clauses :require :clause] spec: :clojure.core.specs.alpha/ns-require
+; import - failed: #{:import} at: [:ns-clauses :import :clause] spec: :clojure.core.specs.alpha/ns-import
+; import - failed: #{:use} at: [:ns-clauses :use :clause] spec: :clojure.core.specs.alpha/ns-use
+; import - failed: #{:refer} at: [:ns-clauses :refer :clause] spec: :clojure.core.specs.alpha/ns-refer
+; import - failed: #{:load} at: [:ns-clauses :load :clause] spec: :clojure.core.specs.alpha/ns-load
+; import - failed: #{:gen-class} at: [:ns-clauses :gen-class :clause] spec: :clojure.core.specs.alpha/ns-gen-class
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+java.sql.Timestamp
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+[#:next.jdbc{:update-count 1}]
+clj꞉account.infrastructure.postgres.postgres-users-adapter꞉> 
+nil
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 
+#'account.use-cases.register-user-in-db-use-case/generate-user-data
+clj꞉account.use-cases.register-user-in-db-use-case꞉> 

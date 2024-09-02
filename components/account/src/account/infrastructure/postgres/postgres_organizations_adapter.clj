@@ -6,10 +6,11 @@
 
 (defn db-to-domain-organization [db-org]
   (-> db-org
-      (set/rename-keys {:id :id
-                        :name :name
-                        :created_at :created-at
-                        :updated_at :updated-at})))
+      (set/rename-keys {:organizations/id :id
+                        :organizations/slug :slug
+                        :organizations/name :name
+                        :organizations/created_at :created-at
+                        :organizations/updated_at :updated-at})))
 
 (def table-name :organizations)
 
@@ -17,7 +18,8 @@
   (-> {:insert-into table-name
        :values [data]}
       (sql/format)
-      (db/execute!)))
+      (db/execute!)
+      (db-to-domain-organization)))
 
 (comment
   (insert-organization {:name "hello"}))

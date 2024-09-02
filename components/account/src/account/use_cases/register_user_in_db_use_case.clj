@@ -6,8 +6,8 @@
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [account.domain.user :as user]
-   [password-hash.interface :as ph]
-   [clj-time.core :as t]))
+   [password-hash.interface :as ph])
+  (:import java.sql.Timestamp))
 
 (defn- user-valid? [{:keys [data]}]
   (if (true? (user/validate-register-user-input data))
@@ -43,7 +43,7 @@
 
 (defn- generate-user-data [{:keys [data]}]
   {:data (-> data
-             (assoc :confirmed_at (when (not (credentials-provider data)) (t/now)))
+             (assoc :confirmed_at (when (not (credentials-provider data))  (Timestamp. (System/currentTimeMillis))))
              (assoc :confirmation-token (when (credentials-provider data) (user/generate-confirmation-token))))})
 
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
