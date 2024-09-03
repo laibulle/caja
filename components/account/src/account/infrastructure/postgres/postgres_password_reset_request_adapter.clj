@@ -31,7 +31,7 @@
         res (db/execute-one! tx (sql/format query) {:return-keys true})]
     (db-to-domain-request res)))
 
-(defn insert-requres [tx data]
+(defn insert-request [tx data]
   (let [query {:insert-into table-name
                :values [(domain-request-to-db data)]}
         res (db/execute-one! tx (sql/format query) {:return-keys true})]

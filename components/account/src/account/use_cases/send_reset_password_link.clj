@@ -1,6 +1,7 @@
 (ns account.use-cases.send-reset-password-link
   (:require
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
+   [account.infrastructure.postgres.postgres-password-reset-request-adapter :as ra]
    [common.interface :refer [=> collect-result ErrorSchema]]
    [next.jdbc :as jdbc]
    [postgres-db.interface :as db]))
@@ -11,7 +12,8 @@
   input)
 
 (defn create-reset-request [input]
-  input)
+  (let [request (ra/insert-request (:tx input) {:user-id (get-in input [:user :id]) :token "token"})]
+    (assoc input :request request)))
 
 (defn send-email [input]
   input)
