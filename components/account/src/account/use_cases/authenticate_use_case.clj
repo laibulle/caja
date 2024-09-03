@@ -10,6 +10,8 @@
 
 (def invalid-credentials-error :invalid-credentials)
 
+(def email-not-confirmed :email-not-confirmed)
+
 (defn- validate-input [input]
   (if (validate-login-input (:data input))
     input
@@ -27,6 +29,11 @@
     {:errors [invalid-credentials-error]}
     input))
 
+(defn- check-confirmed [input]
+  (if (nil? (get-in input [:account :confirmed-at]))
+    {:errors [email-not-confirmed]}
+    input))
+
 (defn- create-token [input]
   {:data {:jwt (generate-account-token {:account-id (get-in input [:account :id])})}})
 
@@ -35,6 +42,7 @@
       (=> validate-input)
       (=> find-account-by-email)
       (=> check-password)
+      (=> check-confirmed)
       (=> create-token)
       collect-result))
 

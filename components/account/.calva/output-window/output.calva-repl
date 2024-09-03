@@ -520,3 +520,17 @@ clj꞉account.use-cases.authenticate-use-case꞉> 
 clj꞉account.use-cases.authenticate-use-case꞉> 
 {:errors [:invalid-credentials]}
 clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/email-not-confirmed
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-confirmed
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/execute
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:jwt "eyJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50LWlkIjo1LCJleHAiOjE3Mjc5MTYwNzk1MDl9.pKq0tsSsJHn6ex0OAaADvIm1ewJo0fK3K6SO19KqcjQ"}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:errors [:not-confirmed]}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/email-not-confirmed
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:errors [:email-not-confirmed]}
+clj꞉account.use-cases.authenticate-use-case꞉> 
