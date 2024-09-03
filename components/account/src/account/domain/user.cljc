@@ -62,7 +62,7 @@
 
 (def DeleteUserInput
   [:map
-   [:user-id :pos-int]])
+   [:user-id :int]])
 
 (defn validate-delete-user-input [input]
   (m/validate DeleteUserInput input))

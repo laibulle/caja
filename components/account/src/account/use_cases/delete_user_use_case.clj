@@ -24,4 +24,5 @@
         (=> delete-user)
         (collect-result))))
 
-(comment)
+(comment
+  (execute {:user-id 1}))
