@@ -36,4 +36,4 @@ projects/**/pom.xml
 .clj-kondo/.cache
 
 # Calva VS Code Extension
-.calva/output-window/output.calva-repl
+.calva/output.calva-repl
