@@ -13,6 +13,7 @@ CREATE TABLE users_password_reset_requests (
     id SERIAL PRIMARY KEY,
     token VARCHAR(100) NOT NULL,
     user_id INT NOT NULL REFERENCES users(id),
+    executed_at TIMESTAMP ,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP
 );
