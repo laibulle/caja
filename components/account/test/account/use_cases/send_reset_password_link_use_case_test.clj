@@ -4,7 +4,6 @@
    [account.use-cases.send-reset-password-link-use-case :as use-case]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [account.infrastructure.postgres.postgres-password-reset-request-adapter :as ra]
-   [common.interface :refer [=> collect-result]]
    [messages.interface :as mi]
    [taoensso.tower :as tower :refer (with-tscope)]
    [next.jdbc :as jdbc]
