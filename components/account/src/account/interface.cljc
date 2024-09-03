@@ -5,6 +5,7 @@
    [account.domain.user :as user]
    [account.domain.account :as account]
    [account.domain.password-reset-request :as password-reset-request]
+   #?(:clj [account.use-cases.update-password-use-case :as update-password-use-case])
    #?(:clj [account.use-cases.send-reset-password-link-use-case :as send-reset-password-link-use-case])
    #?(:clj [account.use-cases.authenticate-use-case :as authenticate-use-case])
    #?(:clj [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
@@ -27,9 +28,9 @@
           (defn send-reset-password-link-server [input]
             (send-reset-password-link-use-case/execute (input)))
 
-          (defn reset-password-server [])
-
-          (defn forgotten-password-server [])
+          (m/=>  reset-password-server [:=> [:cat user/UpdatePasswordInput] [:or nil account/LoginResponse]])
+          (defn reset-password-server [input]
+            (update-password-use-case/execute input))
 
           (defn delete-account-server [])))
 
