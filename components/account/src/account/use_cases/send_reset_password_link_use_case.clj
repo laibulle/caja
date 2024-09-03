@@ -1,5 +1,6 @@
 (ns account.use-cases.send-reset-password-link-use-case
   (:require
+   [account.domain.password-reset-request :as pr]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [account.infrastructure.postgres.postgres-password-reset-request-adapter :as ra]
    [common.interface :refer [=> collect-result]]
@@ -23,6 +24,11 @@
          :fallback-locale :fr}))
 
 (def user-not-found :user-not-found)
+
+(defn- input-valid? [input]
+  (if (true? (pr/validate-password-request-input (:input input)))
+    input
+    {:errors [:invalid-password-request-input]}))
 
 (defn check-threshold [input]
   (let [one-hour-ago-sql (Timestamp/from (.toInstant (.minus (ZonedDateTime/now (ZoneId/systemDefault)) (Duration/ofHours 1))))
@@ -60,7 +66,8 @@
 (defn execute [input]
   (jdbc/with-transaction [tx @db/datasource]
     (-> {:input input :tx tx}
-        (get-user-by-email)
+        (input-valid?)
+        (=> get-user-by-email)
         (=> check-threshold)
         (=> create-reset-request)
         (=> send-email)
