@@ -2,6 +2,7 @@
   (:require
    [postgres-db.interface :as pi]
    [messages.interface :as mi]
+   [account.use-cases.authenticate-use-case :as au]
    [account.use-cases.register-user-in-db-use-case :as ru]
    [account.use-cases.confirm-user-in-db-use-case :as cu]
    [ragtime.next-jdbc :as jdbc]
@@ -27,5 +28,7 @@
   (repl/migrate config)
   (repl/rollback config)
 
-  (let [user (ru/execute {:name "John Doe" :email "jssa@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"})]
-    (cu/execute {:token (:confirmation-token user) :email (:email user)})))
+  (let [password "Noirfnefwerf#mopgmtrogmroptgm"
+        user (ru/execute {:name "John Doe" :email "jsssa@gmail.com" :password password})]
+    (cu/execute {:token (:confirmation-token user) :email (:email user)})
+    (au/execute {:email (:email user) :password password})))

@@ -391,3 +391,54 @@ clj꞉user꞉> 
 {:token "b1a2223151404ba5b421e76da212951f", :email "jssa@gmail.com"}
 clj꞉user꞉> 
 ; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:56176 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+#'user/init
+clj꞉user꞉> 
+#'user/config
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+nil
+clj꞉user꞉> 
+; Syntax error compiling at (dev/user.clj:34:5).
+; No such namespace: au
+clj꞉user꞉> 
+; Execution error (FileNotFoundException) at account.use-cases.authenticate-use-case/eval39626$loading (authenticate_use_case.clj:1).
+; Could not locate authentication/infrastructure/datomic_account_schema__init.class, authentication/infrastructure/datomic_account_schema.clj or authentication/infrastructure/datomic_account_schema.cljc on classpath. Please check that namespaces with dashes use underscores in the Clojure file name.
+clj꞉user꞉> 
+; Evaluating file: authenticate_use_case.clj
+nil
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:errors [:invalid-credentials]}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:errors [:invalid-input]}
+clj꞉user꞉> 
+{:errors [:invalid-input]}
+clj꞉user꞉> 
+{:errors [:invalid-input]}
+clj꞉user꞉> 
+{:errors [:invalid-input]}
+clj꞉user꞉> 
+; {:email nil, :password Noirfnefwerf#mopgmtrogmroptgm}
+{:errors [:invalid-input]}
+clj꞉user꞉> 
+{:errors [:invalid-credentials]}
+clj꞉user꞉> 
+{:errors [:invalid-credentials]}
+clj꞉account.use-cases.authenticate-use-case꞉> 

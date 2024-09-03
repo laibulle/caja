@@ -3,7 +3,9 @@
    [common.interface :refer [=> collect-result]]
    [account.infrastructure.jwt :refer [generate-account-token]]
    [account.domain.account :refer [validate-login-input]]
-   [authentication.infrastructure.datomic-account-schema :refer [get-account-by-email]]
+   [postgres-db.interface :as db]
+   [account.infrastructure.postgres.postgres-users-adapter :as ua]
+   [next.jdbc :as jdbc]
    [password-hash.interface :as ph]))
 
 (def invalid-credentials-error :invalid-credentials)
@@ -14,10 +16,11 @@
     {:errors [:invalid-input]}))
 
 (defn- find-account-by-email [{:keys [data]}]
-  (let [account (get-account-by-email (:email data))]
-    (if (nil? account)
-      {:errors [invalid-credentials-error]}
-      {:data (assoc data account :account)})))
+  (jdbc/with-transaction [tx @db/datasource]
+    (let [user (ua/get-user-by-email tx (:email data))]
+      (if (nil? nil)
+        {:errors [invalid-credentials-error]}
+        {:data (assoc data user :account)}))))
 
 (defn- check-password [{:keys [data]}]
   (if (false? (ph/check (:password data) (get-in data [:account :password])))
@@ -36,4 +39,5 @@
       collect-result))
 
 (comment
+  (execute {:email "jsssa@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"})
   (execute {:email "frefre@gmail.com" :password "ceriomfiver"}))
