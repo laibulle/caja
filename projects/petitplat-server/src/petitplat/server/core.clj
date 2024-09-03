@@ -6,5 +6,9 @@
 
 (defn -main
   [& _]
-  (clip/start (:system-config (read-config (io/resource "config.edn"))))
+  (clip/start (->
+               "config.edn"
+               (io/resource)
+               (read-config)
+               (:system-config)))
   @(promise))

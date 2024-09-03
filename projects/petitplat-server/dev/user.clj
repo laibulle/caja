@@ -5,7 +5,11 @@
             [clojure.java.io :as io]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(def system-config (:system-config (read-config (io/resource "config.edn"))))
+(def system-config (->
+                    "config.edn"
+                    (io/resource)
+                    (read-config)
+                    (:system-config)))
 (def system nil)
 
 (defn start []
