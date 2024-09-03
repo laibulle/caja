@@ -2,10 +2,12 @@
   (:require
    [clojure.test :refer :all]
    [account.use-cases.authenticate-use-case :as auth]
+   [common.interface :refer [collect-result]]
    [account.infrastructure.jwt :as jwt]
    [account.domain.account :as domain]
    [postgres-db.interface :as db]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
+   [next.jdbc :as jdbc]
    [password-hash.interface :as ph]))
 
 ;; Mock dependencies
@@ -26,12 +28,16 @@
 (defn mock-validate-login-input [input]
   (and (:email input) (:password input)))
 
+(defn mock-with-transaction [transaction-fn datasource]
+  (transaction-fn {}))
+
 ;; Binding mocks to functions
 (with-redefs [db/datasource mock-datasource
               ua/get-user-by-email mock-get-user-by-email
               ph/check mock-check-password
               jwt/generate-account-token mock-generate-account-token
-              domain/validate-login-input mock-validate-login-input]
+              domain/validate-login-input mock-validate-login-input
+              jdbc/with-transaction mock-with-transaction]
 
   (deftest test-authenticate-use-case
     ;; Test valid credentials
@@ -55,6 +61,5 @@
       (with-redefs [domain/validate-login-input (fn [_] false)]
         (let [result (auth/execute {:email nil :password nil})]
           (is (= (:errors result) [:invalid-input])))))))
-
 (comment
   (run-tests))
