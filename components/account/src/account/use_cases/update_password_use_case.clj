@@ -23,6 +23,11 @@
       {:errors [:email-already-taken]}
       (assoc input :request request))))
 
+(defn- check-email-and-token [input]
+  (if (= (get-in input [:user :email]) (get-in input [:input :email]))
+    input
+    {:errors [:invalid-request]}))
+
 (defn- get-user [input]
   (let [user (ua/get-user-by-id (:tx input) (get-in input [:user :id]))]
     (if (nil? user)
@@ -35,6 +40,7 @@
         (=> input-valid?)
         (=> get-password-request)
         (=> get-user)
+        (=> check-email-and-token)
         (=> hash-password)
         collect-result)))
 
