@@ -10,25 +10,25 @@
 
 (def invalid-credentials-error :invalid-credentials)
 
-(defn- validate-input [{:keys [data]}]
-  (if (validate-login-input data)
-    {:data data}
+(defn- validate-input [input]
+  (if (validate-login-input (:data input))
+    input
     {:errors [:invalid-input]}))
 
-(defn- find-account-by-email [{:keys [data]}]
+(defn- find-account-by-email [input]
   (jdbc/with-transaction [tx @db/datasource]
-    (let [user (ua/get-user-by-email tx (:email data))]
-      (if (nil? nil)
+    (let [user (ua/get-user-by-email tx (get-in input [:data :email]))]
+      (if (nil? user)
         {:errors [invalid-credentials-error]}
-        {:data (assoc data user :account)}))))
+        (assoc input :account user)))))
 
-(defn- check-password [{:keys [data]}]
-  (if (false? (ph/check (:password data) (get-in data [:account :password])))
+(defn- check-password [input]
+  (if (false? (ph/check (get-in input [:data :password]) (get-in input [:account :password-hash])))
     {:errors [invalid-credentials-error]}
-    {:data data}))
+    input))
 
-(defn- create-token [{:keys [data]}]
-  {:data {:jwt (generate-account-token {:account-id (get-in data [:account :id])})}})
+(defn- create-token [input]
+  {:data {:jwt (generate-account-token {:account-id (get-in input [:account :id])})}})
 
 (defn execute [input]
   (-> {:data input}

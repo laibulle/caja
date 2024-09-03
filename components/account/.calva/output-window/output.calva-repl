@@ -442,3 +442,81 @@ clj꞉user꞉> 
 clj꞉user꞉> 
 {:errors [:invalid-credentials]}
 clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Execution error (NullPointerException) at java.util.Objects/requireNonNull (Objects.java:233).
+; null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}, :base-url "http://base-url", :product {:name "My product", :link "https://www.google.fr"}}
+clj꞉user꞉> 
+; Execution error (NullPointerException) at java.util.Objects/requireNonNull (Objects.java:233).
+; null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Execution error (NullPointerException) at java.util.Objects/requireNonNull (Objects.java:233).
+; null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Execution error (NullPointerException) at java.util.Objects/requireNonNull (Objects.java:233).
+; null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; {:email jsssa@gmail.com, :password Noirfnefwerf#mopgmtrogmroptgm, {:id 5, :name John Doe, :email jsssa@gmail.com, :password-hash $2a$11$oYJbwupIvze7tOqYK6Bgaeq0xGRRNaIZNowAw6U8DYW9AzMchBvoS, :confirmed-at #inst "2024-09-03T00:30:35.751000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-03T00:30:35.404730000-00:00", :updated-at nil} :account}
+; Execution error (NullPointerException) at java.util.Objects/requireNonNull (Objects.java:233).
+; null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; {:email jsssa@gmail.com, :password Noirfnefwerf#mopgmtrogmroptgm, :account {:id 5, :name John Doe, :email jsssa@gmail.com, :password-hash $2a$11$oYJbwupIvze7tOqYK6Bgaeq0xGRRNaIZNowAw6U8DYW9AzMchBvoS, :confirmed-at #inst "2024-09-03T00:30:35.751000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-03T00:30:35.404730000-00:00", :updated-at nil}}
+{:jwt "eyJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50LWlkIjo1LCJleHAiOjE3Mjc5MTU2Nzk2NTJ9.8ZYKRsHFUPNcGDSh5SVlnS9PbEd9yXEuCCFwj-if_Sg"}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/validate-input
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/create-token
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Execution error (NullPointerException) at crypto.password.bcrypt/check (bcrypt.clj:23).
+; Cannot invoke "Object.getClass()" because "target" is null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Evaluating file: authenticate_use_case.clj
+nil
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Execution error (NullPointerException) at crypto.password.bcrypt/check (bcrypt.clj:23).
+; Cannot invoke "Object.getClass()" because "target" is null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; {:data {:data {:email jsssa@gmail.com, :password Noirfnefwerf#mopgmtrogmroptgm}, :account {:id 5, :name John Doe, :email jsssa@gmail.com, :password-hash $2a$11$oYJbwupIvze7tOqYK6Bgaeq0xGRRNaIZNowAw6U8DYW9AzMchBvoS, :confirmed-at #inst "2024-09-03T00:30:35.751000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-03T00:30:35.404730000-00:00", :updated-at nil}}}
+; Execution error (NullPointerException) at crypto.password.bcrypt/check (bcrypt.clj:23).
+; Cannot invoke "Object.getClass()" because "target" is null
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/create-token
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/execute
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; {:data {:email jsssa@gmail.com, :password Noirfnefwerf#mopgmtrogmroptgm}, :account {:id 5, :name John Doe, :email jsssa@gmail.com, :password-hash $2a$11$oYJbwupIvze7tOqYK6Bgaeq0xGRRNaIZNowAw6U8DYW9AzMchBvoS, :confirmed-at #inst "2024-09-03T00:30:35.751000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-03T00:30:35.404730000-00:00", :updated-at nil}}
+nil
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/create-token
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/execute
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; {:data {:email jsssa@gmail.com, :password Noirfnefwerf#mopgmtrogmroptgm}, :account {:id 5, :name John Doe, :email jsssa@gmail.com, :password-hash $2a$11$oYJbwupIvze7tOqYK6Bgaeq0xGRRNaIZNowAw6U8DYW9AzMchBvoS, :confirmed-at #inst "2024-09-03T00:30:35.751000000-00:00", :confirmation-token nil, :created-at #inst "2024-09-03T00:30:35.404730000-00:00", :updated-at nil}}
+{:jwt "eyJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50LWlkIjo1LCJleHAiOjE3Mjc5MTU5NTk0MjJ9.JRZNCmAXw9wmZREbca_49m9J4h6GeiBi7c-YT1fCKfI"}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:jwt "eyJhbGciOiJIUzI1NiJ9.eyJhY2NvdW50LWlkIjo1LCJleHAiOjE3Mjc5MTU5NjY5MzV9.wki6sY7cXDa4-T8rvpaRGio_-IR53ScVfE38crZ_DvQ"}
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:errors [:invalid-credentials]}
+clj꞉account.use-cases.authenticate-use-case꞉> 
