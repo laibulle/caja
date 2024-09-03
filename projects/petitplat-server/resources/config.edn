@@ -7,4 +7,18 @@
                   :prod
                   {:url "jdbc:postgresql://localhost:5437/petitplat_dev?user=postgres&password=postgres"}})
         :stop (postgres-db.interface/stop)}
+   :messages {:start (messages.interface/init
+                      #profile
+                       {:dev
+                        {:email {:host "localhost"
+                                 :port 8025
+                                 :default-from {:email "me@draines.com" :name "Me"}
+                                 :base-url "http://base-url"
+                                 :product {:name "My product" :link "https://www.google.fr"}}}
+                        :prod
+                        {:email {:host "localhost"
+                                 :port 8025
+                                 :default-from {:email "me@draines.com" :name "Me"}
+                                 :base-url "http://base-url"
+                                 :product {:name "My product" :link "https://www.google.fr"}}}})}
    :server {:start (petitplat.server.server/start)}}}}
