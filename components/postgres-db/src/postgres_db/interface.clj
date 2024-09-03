@@ -35,6 +35,10 @@
 (defn stop []
   (reset! datasource nil))
 
+(defmacro with-transaction [[^:clj-kondo/ignore tx] & body]
+  `(jdbc/with-transaction [~tx @datasource]
+     ~@body))
+
 (comment
   (init {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"})
   (fetch-data))
