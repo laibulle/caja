@@ -4,7 +4,7 @@
    [honey.sql :as sql]
    [clojure.set :as set]
    [next.jdbc :as jdbc])
-  (:import [java.time Instant ZoneId ZonedDateTime Duration]
+  (:import [java.time ZoneId ZonedDateTime Duration]
            [java.sql Timestamp]))
 
 (def table-name :users_password_reset_requests)
