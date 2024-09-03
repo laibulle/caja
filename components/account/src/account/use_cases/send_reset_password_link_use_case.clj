@@ -54,6 +54,8 @@
       (assoc input :user user)
       {:errors [user-not-found]})))
 
+(defn format-result [input]
+  {:data {:request (:request input)}})
 
 (defn execute [input]
   (jdbc/with-transaction [tx @db/datasource]
@@ -62,6 +64,7 @@
         (=> check-threshold)
         (=> create-reset-request)
         (=> send-email)
+        (=> format-result)
         collect-result)))
 
 (comment
