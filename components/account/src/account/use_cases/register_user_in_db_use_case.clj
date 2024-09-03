@@ -32,7 +32,7 @@
 (defn- user-valid? [input]
   (if (true? (user/validate-register-user-input (:input input)))
     input
-    {:errors [:invalid-user]}))
+    {:errors [:invalid-user-input]}))
 
 (defn- user-exists? [input]
   (if (nil? (ua/get-user-by-email (:tx input) (get-in input [:input :email])))
