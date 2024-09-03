@@ -50,6 +50,15 @@
        (db/execute-one! tx)
        (db-to-domain-user)))
 
+(defn get-user-by-id [tx id]
+  (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
+        :from [table-name]
+        :where
+        [:= :id id]}
+       (sql/format)
+       (db/execute-one! tx)
+       (db-to-domain-user)))
+
 (comment
   (jdbc/with-transaction [tx @db/datasource]
     ;(insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
