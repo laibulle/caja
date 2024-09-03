@@ -1141,3 +1141,21 @@ clj꞉account.use-cases.authenticate-use-case-test꞉> 
 ; 0 failures, 0 errors.
 {:test 1, :pass 6, :fail 0, :error 0, :type :summary}
 clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; Evaluating file: interface.cljc
+; 
+; ; clj  account.interface 
+; Syntax error compiling at (src/account/interface.cljc:20:11).
+; No such var: account/LoginResponse
+; Evaluation of file interface.cljc failed: class clojure.lang.Compiler$CompilerException
+clj꞉account.interface꞉> 
+nil
+clj꞉account.interface꞉> 
+; Syntax error compiling at (src/account/interface.cljc:20:11).
+; No such var: account/LoginResponse
+clj꞉account.interface꞉> 
+#'account.domain.account/LoginResponse
+clj꞉account.domain.account꞉> 
+#'account.interface/delete-account-server
+clj꞉account.interface꞉> 
+nil
+clj꞉account.interface꞉> 

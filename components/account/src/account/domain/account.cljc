@@ -17,6 +17,10 @@
    [:email EmailAddress]
    [:password Password]])
 
+(def LoginResponse
+  [:map
+   [:jwt :string]])
+
 (defn validate-login-input [input]
   (m/validate LoginInput input))
 

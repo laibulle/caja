@@ -3,6 +3,7 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [account.domain.user :as user]
+   [account.domain.account :as account]
    #?(:clj [account.use-cases.authenticate-use-case :as authenticate-use-case])
    #?(:clj [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
    #?(:clj [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case])))
@@ -16,17 +17,15 @@
           (defn confirm-user-server [input]
             (confirm-user-in-db-use-case/execute input))
 
-
-          (defn authenticate [input]
+          (m/=>  authenticate-server [:=> [:cat account/LoginInput] [:or nil account/LoginResponse]])
+          (defn authenticate-server [input]
             (authenticate-use-case/execute input))
 
           (defn reset-password-server [])
 
           (defn forgotten-password-server [])
 
-          (defn delete-account-server [])
-
-          (defn login-server [])))
+          (defn delete-account-server [])))
 
 (comment
   (mc/emit!))
