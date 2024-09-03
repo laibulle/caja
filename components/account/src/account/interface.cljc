@@ -4,6 +4,7 @@
    [malli.clj-kondo :as mc]
    [account.domain.user :as user]
    [account.domain.account :as account]
+   #?(:clj [account.use-cases.send-reset-password-link :as send-reset-password-link])
    #?(:clj [account.use-cases.authenticate-use-case :as authenticate-use-case])
    #?(:clj [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
    #?(:clj [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case])))
@@ -20,6 +21,9 @@
           (m/=>  authenticate-server [:=> [:cat account/LoginInput] [:or nil account/LoginResponse]])
           (defn authenticate-server [input]
             (authenticate-use-case/execute input))
+
+          (defn send-reset-password-link-server [input]
+            (send-reset-password-link/execute (input)))
 
           (defn reset-password-server [])
 
