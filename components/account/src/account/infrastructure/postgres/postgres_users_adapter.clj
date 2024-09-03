@@ -31,7 +31,7 @@
 (defn update-user [tx data]
   (let [query {:update table-name
                :set (domain-user-to-db data)
-               :where [:= :id (:id data)]}
+               :where [:and [:= :id (:id data)] [:nil :deleted_at]]}
         res (db/execute-one! tx (sql/format query) {:return-keys true})]
     (db-to-domain-user res)))
 
@@ -45,7 +45,7 @@
   (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
         :from [table-name]
         :where
-        [:= :email email]}
+        [:and [:= :email email] [:nil :deleted_at]]}
        (sql/format)
        (db/execute-one! tx)
        (db-to-domain-user)))
@@ -54,7 +54,7 @@
   (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
         :from [table-name]
         :where
-        [:= :id id]}
+        [:and [:= :id id] [:nil :deleted_at]]}
        (sql/format)
        (db/execute-one! tx)
        (db-to-domain-user)))
