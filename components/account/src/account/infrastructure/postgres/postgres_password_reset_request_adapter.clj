@@ -39,7 +39,6 @@
     (db-to-domain-request res)))
 
 (defn list-pending-requests-for-user
-  "TODO: finish it"
   [tx data]
   (let [query {:select [:id]
                :from [table-name]
