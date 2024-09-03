@@ -25,7 +25,7 @@
 
 (defn execute [input]
   (jdbc/with-transaction [tx @db/datasource]
-    (-> {:input input}
+    (-> {:input input :tx tx}
         (get-user-by-email)
         (=> check-threshold)
         (=> create-reset-request)

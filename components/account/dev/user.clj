@@ -2,6 +2,7 @@
   (:require
    [postgres-db.interface :as pi]
    [messages.interface :as mi]
+   [account.use-cases.send-reset-password-link :as splu]
    [account.use-cases.authenticate-use-case :as au]
    [account.use-cases.register-user-in-db-use-case :as ru]
    [account.use-cases.confirm-user-in-db-use-case :as cu]
@@ -27,6 +28,8 @@
 
   (repl/migrate config)
   (repl/rollback config)
+
+  (splu/execute {:email "jsssa@gmail.com"})
 
   (let [password "Noirfnefwerf#mopgmtrogmroptgm"
         user (ru/execute {:name "John Doe" :email "jsssa@gmail.com" :password password})]
