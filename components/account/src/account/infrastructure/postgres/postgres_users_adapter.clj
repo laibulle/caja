@@ -3,10 +3,11 @@
    [postgres-db.interface :as db]
    [honey.sql :as sql]
    [clojure.set :as set]
-   [next.jdbc :as jdbc])
-  (:import java.sql.Timestamp))
+   [next.jdbc :as jdbc]))
 
 (def table-name :users)
+
+(def attributes [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at])
 
 (defn domain-user-to-db [user]
   (-> user
@@ -42,7 +43,7 @@
     (db-to-domain-user res)))
 
 (defn get-user-by-email [tx email]
-  (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
+  (->> {:select attributes
         :from [table-name]
         :where
         [:and [:= :email email] [:nil :deleted_at]]}
@@ -51,7 +52,7 @@
        (db-to-domain-user)))
 
 (defn get-user-by-id [tx id]
-  (->> {:select [:id :name :email :password_hash :confirmed_at :confirmation_token :created_at :updated_at]
+  (->> {:select attributes
         :from [table-name]
         :where
         [:and [:= :id id] [:nil :deleted_at]]}
