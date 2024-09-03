@@ -52,7 +52,7 @@
 (defn- hash-password [input]
   (-> input
       (assoc-in [:data :password_hash] (ph/encrypt (get-in input [:data :password])))
-      (dissoc :password)))
+      (update-in [:data] dissoc :password)))
 
 (defn- credentials-provider [data]
   (or (= (:provider data) :credentials) (=  (:provider data) nil)))
@@ -74,9 +74,9 @@
     input))
 
 (defn- generate-user-data [input]
-  (-> input
-      (assoc-in [:data :confirmed_at] (when (not (credentials-provider (get-in input [:data])))  (Timestamp. (System/currentTimeMillis))))
-      (assoc :confirmation-token (when (credentials-provider (get-in input [:data])) (user/generate-confirmation-token)))))
+  (if (credentials-provider (get-in input [:data]))
+    (assoc-in input [:data :confirmation-token] (user/generate-confirmation-token))
+    (assoc-in input [:data :confirmed_at] (Timestamp. (System/currentTimeMillis)))))
 
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
 (defn execute [input]
