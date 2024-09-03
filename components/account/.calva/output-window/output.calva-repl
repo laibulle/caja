@@ -534,3 +534,28 @@ clj꞉account.use-cases.authenticate-use-case꞉> 
 clj꞉account.use-cases.authenticate-use-case꞉> 
 {:errors [:email-not-confirmed]}
 clj꞉account.use-cases.authenticate-use-case꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:42)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:43)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:53)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:invalid-credentials] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 3 failures, 0 errors.
+{:test 1, :pass 2, :fail 3, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
