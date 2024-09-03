@@ -3,11 +3,9 @@
    [malli.core :as m]
    [malli.clj-kondo :as mc]
    [account.domain.user :as user]
-   #?(:clj
-      [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
+   #?(:clj [account.use-cases.authenticate-use-case :as authenticate-use-case])
+   #?(:clj [account.use-cases.register-user-in-db-use-case :as register-user-in-db-use-case])
    #?(:clj [account.use-cases.confirm-user-in-db-use-case :as confirm-user-in-db-use-case])))
-
-(defn hello [] "Hello ")
 
 #?(:clj (do
           (m/=>  register-user-in-db [:=> [:cat user/RegisterUserInput] [:or nil user/User]])
@@ -17,6 +15,10 @@
           (m/=>  confirm-user-in-db [:=> [:cat user/ConfirmUserEmailInput] [:or nil user/User]])
           (defn confirm-user-server [input]
             (confirm-user-in-db-use-case/execute input))
+
+
+          (defn authenticate [input]
+            (authenticate-use-case/execute input))
 
           (defn reset-password-server [])
 

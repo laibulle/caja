@@ -1,4 +1,4 @@
-(ns authentication.infrastructure.jwt
+(ns account.infrastructure.jwt
   (:require
    [buddy.sign.jwt :as jwt])
   (:import [java.sql Timestamp]

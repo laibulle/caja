@@ -1,8 +1,8 @@
 {:paths ["src" "resources" "dev"]
  :deps {org.clojure/tools.namespace {:mvn/version "1.5.0"}}
  :aliases {:server {:extra-deps
-                    {account/account {:local/root "../../components/account"}
-                     postgres-db/postgres-db {:local/root "../../components/postgres-db"}
+                    {caja/account {:local/root "../../components/account"}
+                     caja/postgres-db {:local/root "../../components/postgres-db"}
                      aero/aero {:mvn/version "1.1.6"}
                      http-kit/http-kit {:mvn/version "2.8.0"}
                      compojure/compojure {:mvn/version "1.7.1"}

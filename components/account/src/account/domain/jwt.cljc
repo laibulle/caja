@@ -1,4 +1,4 @@
-(ns authentication.domain.jwt
+(ns account.domain.jwt
   (:require [malli.core :as m]))
 
 

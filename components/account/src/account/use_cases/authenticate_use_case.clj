@@ -1,8 +1,8 @@
-(ns authentication.use-cases.authenticate-use-case
+(ns account.use-cases.authenticate-use-case
   (:require
-   [common.interface :refer [handle-errors collect-result]]
-   [authentication.infrastructure.jwt :refer [generate-account-token]]
-   [authentication.domain.account :refer [validate-login-input]]
+   [common.interface :refer [=> collect-result]]
+   [account.infrastructure.jwt :refer [generate-account-token]]
+   [account.domain.account :refer [validate-login-input]]
    [authentication.infrastructure.datomic-account-schema :refer [get-account-by-email]]
    [password-hash.interface :as ph]))
 
@@ -29,10 +29,10 @@
 
 (defn execute [input]
   (-> {:data input}
-      (handle-errors validate-input)
-      (handle-errors find-account-by-email)
-      (handle-errors check-password)
-      (handle-errors create-token)
+      (=> validate-input)
+      (=> find-account-by-email)
+      (=> check-password)
+      (=> create-token)
       collect-result))
 
 (comment

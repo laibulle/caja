@@ -1,4 +1,4 @@
-(ns authentication.domain.account
+(ns account.domain.account
   (:require [malli.core :as m]
             [malli.generator :as mg]
             [malli.clj-kondo :as mc]
