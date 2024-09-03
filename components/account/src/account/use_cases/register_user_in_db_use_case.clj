@@ -41,7 +41,7 @@
       {:errors [:email-already-taken]})))
 
 (defn- save-in-db [{:keys [data]}]
-  (db/with-transaction [tx]
+  (jdbc/with-transaction [tx @db/datasource]
     (let [user (ua/insert-user tx data)
           name (random-name)
           organization (oa/insert-organization tx {:owner-id (:id user) :name name :slug name})

@@ -5,6 +5,7 @@ CREATE TABLE users (
     confirmed_at TIMESTAMP,
     confirmation_token VARCHAR(255),
     password_hash VARCHAR(255),
+    deleted_at TIMESTAMP,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP
 );

@@ -1,2 +1,2 @@
 {:lint-as
- {db/with-transaction clojure.core/let}}
+ {postgres-db.interface/with-transaction clojure.core/let}}

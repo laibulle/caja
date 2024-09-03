@@ -1,2 +1,5 @@
-{:lint-as
- {db/with-transaction clojure.core/let}}
+{:custom-macros
+ {postgres-db.interface/with-transaction
+  {:arity
+   2
+   :encloses 1}}}
