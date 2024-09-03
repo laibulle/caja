@@ -2,12 +2,10 @@
   (:require
    [clojure.test :refer :all]
    [account.use-cases.authenticate-use-case :as auth]
-   [common.interface :refer [collect-result]]
    [account.infrastructure.jwt :as jwt]
    [account.domain.account :as domain]
    [postgres-db.interface :as db]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
-   [next.jdbc :as jdbc]
    [password-hash.interface :as ph]))
 
 ;; Mock dependencies
