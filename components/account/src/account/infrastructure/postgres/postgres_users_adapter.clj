@@ -16,7 +16,6 @@
                         :confirmation-token :confirmation_token
                         :updated-at :updated_at})))
 
-
 (defn db-to-domain-user [db-user]
   (-> db-user
       (set/rename-keys {:users/id :id
@@ -27,7 +26,6 @@
                         :users/confirmation_token :confirmation-token
                         :users/created_at :created-at
                         :users/updated_at :updated-at})))
-
 
 (defn update-user [tx data]
   (let [query {:update table-name

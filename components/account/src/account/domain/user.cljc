@@ -74,6 +74,5 @@
 
   (mg/generate EmailAddress)
 
-
   (mg/generate User)
   (m/validate User {:id -9}))

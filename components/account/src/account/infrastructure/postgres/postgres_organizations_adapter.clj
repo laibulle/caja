@@ -21,7 +21,6 @@
       (set/rename-keys {:owner-id :owner_id
                         :updated-at :updated_at})))
 
-
 (defn insert-organization [tx data]
   (let [query {:insert-into table-name
                :values [(domain-organization-to-db data)]}

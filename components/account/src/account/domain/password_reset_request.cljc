@@ -4,7 +4,6 @@
             [malli.clj-kondo :as mc]
             [clojure.string :as str]))
 
-
 (def EmailAddress  [:re {:description "https://github.com/gfredericks/test.chuck/issues/46"
                          :gen/fmap '(constantly "random@example.com")
                          :error/message "should be email"}
@@ -14,10 +13,8 @@
   [:map
    [:email EmailAddress]])
 
-
 (defn validate-password-request-input [input]
   (m/validate PasswordResetRequestInput input))
-
 
 (comment
   (validate-password-request-input {:email "frefre@frfrefr.fr"}))

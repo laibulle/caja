@@ -48,6 +48,5 @@
       (let [result (execute {:email "unconfirmed@example.com" :password "valid-password"})]
         (is (= [email-not-confirmed] (:errors result)))))))
 
-
 (comment
   (run-tests))

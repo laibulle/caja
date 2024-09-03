@@ -10,7 +10,6 @@
    [postgres-db.interface :as db]
    [clojure.java.jdbc :as jdbc-mock]))
 
-
 (deftest test-execute
   (testing "When user is not found"
     (with-redefs [ua/get-user-by-email (fn [_ _] nil)]

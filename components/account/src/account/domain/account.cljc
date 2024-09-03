@@ -4,7 +4,6 @@
             [malli.clj-kondo :as mc]
             [clojure.string :as str]))
 
-
 (def Password [:string {:min 8 :max 50}])
 
 (def EmailAddress  [:re {:description "https://github.com/gfredericks/test.chuck/issues/46"
@@ -23,7 +22,6 @@
 
 (defn validate-login-input [input]
   (m/validate LoginInput input))
-
 
 (comment
   (validate-login-input {:email "frefre@frfrefr.fr" :password "nconfiorn"}))

@@ -17,6 +17,5 @@
 
   (mg/generate Organization)
 
-
   (mg/generate Organization)
   (m/validate Organization {:id -9}))

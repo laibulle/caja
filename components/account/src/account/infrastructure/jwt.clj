@@ -19,7 +19,6 @@
 (defn unsign-account-token [token]
   (jwt/unsign token jwt-secret))
 
-
 (comment
   (let [token (generate-account-token {:account-id 423})]
     (unsign-account-token token)))

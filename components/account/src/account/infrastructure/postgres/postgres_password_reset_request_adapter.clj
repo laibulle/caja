@@ -16,7 +16,6 @@
                         :created-at :created_at
                         :updated-at :updated_at})))
 
-
 (defn db-to-domain-request [db-user]
   (-> db-user
       (set/rename-keys {:users_password_reset_requests/id :id
