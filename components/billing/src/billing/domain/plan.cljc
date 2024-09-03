@@ -4,8 +4,8 @@
             [malli.clj-kondo :as mc]
             [clojure.instant :as inst]))
 
-(def CUID [:string {:min 25 :max 25}])
 (def SKU [:string {:min 5 :max 50}])
+(def Id [:int {:min 1}])
 
 (def Plan
   [:map
@@ -14,7 +14,7 @@
 
 (def OrganizationPlan
   [:map
-   [:organization-id CUID]
+   [:organization-id Id]
    [:plan-id SKU]])
 
 (comment
