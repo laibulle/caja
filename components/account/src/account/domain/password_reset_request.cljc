@@ -1,8 +1,5 @@
 (ns account.domain.password-reset-request
-  (:require [malli.core :as m]
-            [malli.generator :as mg]
-            [malli.clj-kondo :as mc]
-            [clojure.string :as str]))
+  (:require [malli.core :as m]))
 
 (def EmailAddress  [:re {:description "https://github.com/gfredericks/test.chuck/issues/46"
                          :gen/fmap '(constantly "random@example.com")
