@@ -60,6 +60,13 @@
 (defn validate-confirmation-email-input [input]
   (m/validate ConfirmUserEmailInput input))
 
+(def DeleteUserInput
+  [:map
+   [:user-id :pos-int]])
+
+(defn validate-delete-user-input [input]
+  (m/validate DeleteUserInput input))
+
 (comment
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)

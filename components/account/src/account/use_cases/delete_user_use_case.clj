@@ -6,16 +6,19 @@
    [postgres-db.interface :as db]
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [next.jdbc :as jdbc]
-   [password-hash.interface :as ph]))
+   [account.domain.user :as user]))
 
-(defn- validate-input [input] input)
+(defn- input-valid? [input]
+  (if (true? (user/validate-delete-user-input (:input input)))
+    input
+    {:errors [:invalid-input]}))
 
 (defn- delete-user [input] input)
 
 (defn execute [input]
   (jdbc/with-transaction [tx @db/datasource]
     (-> {:input input :tx tx}
-        (validate-input)
+        (input-valid?)
         (=> delete-user))))
 
 (comment)
