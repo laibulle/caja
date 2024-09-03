@@ -15,17 +15,16 @@
   (:import java.sql.Timestamp)
   (:import [java.net URLEncoder]))
 
-(def my-tconfig
-  {:dictionary
-   {:fr   {:confirmation-email {:subject         "Confirmez votre email"
-                                :intro "Bienvenue"
-                                :outro ""
-                                :instructions "Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :"}
-           :missing  "|Missing translation: [%1$s %2$s %3$s]|"}}
-   :dev-mode? true
-   :fallback-locale :fr})
-
-(def t (tower/make-t my-tconfig))
+(def t (tower/make-t
+        {:dictionary
+         {:fr   {:confirmation-email {:subject "Confirmez votre email"
+                                      :intro "Bienvenue"
+                                      :reset-password "Confirm email"
+                                      :outro ""
+                                      :instructions "Pour commencer à utiliser l'application veuillez confirmer votre email en cliquant sur le lien si dessous :"}
+                 :missing  "|Missing translation: [%1$s %2$s %3$s]|"}}
+         :dev-mode? true
+         :fallback-locale :fr}))
 
 (defn- random-name []
   (apply str (repeatedly 20 #(rand-nth "abcdefghijklmnopqrstuvwxyz0123456789"))))
@@ -68,7 +67,7 @@
                                                              :intro [(t :fr :intro)]
                                                              :outro [(t :fr :outro)]
                                                              :action [{:instructions (t :fr :instructions)
-                                                                       :button [{:link confirmation-link :text "Confirm email" :color "blue"}]}]}})]
+                                                                       :button [{:link confirmation-link :text (t :fr :reset-password) :color "blue"}]}]}})]
         (if (true? result)
           {:data data}
           result)))
