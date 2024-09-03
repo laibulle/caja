@@ -6,4 +6,5 @@
                   {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"}
                   :prod
                   {:url "jdbc:postgresql://localhost:5437/petitplat_dev" :user "postgres" :password "postgres"}})
-        :stop (postgres-db.interface/stop)}}}}
+        :stop (postgres-db.interface/stop)}
+   :server {:start (petitplat.server.server/start)}}}}
