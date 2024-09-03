@@ -18,11 +18,10 @@
     {:errors [:invalid-input]}))
 
 (defn- find-account-by-email [input]
-  (jdbc/with-transaction [tx @db/datasource]
-    (let [user (ua/get-user-by-email tx (get-in input [:data :email]))]
-      (if (nil? user)
-        {:errors [invalid-credentials-error]}
-        (assoc input :account user)))))
+  (let [user (ua/get-user-by-email (:tx input) (get-in input [:data :email]))]
+    (if (nil? user)
+      {:errors [invalid-credentials-error]}
+      (assoc input :account user))))
 
 (defn- check-password [input]
   (if (false? (ph/check (get-in input [:data :password]) (get-in input [:account :password-hash])))
@@ -38,13 +37,14 @@
   {:data {:jwt (generate-account-token {:account-id (get-in input [:account :id])})}})
 
 (defn execute [input]
-  (-> {:data input}
-      (=> validate-input)
-      (=> find-account-by-email)
-      (=> check-password)
-      (=> check-confirmed)
-      (=> create-token)
-      collect-result))
+  (jdbc/with-transaction [tx @db/datasource]
+    (-> {:data input :tx tx}
+        (=> validate-input)
+        (=> find-account-by-email)
+        (=> check-password)
+        (=> check-confirmed)
+        (=> create-token)
+        collect-result)))
 
 (comment
   (execute {:email "jsssa@gmail.com" :password "Noirfnefwerf#mopgmtrogmroptgm"})

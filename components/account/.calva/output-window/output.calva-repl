@@ -765,3 +765,352 @@ clj꞉account.use-cases.authenticate-use-case-test꞉> 
 ; 3 failures, 0 errors.
 {:test 1, :pass 2, :fail 3, :error 0, :type :summary}
 clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:21:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Evaluating file: authenticate_use_case.clj
+; 
+; ; clj  account.use-cases.authenticate-use-case 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:21:3).
+; Unable to resolve symbol: tx in this context
+; Evaluation of file authenticate_use_case.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:21:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:46)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:47)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:57)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:invalid-credentials] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 3 failures, 0 errors.
+{:test 1, :pass 2, :fail 3, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+#'account.use-cases.authenticate-use-case/check-password
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:21:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:46)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:47)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:57)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:invalid-credentials] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 3 failures, 0 errors.
+{:test 1, :pass 2, :fail 3, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:57343 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:46)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:ninin]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:47)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:52)
+; Invalid credentials
+; expected: (= (:errors result) [auth/invalid-credentials-error])
+;   actual: (not (= [:ninin] [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:57)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:ninin] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 4 failures, 0 errors.
+{:test 1, :pass 1, :fail 4, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:21:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:57414 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:46)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:ninin]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:47)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:52)
+; Invalid credentials
+; expected: (= (:errors result) [auth/invalid-credentials-error])
+;   actual: (not (= [:ninin] [:invalid-credentials]))
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:57)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:ninin] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 4 failures, 0 errors.
+{:test 1, :pass 1, :fail 4, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+#'account.use-cases.authenticate-use-case-test/test-authenticate-use-case
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (NO_SOURCE_FILE:42)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:ninin]))
+; 
+; FAIL in (test-authenticate-use-case) (NO_SOURCE_FILE:43)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (NO_SOURCE_FILE:48)
+; Invalid credentials
+; expected: (= (:errors result) [auth/invalid-credentials-error])
+;   actual: (not (= [:ninin] [:invalid-credentials]))
+; nil
+; 
+; FAIL in (test-authenticate-use-case) (NO_SOURCE_FILE:53)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:ninin] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 4 failures, 0 errors.
+{:test 1, :pass 1, :fail 4, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+#'account.use-cases.authenticate-use-case/find-account-by-email
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:40:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:40:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+{:host "localhost", :port 8025, :default-from {:email "me@draines.com", :name "Me"}, :base-url "http://base-url", :product {:name "My product", :link "https://www.google.fr"}}
+clj꞉user꞉> 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:40:3).
+; Unable to resolve symbol: tx in this context
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; Evaluating file: authenticate_use_case.clj
+; 
+; ; clj  account.use-cases.authenticate-use-case 
+; Syntax error compiling at (src/account/use_cases/authenticate_use_case.clj:40:3).
+; Unable to resolve symbol: tx in this context
+; Evaluation of file authenticate_use_case.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉account.use-cases.authenticate-use-case꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; TypeError: Cannot read properties of undefined (reading 'label')
+; Aborting jack-in.
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:57542 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:42)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:ninin]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:43)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:48)
+; Invalid credentials
+; expected: (= (:errors result) [auth/invalid-credentials-error])
+;   actual: (not (= [:ninin] [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:53)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:ninin] [:email-not-confirmed]))
+; 
+; Ran 1 tests containing 5 assertions.
+; 4 failures, 0 errors.
+{:test 1, :pass 1, :fail 4, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; Syntax error compiling at (test/account/use_cases/authenticate_use_case_test.clj:30:20).
+; Unable to resolve symbol: execute in this context
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (authenticate-use-case-tests) (authenticate_use_case_test.clj:32)
+; successful authentication
+; expected: (= "mock-jwt-token" (get-in result [:data :jwt]))
+;   actual: (not (= "mock-jwt-token" nil))
+; 
+; FAIL in (authenticate-use-case-tests) (authenticate_use_case_test.clj:36)
+; authentication fails due to invalid email
+; expected: (= [invalid-credentials-error] (:errors result))
+;   actual: (not (= [:invalid-credentials] [:ninin]))
+; 
+; FAIL in (authenticate-use-case-tests) (authenticate_use_case_test.clj:41)
+; authentication fails due to invalid password
+; expected: (= [invalid-credentials-error] (:errors result))
+;   actual: (not (= [:invalid-credentials] [:iiiii]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:42)
+; Valid credentials
+; expected: (nil? (:errors result))
+;   actual: (not (nil? [:ninin]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:43)
+; Valid credentials
+; expected: (= (:data result) {:jwt "mock-jwt-token"})
+;   actual: (not (= nil {:jwt "mock-jwt-token"}))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:48)
+; Invalid credentials
+; expected: (= (:errors result) [auth/invalid-credentials-error])
+;   actual: (not (= [:ninin] [:invalid-credentials]))
+; 
+; FAIL in (test-authenticate-use-case) (authenticate_use_case_test.clj:53)
+; Unconfirmed email
+; expected: (= (:errors result) [auth/email-not-confirmed])
+;   actual: (not (= [:ninin] [:email-not-confirmed]))
+; 
+; Ran 2 tests containing 10 assertions.
+; 7 failures, 0 errors.
+{:test 2, :pass 3, :fail 7, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "deps.edn" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/guillaume/perso/caja/components/account; clojure -Sdeps '{:deps {nrepl/nrepl {:mvn/version,"1.1.1"},cider/cider-nrepl {:mvn/version,"0.47.1"}}}' -M:dev:test -m nrepl.cmdline --middleware "[cider.nrepl/cider-middleware]")
+; Using host:port localhost:57588 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉user꞉> 
+; Jack-in done.
+clj꞉user꞉> 
+; Evaluating file: authenticate_use_case_test.clj
+nil
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; FAIL in (authenticate-use-case-tests) (authenticate_use_case_test.clj:32)
+; successful authentication
+; expected: (= "mock-jwt-token" (get-in result [:data :jwt]))
+;   actual: (not (= "mock-jwt-token" nil))
+; 
+; Ran 1 tests containing 5 assertions.
+; 1 failures, 0 errors.
+{:test 1, :pass 4, :fail 1, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+#'account.use-cases.authenticate-use-case-test/authenticate-use-case-tests
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
+; 
+; Testing account.use-cases.authenticate-use-case-test
+; 
+; Ran 1 tests containing 5 assertions.
+; 0 failures, 0 errors.
+{:test 1, :pass 5, :fail 0, :error 0, :type :summary}
+clj꞉account.use-cases.authenticate-use-case-test꞉> 
