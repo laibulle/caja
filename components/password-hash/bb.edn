@@ -1,0 +1,2 @@
+{:tasks {format:check   (shell "cljfmt check")
+         format         (shell "cljfmt fix")}}

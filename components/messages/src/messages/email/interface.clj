@@ -34,7 +34,6 @@
                      (dissoc :variables))]
     (send-email sm-input)))
 
-
 (comment
   (init {:host "localhost"
          :port 8025

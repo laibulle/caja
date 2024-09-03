@@ -22,6 +22,5 @@
 
    "\n\n© " (.getYear (java.time.LocalDate/now)) " " (:name product) ". All rights reserved."))
 
-
 (comment
   (generate {:title "hello" :intro ["intro"] :outro ["outro"] :product {:name "My product" :link "http://link.com"}}))
