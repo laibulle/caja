@@ -40,6 +40,15 @@
    [:email EmailAddress]
    [:password Password]])
 
+(def UpdatePasswordInput
+  [:map
+   [:password String100]
+   [:email EmailAddress]
+   [:token :string]])
+
+(defn validate-update-password-input [input]
+  (m/validate UpdatePasswordInput input))
+
 (defn validate-register-user-input [input]
   (m/validate RegisterUserInput input))
 
