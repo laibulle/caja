@@ -1,4 +1,4 @@
-(ns account.use-cases.send-reset-password-link
+(ns account.use-cases.send-reset-password-link-use-case
   (:require
    [account.infrastructure.postgres.postgres-users-adapter :as ua]
    [account.infrastructure.postgres.postgres-password-reset-request-adapter :as ra]
