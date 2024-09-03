@@ -2,9 +2,10 @@
   (:require [juxt.clip.core :as clip]
             [aero.core :refer [read-config]]
             [postgres-db.interface :as di]
+            [clojure.java.io :as io]
             [clojure.tools.namespace.repl :refer [refresh]]))
 
-(def system-config (:system-config (read-config (clojure.java.io/resource "config.edn"))))
+(def system-config (:system-config (read-config (io/resource "config.edn"))))
 (def system nil)
 
 (defn start []
