@@ -29,39 +29,39 @@
 (defn- random-name []
   (apply str (repeatedly 20 #(rand-nth "abcdefghijklmnopqrstuvwxyz0123456789"))))
 
-(defn- user-valid? [{:keys [data]}]
-  (if (true? (user/validate-register-user-input data))
-    {:data data}
+(defn- user-valid? [input]
+  (if (true? (user/validate-register-user-input (:data input)))
+    input
     {:errors [:invalid-user]}))
 
-(defn- user-exists? [{:keys [data]}]
-  (jdbc/with-transaction [tx @db/datasource]
-    (if (nil? (ua/get-user-by-email tx (:email data)))
-      {:data data}
-      {:errors [:email-already-taken]})))
+(defn- user-exists? [input]
+  (if (nil? (ua/get-user-by-email (:tx input) (get-in input [:data :email])))
+    input
+    {:errors [:email-already-taken]}))
 
-(defn- save-in-db [{:keys [data]}]
-  (jdbc/with-transaction [tx @db/datasource]
-    (let [user (ua/insert-user tx data)
-          name (random-name)
-          organization (oa/insert-organization tx {:owner-id (:id user) :name name :slug name})
-          membership (ma/insert-membership tx {:role "owner" :organization-id (:id organization) :user-id (:id user)})]
-      {:data data :user user :organization organization :membership membership})))
+(defn- save-in-db [input]
+  (let [user (ua/insert-user (:tx input) (:data input))
+        name (random-name)
+        organization (oa/insert-organization (:tx input) {:owner-id (:id user) :name name :slug name})
+        membership (ma/insert-membership (:tx input) {:role "owner" :organization-id (:id organization) :user-id (:id user)})]
+    (-> input (assoc :user user)
+        (assoc :user user)
+        (assoc :organization organization)
+        (assoc :membership membership))))
 
-(defn- hash-password [{:keys [data]}]
-  {:data
-   (-> data
-       (assoc :password_hash (ph/encrypt (data :password)))
-       (dissoc :password))})
+(defn- hash-password [input]
+  (-> input
+      (assoc-in [:data :password_hash] (ph/encrypt (get-in input [:data :password])))
+      (dissoc :password)))
 
 (defn- credentials-provider [data]
   (or (= (:provider data) :credentials) (=  (:provider data) nil)))
 
-(defn- send-confirmation-email [{:keys [data]}]
-  (if (credentials-provider data)
+(defn- send-confirmation-email [input]
+  (if (credentials-provider (:data input))
     (with-tscope :confirmation-email
-      (let [confirmation-link (mi/create-email-link (str "/confirm-email?token=" (:confirmation-token data) "&email=" (URLEncoder/encode (:email data) "UTF-8")))
-            result (mi/send-email-from-template {:to (:email data)
+      (let [confirmation-link (mi/create-email-link (str "/confirm-email?token=" (get-in input [:data :confirmation-token]) "&email=" (URLEncoder/encode (get-in input [:data :email]) "UTF-8")))
+            result (mi/send-email-from-template {:to (get-in input [:data :email])
                                                  :subject (t :fr :subject)
                                                  :variables {:title (t :fr :subject)
                                                              :intro [(t :fr :intro)]
@@ -69,25 +69,27 @@
                                                              :action [{:instructions (t :fr :instructions)
                                                                        :button [{:link confirmation-link :text (t :fr :reset-password) :color "blue"}]}]}})]
         (if (true? result)
-          {:data data}
+          input
           result)))
-    {:data data}))
+    input))
 
-(defn- generate-user-data [{:keys [data]}]
-  {:data (-> data
-             (assoc :confirmed_at (when (not (credentials-provider data))  (Timestamp. (System/currentTimeMillis))))
-             (assoc :confirmation-token (when (credentials-provider data) (user/generate-confirmation-token))))})
+(defn- generate-user-data [input]
+  (-> input
+      (assoc-in [:data :confirmed_at] (when (not (credentials-provider (get-in input [:data])))  (Timestamp. (System/currentTimeMillis))))
+      (assoc :confirmation-token (when (credentials-provider (get-in input [:data])) (user/generate-confirmation-token)))))
 
 (m/=>  execute [:=> [:cat user/RegisterUserInput] [:or ErrorSchema user/User]])
 (defn execute [input]
-  (-> {:data input}
-      (=> user-valid?)
-      (=> user-exists?)
-      (=> generate-user-data)
-      (=> hash-password)
-      (=> save-in-db)
-      (=> send-confirmation-email)
-      collect-result))
+  (jdbc/with-transaction [tx @db/datasource]
+
+    (-> {:data input :tx tx}
+        (=> user-valid?)
+        (=> user-exists?)
+        (=> generate-user-data)
+        (=> hash-password)
+        (=> save-in-db)
+        (=> send-confirmation-email)
+        collect-result)))
 
 (comment
   (with-tscope :confirmation-email

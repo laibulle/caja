@@ -4,8 +4,7 @@
    [messages.interface :as mi]
    [taoensso.tower :as tower :refer (with-tscope)]
    [next.jdbc :as jdbc]
-   [postgres-db.interface :as db])
-  )
+   [postgres-db.interface :as db]))
 
 
 (defn execute [input]
