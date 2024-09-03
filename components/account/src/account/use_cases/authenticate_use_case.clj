@@ -12,10 +12,12 @@
 
 (def email-not-confirmed :email-not-confirmed)
 
+(def invalid-input :invalid-input)
+
 (defn- validate-input [input]
   (if (validate-login-input (:data input))
     input
-    {:errors [:invalid-input]}))
+    {:errors [invalid-input]}))
 
 (defn- find-account-by-email [input]
   (let [user (ua/get-user-by-email (:tx input) (get-in input [:data :email]))]

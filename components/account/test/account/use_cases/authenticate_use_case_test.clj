@@ -31,6 +31,10 @@
         (is (nil? (:errors result)))
         (is (= "mock-jwt-token" (:jwt result)))))
 
+    (testing "authentication fails due to invalid input"
+      (let [result (execute {})]
+        (is (= [invalid-input] (:errors result)))))
+
     (testing "authentication fails due to invalid email"
       (let [result (execute {:email "invalid@example.com" :password "valid-password"})]
         (is (= [invalid-credentials-error] (:errors result)))))
