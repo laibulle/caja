@@ -7,7 +7,9 @@
    [taoensso.tower :as tower :refer (with-tscope)]
    [next.jdbc :as jdbc]
    [postgres-db.interface :as db])
-  (:import [java.net URLEncoder]))
+  (:import [java.time Instant ZoneId ZonedDateTime Duration]
+           [java.sql Timestamp]
+           [java.net URLEncoder]))
 
 (def t (tower/make-t
         {:dictionary
@@ -23,7 +25,11 @@
 (def user-not-found :user-not-found)
 
 (defn check-threshold [input]
-  input)
+  (let [one-hour-ago-sql (Timestamp/from (.toInstant (.minus (ZonedDateTime/now (ZoneId/systemDefault)) (Duration/ofHours 1))))
+        pending-requests (ra/list-pending-requests-for-user (:tx input) {:user-id (get-in input [:user :id]) :from one-hour-ago-sql})]
+    (if (>= (count pending-requests) 3)
+      {:errors [:to-many-requests]}
+      input)))
 
 (defn create-reset-request [input]
   (let [request-data  {:user-id (get-in input [:user :id]) :token (apply str (repeatedly 40 #(rand-nth "abcdefghijklmnopqrstuvwxyz0123456789")))}

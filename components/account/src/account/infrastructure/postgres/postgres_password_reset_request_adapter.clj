@@ -4,7 +4,8 @@
    [honey.sql :as sql]
    [clojure.set :as set]
    [next.jdbc :as jdbc])
-  (:import java.sql.Timestamp))
+  (:import [java.time Instant ZoneId ZonedDateTime Duration]
+           [java.sql Timestamp]))
 
 (def table-name :users_password_reset_requests)
 
@@ -37,17 +38,32 @@
         res (db/execute-one! tx (sql/format query) {:return-keys true})]
     (db-to-domain-request res)))
 
+(defn list-pending-requests-for-user
+  "TODO: finish it"
+  [tx data]
+  (let [query {:select [:id]
+               :from [table-name]
+               :where [:and [:= :user-id (:user-id data)]
+                       [:>= :created-at (:from data)]]}
+        res (db/execute! tx (sql/format query))]
+    (vec (map db-to-domain-request res))))
+
 (defn get-request-by-token [tx token]
   (->> {:select [:id :token :executed_at :created_at :updated_at]
         :from [table-name]
         :where
         [:= :token token]}
        (sql/format)
+
        (db/execute-one! tx)
        (db-to-domain-request)))
 
 (comment
-  (jdbc/with-transaction [tx @db/datasource]
-    ;(insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
-    (get-request-by-token tx "j@gmdsail.com")
-    (update-request tx {:id 1 :email "jj@mjk.fr"})))
+
+  (let [one-hour-ago-sql (Timestamp/from (.toInstant (.minus (ZonedDateTime/now (ZoneId/systemDefault)) (Duration/ofHours 1))))]
+    (jdbc/with-transaction [tx @db/datasource]
+      (list-pending-requests-for-user tx {:user-id 1 :from one-hour-ago-sql})
+        ;(insert-user tx {:name "hello" :email "j@gmdsail.com" :confirmed-at (Timestamp. (System/currentTimeMillis))})
+        ;(get-request-by-token tx "j@gmdsail.com")
+        ;(update-request tx {:id 1 :email "jj@mjk.fr"})
+      )))

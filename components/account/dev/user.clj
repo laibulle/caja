@@ -2,7 +2,7 @@
   (:require
    [postgres-db.interface :as pi]
    [messages.interface :as mi]
-   [account.use-cases.send-reset-password-link :as splu]
+   [account.use-cases.send-reset-password-link-use-case :as splu]
    [account.use-cases.authenticate-use-case :as au]
    [account.use-cases.register-user-in-db-use-case :as ru]
    [account.use-cases.confirm-user-in-db-use-case :as cu]
