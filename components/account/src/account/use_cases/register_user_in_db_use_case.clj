@@ -102,4 +102,4 @@
   (-> (mc/collect *ns*) (mc/linter-config))
   (mc/emit!)
   (user-exists? {:input {:email "hell"}})
-  (execute {:name "John Doe" :email "dewfrefrjdew@djdewnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
+  (execute {:name "John Doe" :email "dewfrefrjdew@djdsewnjkreds.fr" :password "Noirfnefwerf#mopgmtrogmroptgm"}))
