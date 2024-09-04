@@ -1,8 +1,4 @@
 {:tasks {test   (shell "clj -X:test")
          format:check   (shell "cljfmt check")
          format         (shell "cljfmt fix")
-         gather-migrations
-         {:doc "Gather and process migrations"
-          :task (do
-                  (require '[petitplat.server.migrate :refer [gather-migrations]])
-                  (gather-migrations))}}}
+         gather-migrations (shell "clj -M -m petitplat.server.migrate")}}

@@ -25,6 +25,10 @@
   {:datastore  (jdbc/sql-database {:connection-uri "jdbc:postgresql://localhost:5437/petitplat_dev?user=postgres&password=postgres"})
    :migrations (jdbc/load-resources "migrations")})
 
+(defn -main
+  [& _]
+  (gather-migrations))
+
 (comment
   (gather-migrations)
   (repl/migrate config)
