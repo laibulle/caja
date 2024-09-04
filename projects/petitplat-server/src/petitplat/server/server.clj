@@ -24,7 +24,6 @@
 (defn start-router! []
   (sente/start-chsk-router! ch-recv event-msg-handler))
 
-
 (defroutes app
   [["/chsk" (:ajax-get-or-ws-handshake-fn channel-socket)]
    ["/chsk/send" (:ajax-post-fn channel-socket)]])
@@ -33,7 +32,6 @@
   (start-router!)
   (println "Starting server on port 8787...")
   (http-kit/run-server app {:port 8787}))
-
 
 (comment
   (start))
