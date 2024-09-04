@@ -17,10 +17,14 @@
     (let [relative-path (.relativize (.toPath (io/file dir)) (.toPath file))
           target-file (io/file target-dir (str relative-path))]
       (io/make-parents target-file)
+      (println "start")
+      (println file)
+      (println target-file)
+      (println "done")
       (copy-file file target-file))))
 
 (defn gather-migrations []
-  (merge-directories ["../../components/account/resources/migrations"] "resources/migrations"))
+  (merge-directories ["../../components/account/resources/migrations"] "./resources/migrations"))
 
 (def config
   {:datastore  (jdbc/sql-database {:connection-uri "jdbc:postgresql://localhost:5437/petitplat_dev?user=postgres&password=postgres"})
