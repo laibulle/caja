@@ -14,10 +14,13 @@
   (doseq [dir source-dirs
           file (file-seq (io/file dir))
           :when (.isFile file)]
-    (let [relative-path (.relativize (.toPath (io/file dir)) (.toPath file))
+    (let [relative-path (.relativize (.toPath (io/file target-dir)) (.toPath file))
           target-file (io/file target-dir (str relative-path))]
+
+      (println (io/as-url target-file))
       (io/make-parents target-file)
-      (copy-file file target-file))))
+      ;(copy-file file target-file)
+      )))
 
 (defn gather-migrations []
   (merge-directories ["../../components/account/resources/migrations"] "./resources/migrations"))
