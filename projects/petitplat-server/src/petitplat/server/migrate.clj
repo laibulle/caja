@@ -2,8 +2,7 @@
   (:require
    [ragtime.next-jdbc :as jdbc]
    [ragtime.repl :as repl]
-   [clojure.java.io :as io])
-  (:import [java.nio.file Paths Files]))
+   [clojure.java.io :as io]))
 
 (defn copy-file [source target]
   (with-open [in (io/input-stream source)
