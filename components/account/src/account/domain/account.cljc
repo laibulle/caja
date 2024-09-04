@@ -1,8 +1,5 @@
 (ns account.domain.account
-  (:require [malli.core :as m]
-            [malli.generator :as mg]
-            [malli.clj-kondo :as mc]
-            [clojure.string :as str]))
+  (:require [malli.core :as m]))
 
 (def Password [:string {:min 8 :max 50}])
 
