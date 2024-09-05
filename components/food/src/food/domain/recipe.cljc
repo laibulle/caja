@@ -5,13 +5,17 @@
             [clojure.instant :as inst]))
 
 (def RecipeId [:int {:min 1}])
+(def RecipeName [:string])
+(def MemberId [:int {:min 1}])
+
 (def DateTime [inst? {:optional false}])
 (def DateTime? [inst? {:optional true}])
 
 (def Recipe
   [:map
    [:id RecipeId]
-   [:name :string]
+   [:member-id MemberId]
+   [:name RecipeName]
    [:deleted-at DateTime?]
    [:created-at DateTime]
    [:updated-at DateTime?]])
