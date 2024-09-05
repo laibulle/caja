@@ -1,0 +1,1 @@
+{:default-llm {:temperature 0 :model :ollama}}

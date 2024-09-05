@@ -1,5 +1,14 @@
 (ns fisher.core
-  (:require [bosquet.llm.generator :refer [generate llm]]))
+  (:require
+   [bosquet.llm.wkk :as k]
+   [bosquet.llm.generator :refer [generate llm]]))
 
 (comment
-  (generate "When I was 6 my sister was half my age. Now I’m 70 how old is my sister?"))
+  (generate
+   {:question-answer "Question: {{question}}  Answer: {{answer}}"
+    :answer          (llm :ollama k/model-params {:model "llama3.1"})
+    :self-eval       ["{{question-answer}}"
+                      ""
+                      "Is this a correct answer? {{test}}"]
+    :test            (llm :ollama k/model-params {:model "llama3.1"})}
+   {:question "What is the distance from Moon to Io?"}))

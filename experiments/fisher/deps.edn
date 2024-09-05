@@ -1,8 +1,4 @@
 {:paths ["src" "resources"]
- :deps {}
- :aliases {:cljs {:extra-deps
-                  {io.github.zmedelis/bosquet {:mvn/version "2024.08.08"}}
-                  :devtools {:preloads [helix.experimental.refresh]
-                             :reload-strategy :full}}
-           :test {:extra-paths ["test"]
+ :deps {io.github.zmedelis/bosquet {:mvn/version "2024.08.08"}}
+ :aliases {:test {:extra-paths ["test"]
                   :extra-deps {}}}}
