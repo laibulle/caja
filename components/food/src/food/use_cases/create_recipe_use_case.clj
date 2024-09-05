@@ -3,7 +3,9 @@
    [malli.core :as m]
    [food.domain.recipe :as d]
    [next.jdbc :as jdbc]
-   [postgres-db.interface :as db]))
+   [postgres-db.interface :as db]
+   [common.interface :refer [=> collect-result]]
+   [food.infrastructure.adapters.postgres.postgres-foods-adapter :as fa]))
 
 (def invalid-input :invalid-input)
 
@@ -16,14 +18,18 @@
   (m/validate CreateRecipeInput input))
 
 (defn- validate-input [input]
-  (if (validate-create-recipe-input (:data input))
+  (if (validate-create-recipe-input (:input input))
     input
     {:errors [invalid-input]}))
 
+(defn- save-in-db [input]
+  (fa/insert-food (:tx input) (:input input)))
+
 (defn execute [input]
   (jdbc/with-transaction [tx @db/datasource]
-    (-> {:data input :tx tx}
-        (validate-input))))
+    (-> {:input input :tx tx}
+        (validate-input)
+        (=> save-in-db))))
 
 (comment
   (def input {:member-id 1 :name "Test recipe"})
