@@ -1,0 +1,1 @@
+(ns fisher.adapters.whatsapp)
