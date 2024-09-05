@@ -1,0 +1,1 @@
+(ns food.infrastructure.adapters.postgres.postgres-foods-adapter)
