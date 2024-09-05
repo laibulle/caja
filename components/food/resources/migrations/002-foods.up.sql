@@ -8,7 +8,6 @@ CREATE TABLE foods (
     fat100 float NOT NULL,
     carb100 float NOT NULL,
     protein100 float NOT NULL,
-    energy100 float NOT NULL,
     serving_size integer,
     coocked_ratio integer,
     is_nutrition_complete boolean,
