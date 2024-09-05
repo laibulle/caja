@@ -1,12 +1,13 @@
 {:tasks
- {:init (defn component-dirs []
-          ["components/account"
-           "components/billing"
-           "components/common"
-           "components/food"
-           "components/messages"
-           "components/password-hash"
-           "components/postgres-db"])
+ {:init (do
+          (defn component-dirs []
+            ["components/account"
+             "components/billing"
+             "components/common"
+             "components/food"
+             "components/messages"
+             "components/password-hash"
+             "components/postgres-db"]))
 
   test
   (let [dirs (component-dirs)]
