@@ -1,7 +1,12 @@
 {:tasks
  {:init (defn component-dirs []
           ["components/account"
-           "components/billing"])
+           "components/billing"
+           "components/common"
+           "components/food"
+           "components/messages"
+           "components/password-hash"
+           "components/postgres-db"])
 
  ;; Task to run tests in all components
   test
