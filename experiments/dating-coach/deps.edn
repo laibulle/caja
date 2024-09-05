@@ -1,0 +1,8 @@
+{:paths ["src" "resources"]
+ :deps {}
+ :aliases {:cljs {:extra-deps
+                  {}
+                  :devtools {:preloads [helix.experimental.refresh]
+                             :reload-strategy :full}}
+           :test {:extra-paths ["test"]
+                  :extra-deps {}}}}
