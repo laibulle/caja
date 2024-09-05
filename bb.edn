@@ -8,19 +8,16 @@
            "components/password-hash"
            "components/postgres-db"])
 
- ;; Task to run tests in all components
   test
   (let [dirs (component-dirs)]
     (doseq [dir dirs]
       (shell {:dir dir} "bb test")))
 
-   ;; Task to check formatting in all components
   format:check
   (let [dirs (component-dirs)]
     (doseq [dir dirs]
       (shell {:dir dir} "cljfmt check")))
 
-   ;; Task to fix formatting in all components
   format
   (let [dirs (component-dirs)]
     (doseq [dir dirs]
